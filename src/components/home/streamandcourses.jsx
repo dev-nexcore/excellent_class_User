@@ -16,13 +16,13 @@ export default function StreamAndCourses() {
       title: "SCIENCE SECTION",
       image: "/Home/Rectangle 24.png",
       desc: "XI & XII & Entrance",
-      link: "/college",
+      link: "/school",
     },
     {
       title: "COMMERCE SECTION",
       image: "/Home/Rectangle 23.png",
       desc: "XI, XII, F.Y to T.Y.B.Com, BMS, BAF",
-      link: "/class",
+      link: "/school",
     },
   ];
 
