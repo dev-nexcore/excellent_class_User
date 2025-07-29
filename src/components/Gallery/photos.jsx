@@ -12,11 +12,11 @@ export default function GalleryPage() {
       </section>
 
       {/* Photo Rows */}
-      <div className="flex flex-col items-center justify-center gap-4 bg-white sticky top-0 z-[30] py-6 shadow-md">
+      <div className="flex flex-col items-center justify-center gap-4 bg-white sticky top-0 z-[30] py-2 shadow-md">
       <ImageComponent />
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 bg-white sticky top-0 z-[30] py-6 shadow-md">
+      <div className="flex flex-col items-center justify-center gap-4 bg-white sticky top-0 z-[30] py-2 shadow-md">
       <ImageComponent />
       </div>
 
