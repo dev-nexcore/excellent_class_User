@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import { Geist, Geist_Mono } from "next/font/google";
+import "./global.css";
+
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+=======
 import { Inter } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -6,6 +14,7 @@ import Footer from "@/components/common/Footer"; // ✅ Make sure this is correc
 import BreadCrumbs from "@/components/breadCrumbs/breadCrumbs";
 const inter = Inter({
   variable: "--font-sans",
+>>>>>>> fcf1a3c0ebbdf2e63ede61e459d13844da394ff0
   subsets: ["latin"],
 });
 
@@ -22,11 +31,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+<<<<<<< HEAD
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+=======
       <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         <BreadCrumbs/>
         {children}
         <Footer /> {/* ✅ Make sure this is self-closing */}
+>>>>>>> fcf1a3c0ebbdf2e63ede61e459d13844da394ff0
       </body>
     </html>
   );
