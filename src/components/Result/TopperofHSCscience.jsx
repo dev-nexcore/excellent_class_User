@@ -1,117 +1,80 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion";
-
-// Animation Variants
-const slideInLeft = {
-  hidden: { opacity: 0, x: -100 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-};
-
-const slideInTop = {
-  hidden: { opacity: 0, y: -100 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
-
-const slideInRight = {
-  hidden: { opacity: 0, x: 100 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-};
 
 // Card Component
-const TopperCard = ({ name, percentage, achievement, image, animation }) => (
-  <motion.div
-    className="w-[260px] rounded-[16px] shadow-xl bg-[#23306e] flex flex-col items-center pt-8 pb-0 overflow-visible relative"
-    variants={animation}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.3 }}
-  >
-    <img
+const TopperCard = ({ name, percentage, achievement, rank, image }) => (
+  <div className="w-[280px] rounded-2xl shadow-lg overflow-visible relative mt-28">
+    {/* Overflowing Image */}
+    <img 
       src={image}
-      alt="Student"
-      className="w-[150px] h-[200px] object-cover rounded-xl shadow-lg"
+      alt={name}
+      className="absolute -top-24 left-1/2 transform -translate-x-1/2 h-[220px] w-auto object-contain z-30"
     />
-    <div className="bg-[#f8b929] rounded-xl text-white font-bold text-center py-3 px-6 shadow-md -mt-8 z-10">
-      <div className="text-lg">{name}</div>
-      <div className="text-sm">{percentage}</div>
-    </div>
-    <div className="bg-[#ef5b25] w-full rounded-b-[16px] mt-6 py-4 flex justify-center items-center">
-      <p className="text-white text-base font-semibold text-center px-3">
-        {achievement}
-      </p>
-    </div>
-  </motion.div>
-);
-
-// Section Component
-const TopperSection = ({ data }) => {
-  return (
-    <div className="py-16">
-      <div className="flex justify-center items-end gap-6 flex-wrap min-h-[270px] transition-all duration-700">
-        {data.map((topper, index) => {
-          let animationVariant =
-            index === 0
-              ? slideInLeft
-              : index === 1
-              ? slideInTop
-              : slideInRight;
-
-          return (
-            <TopperCard
-              key={index}
-              {...topper}
-              animation={animationVariant}
-            />
-          );
-        })}
+    
+    {/* Card Content Container - no white background */}
+    <div className="relative">
+      {/* Top Blue Section */}
+      <div className="bg-[#2B4C8C] h-[100px] rounded-t-2xl"></div>
+      
+      {/* Orange Middle Section */}
+      <div className="bg-[#FF8C00] px-4 py-3 text-center relative rounded-lg mx-2 -mt-2 z-20">
+        <h3 className="text-black font-bold text-lg mb-1">{name}</h3>
+        <p className="text-black font-bold text-base">{percentage}</p>
+      </div>
+      
+      {/* Bottom Red Section - extends to fill all remaining space */}
+      <div className="bg-[#E85A2B] text-white text-center py-8 rounded-b-2xl -mt-2">
+        <p className="text-sm font-semibold">{rank} in {achievement}</p>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
-// Sample Data
+// Section Renderer
+const TopperSection = ({ data }) => (
+  <div className="py-12">
+    <div className="flex justify-center items-center gap-8 flex-wrap">
+      {data.map((topper, index) => (
+        <TopperCard key={index} {...topper} />
+      ))}
+    </div>
+  </div>
+);
+
+// Data without images
 const toppersData = [
   {
     name: "Sana",
     percentage: "92.60%",
-    achievement: "2nd in Holy Cross",
-    image: "/Result images/result photo.png",
+    achievement: "Holy Cross",
+    rank: "2nd",
   },
   {
-    name: "Sana",
+    name: "Sana", 
     percentage: "95.60%",
-    achievement: "1st in Karthika",
-    image: "/Result images/result photo.png",
+    achievement: "Karthika",
+    rank: "1st",
   },
   {
     name: "Sana",
     percentage: "91.60%",
-    achievement: "3rd in Micheal",
-    image: "/Result images/result photo.png",
+    achievement: "Micheal", 
+    rank: "3rd",
   },
 ];
 
-// Page Component
+// Main Component
 export default function TopperofHSCscience() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <div className="w-full bg-[#E85222] py-10 mb-12 shadow">
-        <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
-          Toppers of HSC Science 2025
+      <div className="w-full bg-[#2B4C8C] py-6">
+        <h1 className="text-white text-center text-3xl font-bold">
+          Toppers of X. 2025
         </h1>
       </div>
-
+      
       {/* Cards */}
       <TopperSection data={toppersData} />
-
-      {/* CTA */}
-      <div className="flex justify-center pb-14 pt-8">
-        <button className="px-8 py-3 font-semibold text-white bg-[#23306e] rounded-lg shadow hover:opacity-90 transition-opacity">
-          Know More
-        </button>
-      </div>
     </div>
   );
 }

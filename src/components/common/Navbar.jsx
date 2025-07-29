@@ -20,8 +20,8 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/Aboutus" },
-    { name: "Courses", path: "/courses" },
-    { name: "Result", path: "/result" },
+    { name: "Courses", path: "/cources" },
+    { name: "Result", path: "/Result" },
     { name: "Gallery", path: "/gallery" },
     { name: "Testimonial", path: "/Testimoniall" },
     { name: "Contact us", path: "/Contactuss" },
