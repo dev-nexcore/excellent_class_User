@@ -4,7 +4,7 @@ import ContactUs from "@/components/home/contact";
 import ContactCards from "@/components/home/contact";
 import Image from "next/image";
 
-export default function Home() {
+export default function page() {
   return (
     <div>
       
