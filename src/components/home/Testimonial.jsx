@@ -37,19 +37,23 @@ export default function Testimonial() {
         <span style={{ color: "white", fontSize: "20px" }}>»»</span>
         <span style={{ color: "white", fontWeight: "600" }}>Testimonial</span>
       </div>
+{/* 🖼️ Extra Image after Breadcrumb */}
+<div style={{ maxWidth: "600px", margin: "30px auto" }}>
+  <Image
+    src="/img3.png"
+    alt="Banner Below Breadcrumb"
+    width={600}
+    height={180}
+    style={{
+      borderRadius: "8px",
+      objectFit: "cover",
+      width: "100%",
+      height: "auto",
+    }}
+    priority
+  />
+</div>
 
-      {/* 🖼️ Extra Image after Breadcrumb */}
-      <div style={{ maxWidth: "1100px", margin: "30px auto" }}>
-        <Image
-          src="/img3.jpg" // Replace with your image path
-          alt="Banner Below Breadcrumb"
-          width={1100}
-          height={400}
-          layout="responsive"
-          objectFit="cover"
-          priority
-        />
-      </div>
 
       {/* 🖼️ Testimonials Grid - 2 per row with padding */}
       <div
