@@ -1,9 +1,9 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -19,12 +19,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/Aboutus" },
+    { name: "About", path: "/aboutus" },
     { name: "Courses", path: "/courses" },
     { name: "Result", path: "/result" },
     { name: "Gallery", path: "/gallery" },
     { name: "Testimonial", path: "/Testimoniall" },
-    { name: "Contact us", path: "/Contactuss" },
+    { name: "Contact us", path: "/contactus" },
   ];
 
   return (
@@ -65,18 +65,47 @@ export default function Navbar() {
         <div style={{ display: "flex", gap: "32px", flex: 1, justifyContent: "center" }}>
           {navLinks.map((item) => (
             <Link key={item.name} href={item.path}>
-              <span
-                style={{
-                  fontWeight: "bold",
-                  color: pathname === item.path ? "#e65100" : "#000",
-                  borderBottom: pathname === item.path ? "2px solid #e65100" : "none",
-                  paddingBottom: "4px",
-                  transition: "border-bottom 0.2s ease",
-                  cursor: "pointer",
-                }}
-              >
-                {item.name}
-              </span>
+              <div style={{ position: "relative", paddingBottom: "4px" }}>
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: pathname === item.path ? "#e65100" : "#000",
+                    cursor: "pointer",
+                    position: "relative",
+                    display: "inline-block",
+                  }}
+                >
+                  {item.name}
+                </span>
+                {/* Animated underline */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    height: "2px",
+                    backgroundColor: "#e65100",
+                  }}
+                />
+                {/* Active state underline */}
+                {pathname === item.path && (
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      height: "2px",
+                      backgroundColor: "#e65100",
+                    }}
+                  />
+                )}
+              </div>
             </Link>
           ))}
         </div>
