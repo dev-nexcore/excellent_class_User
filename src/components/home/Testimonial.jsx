@@ -5,13 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// 🧾 Main Testimonial Component
 export default function Testimonial() {
   const images = Array(10).fill("/img2.png");
 
   return (
     <>
-      {/* 🧭 Breadcrumb Header */}
+            {/* Breadcrumb Header with fixed size */}
       <div
         className="breadcrumb-header"
         style={{
@@ -23,6 +22,7 @@ export default function Testimonial() {
           maxWidth: "1726px",
           margin: "auto",
           color: "#fff",
+          textAlign: "center",
           fontWeight: "bold",
           fontSize: "32px",
           display: "flex",
@@ -31,37 +31,30 @@ export default function Testimonial() {
           gap: "20px",
         }}
       >
-        <Link href="/" style={{ color: "white", fontWeight: "600", textDecoration: "none" }}>
+        <Link
+          href="/"
+          style={{ color: "white", fontWeight: "600", textDecoration: "none" }}
+        >
           Home
         </Link>
-        <span style={{ color: "white", fontSize: "20px" }}>»»</span>
+        <span style={{ color: "white", fontSize: "20px" }}>{">>>"}</span>
         <span style={{ color: "white", fontWeight: "600" }}>Testimonial</span>
       </div>
 
-      {/* 🖼️ Extra Image after Breadcrumb */}
-      <div style={{ maxWidth: "1100px", margin: "30px auto" }}>
+      {/* 📸 Extra Banner Image */}
+      <div className="max-w-[1000px] mx-auto px-4 my-10">
         <Image
-          src="/img3.jpg" // Replace with your image path
+          src="/img3.png"
           alt="Banner Below Breadcrumb"
-          width={1100}
-          height={400}
-          layout="responsive"
-          objectFit="cover"
+          width={1000}
+          height={200}
+          className="w-full h-auto object-cover rounded-lg"
           priority
         />
       </div>
 
-      {/* 🖼️ Testimonials Grid - 2 per row with padding */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "30px",
-          padding: "30px",
-          maxWidth: "1100px",
-          margin: "auto",
-        }}
-      >
+      {/* 🧾 Testimonials Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 max-w-[1100px] mx-auto pb-12">
         {images.map((img, index) => (
           <motion.div
             key={index}
@@ -69,28 +62,21 @@ export default function Testimonial() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            style={{
-              padding: "10px",
-              borderRadius: "12px",
-              overflow: "hidden",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "#fff",
-            }}
+            className="overflow-hidden bg-white rounded-xl text-center py-4"
           >
             <Image
               src={img}
               alt={`Testimonial ${index + 1}`}
-              width={400}
-              height={500}
-              layout="responsive"
-              objectFit="cover"
+              width={360}
+              height={450}
+              className="mx-auto rounded-md object-cover w-full h-auto"
               priority={index === 0}
             />
           </motion.div>
         ))}
       </div>
 
-      {/* 📱 Responsive Grid CSS */}
+      {/* 📱 Responsive Styling */}
       <style jsx>{`
         @media (max-width: 768px) {
           .breadcrumb-header {
@@ -99,11 +85,6 @@ export default function Testimonial() {
             height: auto;
             padding: 20px 10px;
             gap: 10px;
-          }
-
-          div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-            padding: 20px !important;
           }
         }
       `}</style>

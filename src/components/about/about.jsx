@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { useRef } from 'react';
 import { useInView, inView } from 'framer-motion';
 import { GraduationCap, Users, Landmark } from "lucide-react";
-export default function About() {
+export default function about() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const leftRef = useRef(null);
@@ -26,30 +26,13 @@ export default function About() {
   const inViewRight1 = useInView(right1Ref, { once: true });
   const inViewRight2 = useInView(right2Ref, { once: true });
 
+
+
   return (
     <>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <div className="relative h-90">
-
-          <Image
-            src={AboutBanner}
-            alt="Office workspace background"
-            fill
-            className="object-cover brightness-50"
-            priority // Add this for better loading
-          />
-          {/* Adjusted overlay opacity for better visibility */}
-
-          <div className="relative z-10 flex items-center justify-center h-full">
-            <nav className="text-white text-5xl font-bold">
-              <span className="pr-3 mr-8">home</span>
-              <span className="mx-6 mr-8">{">>>"}</span>
-
-              <span>about us</span>
-            </nav>
-          </div>
-        </div>
+       
 
         {/* Main Content Section */}
         <div className="py-16 px-4 flex justify-center w-full mb-[6vw]">
@@ -76,39 +59,49 @@ export default function About() {
               </motion.div>
 
               {/* Right Content with animation */}
-              <motion.div
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="flex flex-col space-y-8 px-8 py-12 w-[43vw] h-[20vw]"
-              >
-                {/* Badge */}
-                <div className="flex justify-start">
-                  <div className="inline-flex items-center px-10 py-6 bg-[#20356B] text-white rounded-full text-sm font-medium mb-6">
-                    <span className="w-5 h-5 bg-[#E85222] rounded-full mr-3"></span>
-                    <span className="text-3xl capitalize">about us</span>
-                    <span className="w-5 h-5 bg-[#E85222] rounded-full ml-3"></span>
-                  </div>
-                </div>
+             <motion.div
+  initial={{ x: 100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 1, delay: 0.3 }}
+  className="flex flex-col space-y-8 px-8 py-6 w-[43vw] h-[20vw]"
+>
+  {/* Badge - animate from top */}
+  <motion.div
+    initial={{ y: -50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 1, delay: 0.2 }}
+    className="flex justify-start"
+  >
+    <div className="inline-flex items-center px-6 py-2 bg-[#20356B] text-white rounded-full text-sm font-medium mb-2">
+      <span className="w-2 h-2 bg-[#E85222] rounded-full mr-3"></span>
+      <span className="text-xl capitalize">about us</span>
+      <span className="w-2 h-2 bg-[#E85222] rounded-full ml-3"></span>
+    </div>
+  </motion.div>
 
-                {/* Heading */}
-                <div className="space-y-8">
-                  <h1 className="text-8xl font-bold text-gray-900 leading-tight">
-                    We have the Best Teachers
-                  </h1>
-                  <h1 className="text-8xl text-center font-bold text-gray-900 leading-tight">
-                    available in the City
-                  </h1>
+  {/* Text Content - animate from right */}
+  <motion.div
+    initial={{ x: 100, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 1, delay: 0.5 }}
+    className="space-y-2"
+  >
+    <h1 className="text-[2.5vw] font-bold text-gray-900 leading-tight">
+      We have the Best Teachers
+    </h1>
+    <h1 className="text-[2.5vw] font-bold text-center text-gray-900 leading-tight">
+      available in the City
+    </h1>
 
-                  {/* Description */}
-                  <p className="leading-relaxed text-5xl">
-                    Established in 1990. Successfully trained more than 20000
-                    <p className="text-center">
-                      students. Driven by motivated and dedicated team.
-                    </p>
-                  </p>
-                </div>
-              </motion.div>
+    <p className="leading-relaxed text-[1.1vw] ml-[3vw]">
+      Established in 1990. Successfully trained more than 20000
+      <p className="text-center">
+        students. Driven by motivated and dedicated team.
+      </p>
+    </p>
+  </motion.div>
+</motion.div>
+
             </div>
           </div>
         </div>
@@ -117,47 +110,66 @@ export default function About() {
       <div className='bg-[#E85222] flex justify-center items-center py-[3vw] px-12 mb-[4vw]'>
         <div className='text-6xl capitalize font-bold text-white text-center tracking-wide'> our Story</div>
       </div>
-      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-10 gap-4 ">
+      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-10 gap-4">
+  {/* Left Content */}  
+ <motion.div
+  initial={{ opacity: 0, x: -100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="w-full lg:w-[40vw] px-12 py-6"
+>
+  <div className="relative"> {/* Added wrapper div */}
+    <span className="block"> {/* Changed to block element */}
+      <span className="text-[3vw] font-semibold text-blue-900 -mt-[3vw] block"> {/* Added -mt-[3vw] and block */}
+        Established <span className='text-black'>in 1990.</span>
+      </span>{' '}
+    </span>
 
-        {/* Left Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full lg:w-[40vw] px-12 py-6"
-        >
-          <p className="text-4xl tracking-wider leading-relaxed text-black font-radey">
-            <span>
-              <span className="text-[6vw] font-semibold text-blue-900 -ml-3">Established</span>{' '}
-              <span className="text-black">in 1990.</span>
-            </span>
-            <p className="-mt-12">
-              Successfully trained more than 20000 students. Driven by motivated and dedicated team.
-              We at Excellent strongly believe that the best faculty creates the best students and that is why we have a faculty who are masters in their subjects. We offer our students expertise that they would never experience anywhere else. We invest in training and developing their skills, thus providing our students a complete upgraded education. Qualified and experience faculty accelerate the learning process.
-            </p>
-            <p>
-              I am glad to share my thoughts about our journey in pursuit of excellence. Our endeavour has been to be the preferred choice for quality education and we keep striving to surpass our benchmarks year after year. We believe in giving the Best. Excellent has been and will continue to serve the students community through innovative coaching programs with a clear accent on quality. We are proud of our legacy. It gives me immense satisfaction to say “We teach Success”. We are there to give you a competitive advantage in future with unseen challenges. We will always seek to deliver optimal quality of service to our students, our customer with integrity and unscrupulous honesty as cornerstones of our quality policy. In your happiness, we count our blessings.
-            </p>
-          </p>
-        </motion.div>
+    <p className="mt-0 text-[1.3vw] tracking-wide text-black font-radey"> {/* Removed -mt-12 */}
+      Successfully trained more than 20000 students. Driven by motivated and dedicated team.
+      We at Excellent strongly believe that the best faculty creates the best students and that is why we have a faculty who are masters in their subjects. We offer our students expertise that they would never experience anywhere else. We invest in training and developing their skills, thus providing our students a complete upgraded education. Qualified and experience faculty accelerate the learning process.
+    </p>
+    <p className="text-[1.3vw] tracking-wide text-black font-radey">
+      I am glad to share my thoughts about our journey in pursuit of excellence. Our endeavour has been to be the preferred choice for quality education and we keep striving to surpass our benchmarks year after year. We believe in giving the Best. Excellent has been and will continue to serve the students community through innovative coaching programs with a clear accent on quality. We are proud of our legacy. It gives me immense satisfaction to say "We teach Success". We are there to give you a competitive advantage in future with unseen challenges. We will always seek to deliver optimal quality of service to our students, our customer with integrity and unscrupulous honesty as cornerstones of our quality policy. In your happiness, we count our blessings.
+    </p>
+  </div>
+</motion.div>
+  {/* Right Content */}  
+  <motion.div
+    initial={{ opacity: 0, x: 100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="w-[45vw] flex flex-col items-center justify-center py-[6vw]"
+  >
+    <div className="relative w-[40vw]  flex flex-col items-center">
 
-        {/* Right Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-[45vw] flex flex-col items-center justify-center py-[6vw]"
-        >
-          <div className="w-[40vw] h-[37vw] flex justify-center">
-            <Image src={ExcellentBroucher} alt="Excellent Broucher" className="w-[36vw]" />
-          </div>
-          <p className="text-center text-6xl font-bold mt-4 uppercase py-6">Excellent Classes Broucher</p>
-        </motion.div>
-      </div>
+      {/* SVG Behind the Image */}  
+      <img
+        src="/img/squareDesign.svg"
+        alt="SVG Decoration"
+        className="absolute top-[60vw] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15vw] h-auto z-0 "
+      />
+      {/* Image on Top */}  
+      <Image
+        src={ExcellentBroucher}
+        alt="Excellent Broucher"
+        className="w-[36vw] relative z-10"
+      />
+    </div>
+    <p className="text-center text-2xl font-bold  uppercase py-6 z-20 mt-8">
+      Excellent Classes Broucher
+    </p>
+  </motion.div>
+</div>
       {/* 4 div design over here */}
-      <div className="min-h-screen bg-white py-10 px-4 flex flex-col items-center font-sans relative mt-[8vw]">
+      <div className="min-h-screen   py-10 px-4 flex flex-col items-center font-sans relative mt-[10vw] overflow-visible ">
+        <img
+    src="/img/squareDesign.svg"
+    alt="Left background design"
+    className="absolute top-[10vw] -left-[6vw] w-[25vw] h-[45vw] -z-10 "
+  />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* OUR VISION (Left In) */}
           <motion.div
@@ -169,8 +181,8 @@ export default function About() {
           >
             <div className="absolute w-[40vw] h-[20vw] bg-[#E85222] rounded-tl-[120px] shadow-md transform -translate-y-12 -translate-x-10"></div>
             <div className="relative z-10 w-[40vw] h-[20vw] bg-[#20356B] text-white p-6 flex justify-center items-center gap-8 flex-col rounded-tl-[120px] shadow-lg">
-              <h2 className="text-8xl font-semibold mb-3">OUR VISION</h2>
-              <p className="text-5xl text-center">To be a preferred center for providing quality education.</p>
+              <h2 className="text-4xl font-semibold mb-3">OUR VISION</h2>
+              <p className="text-2xl text-center">To be a preferred center for providing quality education.</p>
             </div>
           </motion.div>
 
@@ -180,10 +192,10 @@ export default function About() {
             initial={{ x: 100, opacity: 0 }}
             animate={inViewRight1 ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-[27vw] h-[17vw] bg-[#F9B233] text-black py-[2vw] rounded-tr-[120px] shadow-lg ml-14 mb-6 mt-[3vw]"
+            className="w-[27vw] h-[17vw] bg-[#F9B233] text-black py-[1vw] rounded-tr-[120px] shadow-lg ml-14 mb-6 mt-[3vw]"
           >
-            <h2 className="text-6xl font-semibold mb-6 text-center">OUR CULTURE</h2>
-            <ul className="list-disc list-inside space-y-3 text-3xl leading-relaxed px-14 font-bold">
+            <h2 className="text-2xl font-semibold mb-6 text-center">OUR CULTURE</h2>
+            <ul className="list-disc list-inside space-y-1 text-[12px] leading-relaxed px-14 font-bold">
               <li>Commitment</li>
               <li>Enriching Education</li>
               <li>Encouraging Learning</li>
@@ -198,10 +210,10 @@ export default function About() {
             initial={{ x: -100, opacity: 0 }}
             animate={inViewLeft2 ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="w-[27vw] h-[17vw] bg-[#F9B233] text-black py-[2vw] rounded-bl-[120px] shadow-lg ml-auto mt-[1vw] mr-[1vw]"
+            className="w-[27vw] h-[17vw] bg-[#F9B233] text-black py-[1vw] rounded-bl-[120px] shadow-lg ml-auto mt-[1vw] mr-[1vw]"
           >
-            <h2 className="text-6xl font-semibold mb-6 text-center">CORE VALUES</h2>
-            <ul className="list-disc list-inside space-y-3 text-3xl leading-relaxed px-14 font-bold">
+            <h2 className="text-2xl font-semibold mb-6 text-center">CORE VALUES</h2>
+            <ul className="list-disc list-inside space-y-1 text-[12px] leading-relaxed px-14 font-bold">
               <li>Commitment</li>
               <li>Enriching Education</li>
               <li>Encouraging Learning</li>
@@ -220,20 +232,21 @@ export default function About() {
           >
             <div className="absolute w-[40vw] h-[20vw] bg-[#20356B] rounded-br-[120px] shadow-lg transform translate-y-12 translate-x-10 "></div>
             <div className="relative z-10 w-[40vw] h-[20vw] bg-[#E85222] text-white p-6 flex justify-center items-center gap-8 flex-col rounded-br-[120px] shadow-lg">
-              <h2 className="text-8xl font-semibold mb-3">OUR MISSION</h2>
-              <p className="text-5xl text-center">To be a preferred center for providing quality education.</p>
+              <h2 className="text-4xl font-semibold mb-3">OUR MISSION</h2>
+              <p className="text-2xl text-center">To create passion for learning and contribute to developing student's learning graph through quality education.</p>
             </div>
           </motion.div>
         </div>
       </div>
       {/* pricipal section */}
-      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-10 gap-4">
+      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-10 gap-4 overflow-hidden">
         {/* Left Content - Animated */}
         <motion.div
           ref={leftRef}
           initial={{ x: -100, opacity: 0 }}
           animate={leftInView ? { x: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }} // faster animation
+
           className="w-full lg:w-[40vw] px-12 py-6 mt-[8vw]"
 
         >
@@ -246,7 +259,7 @@ export default function About() {
               "The whole purpose of education is to turn mirrors in to windows."
             </span>
           </div>
-          <p className='mt-4 text-[1.4vw] leading-14 '>
+          <p className='mt-4 text-[1vw]  '>
             I extend my warm welcome once again to all the students and parents to a new academic year. Our hard work, dedication, tried and tested practices have produced excellent results for our students. Our strong team culture and emphasis on our corevalues has propelled us to be one of the best classes.
             <br />
             At Excellent Classes, we provide a conducive atmosphere to our students, where they are encouraged to channelize their potential in the pursuit of excellence. The talent, skills and abilities of each student are identified, nurtured and encouraged so that he / she is able to perform better with confidence. We strive hard to teach andrealize each students how to succeed in today's competitive environment without losing sight of values & discipline.
@@ -262,7 +275,8 @@ export default function About() {
           ref={rightRef}
           initial={{ x: 100, opacity: 0 }}
           animate={rightInView ? { x: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.1 }} // faster and slight delay
+
           className="w-[40vw] h-[60vw] flex flex-col items-center justify-center py-[7vw] relative mt-[8vw]"
 
         >
@@ -272,7 +286,13 @@ export default function About() {
               alt="Principal"
               className="w-full h-[60vw] object-cover rounded-md"
             />
+              <img
+    src="/img/squareDesign.svg"
+    alt="Decorative SVG"
+    className="w-[15vw] mt-[-2.5vw] -mb-[1vw] absolute -right-[8vw] z-0"
+  />
 
+           
             {/* Text Overlay */}
             <div className="text-center p-4 mt-2">
               <p className=" font-bold text-[2.5vw]">Dr Jamil bhai</p>
@@ -285,7 +305,7 @@ export default function About() {
       {/* display card  */}
       <div
         ref={ref}
-        className="bg-[#20356B] py-[5vw] text-white flex flex-col items-center"
+        className="bg-[#20356B] py-[5vw] text-white flex flex-col items-center "
       >
         <div className="flex flex-col md:flex-row justify-evenly gap-10 items-center">
           {/* Left Box */}

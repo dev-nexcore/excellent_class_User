@@ -5,7 +5,7 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <img src="/Gallery/banner.png" alt="" className="w-full"/>
+      
       {/* Photos Header */}
       <section className="bg-[#20356B] text-white text-center py-3 mb-10">
         <h2 className="text-lg font-semibold py-5">Photos</h2>

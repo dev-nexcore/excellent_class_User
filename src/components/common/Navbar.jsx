@@ -1,31 +1,30 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Detect screen width
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize(); // check on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About", path: "/aboutus" },
     { name: "Courses", path: "/courses" },
     { name: "Result", path: "/result" },
     { name: "Gallery", path: "/gallery" },
     { name: "Testimonial", path: "/Testimoniall" },
-    { name: "Contact us", path: "/Contactuss" },
+    { name: "Contact us", path: "/contactus" },
   ];
 
   return (
@@ -62,29 +61,57 @@ export default function Navbar() {
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       ) : (
-        // Navigation Links for Desktop
+        // Desktop Navigation Links
         <div style={{ display: "flex", gap: "32px", flex: 1, justifyContent: "center" }}>
           {navLinks.map((item) => (
             <Link key={item.name} href={item.path}>
-              <span
-                style={{
-                  fontWeight: "bold",
-                  color: pathname === item.path ? "#e65100" : "#000",
-                  paddingBottom: "4px",
-                  borderBottom:
-                    pathname === item.path ? "3px solid #e65100" : "none",
-                  transition: "all 0.2s ease",
-                  cursor: "pointer",
-                }}
-              >
-                {item.name}
-              </span>
+              <div style={{ position: "relative", paddingBottom: "4px" }}>
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: pathname === item.path ? "#e65100" : "#000",
+                    cursor: "pointer",
+                    position: "relative",
+                    display: "inline-block",
+                  }}
+                >
+                  {item.name}
+                </span>
+                {/* Animated underline */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    height: "2px",
+                    backgroundColor: "#e65100",
+                  }}
+                />
+                {/* Active state underline */}
+                {pathname === item.path && (
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      height: "2px",
+                      backgroundColor: "#e65100",
+                    }}
+                  />
+                )}
+              </div>
             </Link>
           ))}
         </div>
       )}
 
-      {/* Login Button (Always visible) */}
+      {/* Login Button */}
       <div style={{ flexShrink: 0 }}>
         <Link href="/login">
           <span
@@ -129,7 +156,9 @@ export default function Navbar() {
                 style={{
                   fontWeight: "bold",
                   color: pathname === item.path ? "#e65100" : "#000",
-                  padding: "8px 0",
+                  borderBottom: pathname === item.path ? "2px solid #e65100" : "none",
+                  paddingBottom: "4px",
+                  cursor: "pointer",
                 }}
               >
                 {item.name}

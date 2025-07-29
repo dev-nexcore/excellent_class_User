@@ -1,60 +1,27 @@
-'use client';
+"use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#fff" }}>
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .footer-container {
-            flex-direction: column;
-            gap: 30px;
-          }
-        }
-      `}</style>
-
-      <div
-        className="footer-container"
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          maxWidth: "1100px",
-          margin: "auto",
-          padding: "30px 20px",
-          gap: "40px",
-        }}
-      >
-        {/* Column 1: Logo + Description + Social Icons */}
-        <div style={{ flex: "1 1 250px", minWidth: "250px" }}>
-          <img
+    <footer className="bg-white">
+      <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-10">
+        {/* Column 1 */}
+        <div className="flex-1 min-w-[250px]">
+          <Image
             src="/Logo/logo.png"
             alt="Excellent Classes Logo"
-            style={{
-              width: "180px",
-              height: "auto",
-              marginBottom: "12px",
-            }}
+            width={180}
+            height={60}
+            className="mb-4"
           />
-          <p
-            style={{
-              fontWeight: 600,
-              fontSize: "16px",
-              color: "#333",
-              lineHeight: "1.6",
-              marginBottom: "20px",
-              maxWidth: "300px",
-              textAlign: "left",
-            }}
-          >
+          <p className="text-gray-700 text-base leading-relaxed mb-4 max-w-sm">
             We at Excellent strongly believe that the best faculty creates the
             best students and that is why we have a faculty who are masters in
             their subjects.
           </p>
-
-          {/* Social Icons */}
-          <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+          <div className="flex flex-wrap items-center gap-4 mt-3">
             {[
               {
                 href: "https://www.instagram.com/",
@@ -83,45 +50,25 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  src={icon.src}
-                  alt={icon.alt}
-                  style={{ height: "24px", width: "auto" }}
-                />
+                <Image src={icon.src} alt={icon.alt} width={24} height={24} />
               </a>
             ))}
           </div>
         </div>
 
-        {/* Column 2: Main Menu */}
-        <div style={{ flex: "1 1 150px", minWidth: "150px" }}>
-          <h4
-            style={{
-              fontWeight: "700",
-              fontSize: "16px",
-              marginBottom: "12px",
-              color: "#000",
-            }}
-          >
-            MAIN MENU
-          </h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+        {/* Column 2 */}
+        <div className="flex-1 min-w-[200px]">
+          <h4 className="text-black text-base font-semibold uppercase mb-3">Main Menu</h4>
+          <ul className="space-y-2">
             {[
-              { name: "About", path: "/about" },
+              { name: "About", path: "/Aboutus" },
               { name: "Result", path: "/result" },
               { name: "Gallery", path: "/gallery" },
-              { name: "Contact Us", path: "/contact" },
+              { name: "Contact Us", path: "/Contactuss" },
             ].map((item) => (
-              <li key={item.name} style={{ marginBottom: "8px" }}>
+              <li key={item.name}>
                 <Link href={item.path}>
-                  <span
-                    style={{
-                      color: "#2f4271",
-                      fontSize: "15px",
-                      textDecoration: "none",
-                      cursor: "pointer",
-                    }}
-                  >
+                  <span className="text-[#2f4271] hover:underline hover:text-[#1e2f5d] cursor-pointer text-sm">
                     {item.name}
                   </span>
                 </Link>
@@ -130,35 +77,19 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Our Courses */}
-        <div style={{ flex: "1 1 180px", minWidth: "180px" }}>
-          <h4
-            style={{
-              fontWeight: "600",
-              fontSize: "16px",
-              marginBottom: "12px",
-              color: "#000",
-            }}
-          >
-            OUR COURSES
-          </h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+        {/* Column 3 */}
+        <div className="flex-1 min-w-[200px]">
+          <h4 className="text-black text-base font-semibold uppercase mb-3">Our Courses</h4>
+          <ul className="space-y-2">
             {[
               "School Section",
               "Science Section",
               "Commerce Stream",
               "CA Foundation",
             ].map((course) => (
-              <li key={course} style={{ marginBottom: "8px" }}>
+              <li key={course}>
                 <Link href={`/${course.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <span
-                    style={{
-                      color: "#2f4271",
-                      fontSize: "15px",
-                      textDecoration: "none",
-                      cursor: "pointer",
-                    }}
-                  >
+                  <span className="text-[#2f4271] hover:underline hover:text-[#1e2f5d] cursor-pointer text-sm">
                     {course}
                   </span>
                 </Link>
@@ -168,26 +99,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Orange Bar with Code4Bharat link */}
-      <div
-        style={{
-          background: "#e65100",
-          color: "#fff",
-          textAlign: "center",
-          padding: "12px 10px",
-          fontSize: "14px",
-        }}
-      >
-        ©2025 | Developed By{" "}
+      {/* Footer Bottom */}
+      <div className="bg-[#e65100] text-white text-center py-3 text-sm">
+        ©2025 | Developed By {" "}
         <a
           href="https://code4bharat.com/"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: "#2f4271",
-            fontWeight: "600",
-            textDecoration: "none",
-          }}
+          className="underline font-medium"
         >
           Code4Bharat
         </a>{" "}

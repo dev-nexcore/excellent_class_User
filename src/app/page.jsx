@@ -7,7 +7,7 @@ import StreamAndCourses from "@/components/home/streamandcourses";
 import WhyChooseUs from "@/components/home/whychooseus";
 import Image from "next/image";
 
-export default function Home() {
+export default function page() {
   return (
     <div>
       <WhyChooseUs/>
