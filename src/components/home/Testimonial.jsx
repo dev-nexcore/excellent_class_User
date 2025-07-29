@@ -10,20 +10,35 @@ export default function Testimonial() {
 
   return (
     <>
-      {/* 🧭 Breadcrumb Header */}
+            {/* Breadcrumb Header with fixed size */}
       <div
-        className="breadcrumb-header text-white font-bold text-2xl flex justify-center items-center gap-5 h-[150px] bg-cover bg-center"
+        className="breadcrumb-header"
         style={{
           backgroundImage: "url('/img.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "150px",
           maxWidth: "1726px",
           margin: "auto",
+          color: "#fff",
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "32px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "20px",
         }}
       >
-        <Link href="/" className="text-white font-semibold no-underline">
+        <Link
+          href="/"
+          style={{ color: "white", fontWeight: "600", textDecoration: "none" }}
+        >
           Home
         </Link>
-        <span className="text-white text-xl">»»</span>
-        <span className="text-white font-semibold">Testimonial</span>
+        <span style={{ color: "white", fontSize: "20px" }}>{">>>"}</span>
+        <span style={{ color: "white", fontWeight: "600" }}>Testimonial</span>
       </div>
 
       {/* 📸 Extra Banner Image */}

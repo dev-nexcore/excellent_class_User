@@ -40,7 +40,7 @@ export default function ContactUs() {
         >
           Home
         </Link>
-        <span style={{ color: "white", fontSize: "20px" }}>»»</span>
+        <span style={{ color: "white", fontSize: "20px" }}>{">>>"}</span>
         <span style={{ color: "white", fontWeight: "600" }}>Contact</span>
       </div>
 
