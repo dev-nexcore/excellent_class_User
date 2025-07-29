@@ -14,35 +14,7 @@ export default function ContactUs() {
   return (
     <>
       {/* Breadcrumb Header with fixed size */}
-      <div
-        className="breadcrumb-header"
-        style={{
-          backgroundImage: "url('/img.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%",
-          height: "150px",
-          maxWidth: "1726px",
-          margin: "auto",
-          color: "#fff",
-          textAlign: "center",
-          fontWeight: "bold",
-          fontSize: "32px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "20px",
-        }}
-      >
-        <Link
-          href="/"
-          style={{ color: "white", fontWeight: "600", textDecoration: "none" }}
-        >
-          Home
-        </Link>
-        <span style={{ color: "white", fontSize: "20px" }}>{">>>"}</span>
-        <span style={{ color: "white", fontWeight: "600" }}>Contact</span>
-      </div>
+      
 
       {/* Office Boxes Section */}
       <div className="contact-wrapper">
