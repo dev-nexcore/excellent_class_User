@@ -1,1 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 @import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Footer styles */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  color: #2f4271;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-list li a {
+  color: #2f4271;
+  text-decoration: none;
+}
+
+.footer-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Contact section styles */
+.contact-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.contact-card {
+  flex: 1 1 300px;
+  padding: 24px;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 6px;
+}
+
+.contact-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact-icon {
+  margin-top: 6px;
+  color: #fff;
+}
+
+.branch {
+  background-color: #20356B;
+}
+
+.head {
+  background-color: #FFA629;
+  color: #000;
+}
+
+.head .contact-icon {
+  color: #000;
+}
+
+.head h3 {
+  border-color: #000;
+}
+
+/* Follow Us On */
+.social-follow {
+  background: #e65100;
+  text-align: center;
+  padding: 30px 10px;
+  color: white;
+}
+
+.social-follow h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.social-icons {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 40px 0;
+}
+
+.social-icon {
+  font-size: 70px;
+  transition: transform 0.3s;
+}
+
+/* Reach Us Section */
+.reach-us {
+  background: #1e3264;
+  text-align: center;
+  padding: 25px 10px;
+  color: white;
+}
+
+.reach-us h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ✅ Center Google Map */
+.map-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    gap: 30px;
+  }
+
+  .social-img {
+    height: 60px;
+  }
+
+  .map-container iframe {
+    width: 100% !important;
+  }
+}
