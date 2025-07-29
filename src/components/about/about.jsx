@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { useRef } from 'react';
 import { useInView, inView } from 'framer-motion';
 import { GraduationCap, Users, Landmark } from "lucide-react";
-export default function About() {
+export default function about() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const leftRef = useRef(null);
@@ -25,6 +25,8 @@ export default function About() {
   const inViewLeft2 = useInView(left2Ref, { once: true });
   const inViewRight1 = useInView(right1Ref, { once: true });
   const inViewRight2 = useInView(right2Ref, { once: true });
+
+
 
   return (
     <>

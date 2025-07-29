@@ -10,17 +10,16 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Detect screen width
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize(); // check on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About", path: "/Aboutus" },
     { name: "Courses", path: "/courses" },
     { name: "Result", path: "/result" },
     { name: "Gallery", path: "/gallery" },
@@ -62,7 +61,7 @@ export default function Navbar() {
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       ) : (
-        // Navigation Links for Desktop
+        // Desktop Navigation Links
         <div style={{ display: "flex", gap: "32px", flex: 1, justifyContent: "center" }}>
           {navLinks.map((item) => (
             <Link key={item.name} href={item.path}>
@@ -70,10 +69,9 @@ export default function Navbar() {
                 style={{
                   fontWeight: "bold",
                   color: pathname === item.path ? "#e65100" : "#000",
+                  borderBottom: pathname === item.path ? "2px solid #e65100" : "none",
                   paddingBottom: "4px",
-                  borderBottom:
-                    pathname === item.path ? "3px solid #e65100" : "none",
-                  transition: "all 0.2s ease",
+                  transition: "border-bottom 0.2s ease",
                   cursor: "pointer",
                 }}
               >
@@ -84,7 +82,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Login Button (Always visible) */}
+      {/* Login Button */}
       <div style={{ flexShrink: 0 }}>
         <Link href="/login">
           <span
@@ -129,7 +127,9 @@ export default function Navbar() {
                 style={{
                   fontWeight: "bold",
                   color: pathname === item.path ? "#e65100" : "#000",
-                  padding: "8px 0",
+                  borderBottom: pathname === item.path ? "2px solid #e65100" : "none",
+                  paddingBottom: "4px",
+                  cursor: "pointer",
                 }}
               >
                 {item.name}

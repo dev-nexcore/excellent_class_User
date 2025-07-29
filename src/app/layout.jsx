@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer"; // ✅ Make sure this is correct
 
 const inter = Inter({
   variable: "--font-sans",
@@ -20,10 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
         {children}
+        <Footer /> {/* ✅ Make sure this is self-closing */}
       </body>
     </html>
   );
