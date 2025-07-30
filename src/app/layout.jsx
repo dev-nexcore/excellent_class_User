@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
-import BreadCrumbs from "@/components/breadCrumbs/BreadCrumbs";
+import BreadCrumbs from "@/components/breadCrumbs/breadCrumbs";
 
 // Load fonts
 import { Geist, Geist_Mono } from "next/font/google";
