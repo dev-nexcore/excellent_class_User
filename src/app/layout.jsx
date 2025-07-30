@@ -1,33 +1,39 @@
-import { Inter } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
-import Footer from "@/components/common/Footer"; // ✅ Make sure this is correct
+import Footer from "@/components/common/Footer";
 import BreadCrumbs from "@/components/breadCrumbs/BreadCrumbs";
-import { Poppins } from 'next/font/google'
-import { Radley } from 'next/font/google'
 
-// Load Radley font
-const radley = Radley({
-  subsets: ['latin'],
-  weight: ['400'], // Radley only supports 400 (normal)
-  variable: '--font-radley', // for use in Tailwind config
-})
+// Load fonts
+import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Poppins } from 'next/font/google';
+import { Radley } from 'next/font/google';
 
-// Load Poppins with weights you need
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // optional
-  variable: '--font-poppins', // optional if you want to use as a CSS variable
-})
-const inter = Inter({
-  variable: "--font-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const radley = Radley({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-radley',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
 });
 
 export const metadata = {
@@ -37,13 +43,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-        <html lang="en" className={`${poppins.variable} ${radley.variable}`}>
-
+    <html lang="en" className={`${poppins.variable} ${radley.variable} ${geistSans.variable}`}>
       <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
-        <BreadCrumbs/>
+        <BreadCrumbs />
         {children}
-        <Footer /> {/* ✅ Make sure this is self-closing */}
+        <Footer />
       </body>
     </html>
   );
