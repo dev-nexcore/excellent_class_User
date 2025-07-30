@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: "Result", path: "/result" },
     { name: "Gallery", path: "/gallery" },
     { name: "Testimonial", path: "/testimonial" },
-    { name: "Contact us", path: "/contactus" },
+    { name: "Contact us", path: "/contact" },
   ];
 
   return (

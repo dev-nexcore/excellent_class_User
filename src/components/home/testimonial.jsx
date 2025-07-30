@@ -7,23 +7,19 @@ import { motion } from "framer-motion";
 
 export default function Testimonial() {
   const images = Array(10).fill("/img2.png");
+  
+<style jsx>{`
+  .clip-left {
+    clip-path: polygon(0 0, 40% 50%, 0 100%);
+  }
+  .clip-chevron {
+    clip-path: polygon(40% 0, 80% 50%, 40% 100%, 60% 50%);
+  }
+`}</style>
 
   return (
     <>
-      
-
-      {/* 📸 Extra Banner Image */}
-      <div className="max-w-[1000px] mx-auto px-4 my-10">
-        <Image
-          src="/img3.png"
-          alt="Banner Below Breadcrumb"
-          width={1000}
-          height={200}
-          className="w-full h-auto object-cover rounded-lg"
-          priority
-        />
-      </div>
-
+     
       {/* 🧾 Testimonials Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 max-w-[1100px] mx-auto pb-12">
         {images.map((img, index) => (
