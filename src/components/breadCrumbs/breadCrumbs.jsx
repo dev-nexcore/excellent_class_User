@@ -9,12 +9,13 @@ export default function BreadCrumbs() {
     const isHomePage = path === '/';
     let currentPath = path.split("/").pop() || "home";
 
+
     if (isHomePage) {
         return null; // Don't render anything on home page
     }
 
     return (
-        <div className="relative h-60">
+        <div className="relative h-40">
             <Image
                 src={AboutBanner}
                 alt="Office workspace background"
@@ -23,7 +24,7 @@ export default function BreadCrumbs() {
                 priority 
             />
             <div className="relative z-10 flex items-center justify-center h-full">
-                <nav className="text-white text-5xl font-bold">
+                <nav className="text-white text-3xl font-bold">
                     <span className="pr-3 mr-8">home</span>
                     <span className="mx-6 mr-8">{">>>"}</span>
                     <span>{currentPath}</span>

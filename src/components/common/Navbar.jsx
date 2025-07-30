@@ -19,12 +19,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/Aboutus" },
-    { name: "Courses", path: "/cources" },
-    { name: "Result", path: "/Result" },
+    { name: "About", path: "/about" },
+    { name: "Courses", path: "/courses" },
+    { name: "Result", path: "/result" },
     { name: "Gallery", path: "/gallery" },
     { name: "Testimonial", path: "/testimonial" },
-    { name: "Contact us", path: "/contactus" },
+    { name: "Contact us", path: "/contact" },
   ];
 
   return (
