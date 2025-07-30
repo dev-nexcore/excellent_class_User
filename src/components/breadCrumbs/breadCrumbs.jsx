@@ -9,6 +9,7 @@ export default function BreadCrumbs() {
     const isHomePage = path === '/';
     let currentPath = path.split("/").pop() || "home";
 
+
     if (isHomePage) {
         return null; // Don't render anything on home page
     }
