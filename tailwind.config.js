@@ -4,7 +4,12 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['var(--font-poppins)'],
+        radley: ['var(--font-radley)'],
+      },
+    }, // ✅ This closing brace was missing before
   },
   plugins: [],
-}
+};

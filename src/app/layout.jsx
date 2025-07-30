@@ -4,6 +4,22 @@ import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer"; // ✅ Make sure this is correct
 import BreadCrumbs from "@/components/breadCrumbs/BreadCrumbs";
+import { Poppins } from 'next/font/google'
+import { Radley } from 'next/font/google'
+
+// Load Radley font
+const radley = Radley({
+  subsets: ['latin'],
+  weight: ['400'], // Radley only supports 400 (normal)
+  variable: '--font-radley', // for use in Tailwind config
+})
+
+// Load Poppins with weights you need
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'], // optional
+  variable: '--font-poppins', // optional if you want to use as a CSS variable
+})
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -21,7 +37,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+        <html lang="en" className={`${poppins.variable} ${radley.variable}`}>
+
       <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         <BreadCrumbs/>
