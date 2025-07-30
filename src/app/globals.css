@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import "tailwindcss";
+ 
+ 
 @import "tailwindcss";
 
 /* ========= ROOT ========== */
@@ -6,19 +10,27 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-80px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(80px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes slide-in-top {
+  0% { opacity: 0; transform: translateY(-80px);}
+  100% { opacity: 1; transform: translateY(0);}
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.animate-slide-in-left {
+  animation: slide-in-left 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+.animate-slide-in-top {
+  animation: slide-in-top 0.7s cubic-bezier(0.4,0,0.2,1) both;
 }
 
 /* ========= GLOBAL ========= */
@@ -285,4 +297,28 @@ body {
   .map-container iframe {
     width: 100% !important;
   }
+}
+
+/* ============ CARD ANIMATIONS ============ */
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-80px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(80px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes slide-in-top {
+  0% { opacity: 0; transform: translateY(-80px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+.animate-slide-in-top {
+  animation: slide-in-top 0.7s cubic-bezier(0.4,0,0.2,1) both;
 }

@@ -1,15 +1,12 @@
-import TopperofHSCcommerce from "@/components/Result/TopperofHSCcommerce";
-import TopperofHSCscience from "@/components/Result/TopperofHSCscience";
-import TopperofX from "@/components/Result/topperofX";
+import AllToppersPage from "@/components/Result/allTopper";
+
 
 
 
 export default function Home (){
     return (
         <>
-        <TopperofX/>
-        <TopperofHSCscience/>
-        <TopperofHSCcommerce/>
+       <AllToppersPage/>
         
         </>
     )

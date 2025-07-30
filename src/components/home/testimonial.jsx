@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function Testimonial() {
+export default function testimonial() {
   const images = Array(10).fill("/img2.png");
 
   return (
