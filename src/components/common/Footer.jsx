@@ -106,7 +106,7 @@ export default function Footer() {
           href="https://code4bharat.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline font-medium"
+          className="underline font-medium text-[#20356B]"
         >
           Code4Bharat
         </a>{" "}
