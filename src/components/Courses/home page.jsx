@@ -37,20 +37,20 @@ function useInView(threshold = 0.2) {
 // ...rest of your code above
 
 const schoolCardData = [
-  { title: "VIII - IX - S.S.C", href: "/cources/viiixsscpage" },
-  { title: "ICSE (grade 8,9 & 10th)", href: "/cources/icsepage" },
-  { title: "CBSE (grade 8,9 & 10th)", href: "/cources/cbsepage" },
+  { title: "VIII - IX - S.S.C", href: "/viiixsscpage" },
+  { title: "ICSE (grade 8,9 & 10th)", href: "/icsepage" },
+  { title: "CBSE (grade 8,9 & 10th)", href: "/cbsepage" },
 ];
 
 const scienceCardData = [
-  { title: "XI + XII", href: "/cources/xixiiscience" },
-  { title: "Entrance Exam", href: "/cources/entrancecourseplan" },
+  { title: "XI + XII", href: "/xixiiscience" },
+  { title: "Entrance Exam", href: "/entrancecourseplan" },
 ];
 
 const commerceCardData = [
-  { title: "XI + XII", href: "/cources/xixiicommercepage" },
-  { title: "B.M.S+B.com+BAF", href: "/cources/coursedetailspage" },
-  { title: "C.A Foundation", href: "/cources/cafoundation" },
+  { title: "XI + XII", href: "/xixiicommercepage" },
+  { title: "B.M.S+B.com+BAF", href: "/coursedetailspage" },
+  { title: "C.A Foundation", href: "/cafoundation" },
 ];
 
 // ...rest of your code below

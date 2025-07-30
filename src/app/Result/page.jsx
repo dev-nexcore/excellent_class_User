@@ -1,4 +1,4 @@
-import AllToppersPage from "@/components/Result/allTopper";
+import AllToppersPage from "@/components/result/allTopper";
 
 
 
