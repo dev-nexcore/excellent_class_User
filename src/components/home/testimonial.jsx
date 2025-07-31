@@ -10,10 +10,48 @@ export default function Testimonial() {
 
   return (
     <>
-   <div className="w-[400px] h-[200px] bg-blue-600 text-white flex items-center justify-center rounded-md shadow-md">
-  Blue Rectangle Box
-</div>
+            {/* Breadcrumb Header with fixed size */}
+      <div
+        className="breadcrumb-header"
+        style={{
+          backgroundImage: "url('/img.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "150px",
+          maxWidth: "1726px",
+          margin: "auto",
+          color: "#fff",
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "32px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "20px",
+        }}
+      >
+        <Link
+          href="/"
+          style={{ color: "white", fontWeight: "600", textDecoration: "none" }}
+        >
+          Home
+        </Link>
+        <span style={{ color: "white", fontSize: "20px" }}>{">>>"}</span>
+        <span style={{ color: "white", fontWeight: "600" }}>Testimonial</span>
+      </div>
 
+      {/* 📸 Extra Banner Image */}
+      <div className="max-w-[1000px] mx-auto px-4 my-10">
+        <Image
+          src="/img3.png"
+          alt="Banner Below Breadcrumb"
+          width={1000}
+          height={200}
+          className="w-full h-auto object-cover rounded-lg"
+          priority
+        />
+      </div>
 
       {/* 🧾 Testimonials Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 px-6 max-w-[1100px] mx-auto pb-12">
