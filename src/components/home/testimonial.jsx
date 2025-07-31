@@ -54,7 +54,7 @@ export default function Testimonial() {
       </div>
 
       {/* 🧾 Testimonials Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 max-w-[1100px] mx-auto pb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 px-6 max-w-[1100px] mx-auto pb-12">
         {images.map((img, index) => (
           <motion.div
             key={index}
