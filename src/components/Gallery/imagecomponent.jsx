@@ -47,7 +47,7 @@ export default function CurvedCarousel() {
             <img
               src={src}
               alt={`img-${idx}`}
-              className="w-full h-full object-cover rounded-2xl shadow-lg"
+              className="w-full  object-cover rounded-2xl shadow-lg"
             />
           </div>
         ))}
