@@ -1,311 +1,297 @@
-// 'use client';
-// import React, { useState, useEffect } from 'react';
-
-// export default function PhotoCarousel({
-//   autoSlide = false,
-//   indicatorColor = "blue"
-// }) {
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   const images = [
-//     "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
-//     "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png"
-//   ];
-
-//   useEffect(() => {
-//     if (!autoSlide) return;
-//     const interval = setInterval(() => {
-//       setActiveIndex((prev) => (prev + 1) % images.length);
-//     }, 3000);
-//     return () => clearInterval(interval);
-//   }, [autoSlide, images.length]);
-
-//   const goToPrevious = () => {
-//     setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
-//   };
-
-//   const goToNext = () => {
-//     setActiveIndex((prev) => (prev + 1) % images.length);
-//   };
-
-//   const getIndicatorColorClass = () => {
-//     switch (indicatorColor) {
-//       case "purple":
-//         return "bg-purple-600";
-//       case "blue":
-//       default:
-//         return "bg-blue-600";
-//     }
-//   };
-
-//   const [touchStart, setTouchStart] = useState(null);
-//   const [touching, setTouching] = useState(false);
-
-//   const handleTouchStart = (e) => {
-//     if (e.touches.length === 2) {
-//       setTouchStart({
-//         x: (e.touches[0].clientX + e.touches[1].clientX) / 2,
-//         y: (e.touches[0].clientY + e.touches[1].clientY) / 2,
-//       });
-//       setTouching(true);
-//     }
-//   };
-
-//   const handleTouchMove = (e) => {
-//     if (!touching || e.touches.length !== 2 || !touchStart) return;
-//     const x = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-//     const dx = x - touchStart.x;
-//     if (Math.abs(dx) > 50) {
-//       dx > 0 ? goToPrevious() : goToNext();
-//       setTouching(false);
-//       setTouchStart(null);
-//     }
-//   };
-
-//   const handleTouchEnd = () => {
-//     setTouching(false);
-//     setTouchStart(null);
-//   };
-
-//   return (
-//     <div className="w-full max-w-6xl mx-auto p-4">
-//       <div className="relative w-full h-[300px] overflow-hidden bg-white rounded-lg shadow-md">
-//         {/* Top/Bottom mask effect */}
-//         <div
-//           className="absolute inset-0 z-10 pointer-events-none"
-//           style={{
-//             maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
-//             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
-//           }}
-//         />
-
-//         <div
-//           className="relative w-full h-full flex justify-center items-center"
-//           onTouchStart={handleTouchStart}
-//           onTouchMove={handleTouchMove}
-//           onTouchEnd={handleTouchEnd}
-//         >
-//           {images.map((src, idx) => {
-//             const offset = idx - activeIndex;
-//             const translateX = offset * 260;
-//             const scale = idx === activeIndex ? 1 : 0.9;
-//             const brightness = idx === activeIndex ? "brightness-100" : "brightness-90";
-
-//             return (
-//               <div
-//                 key={idx}
-//                 className={`absolute transition-all duration-500 ease-in-out`}
-//                 style={{
-//                   transform: `translateX(${translateX}px) scale(${scale})`,
-//                   zIndex: 10 - Math.abs(offset),
-//                 }}
-//                 onClick={() => setActiveIndex(idx)}
-//               >
-//                 <img
-//                   src={src}
-//                   alt={`Photo ${idx + 1}`}
-//                   className={`w-[240px] h-[160px] object-cover rounded-lg shadow-lg transition-all duration-500 ${brightness}`}
-//                 />
-//               </div>
-//             );
-//           })}
-//         </div>
-
-//         {/* Left/Right navigation */}
-//         <button
-//           onClick={goToPrevious}
-//           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 z-20"
-//         >
-//           <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-//           </svg>
-//         </button>
-
-//         <button
-//           onClick={goToNext}
-//           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 z-20"
-//         >
-//           <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-//           </svg>
-//         </button>
-//       </div>
-
-//       {/* Dots Indicator */}
-//       <div className="flex justify-center mt-6 space-x-2">
-//         {images.map((_, idx) => (
-//           <button
-//             key={idx}
-//             onClick={() => setActiveIndex(idx)}
-//             className={`w-3 h-3 rounded-full transition-all duration-200 ${
-//               idx === activeIndex
-//                 ? `${getIndicatorColorClass()} scale-125`
-//                 : "bg-gray-300 hover:bg-gray-400"
-//             }`}
-//           />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// // Optional: Page with two rows
-// export function DualRowPage() {
-//   return (
-//     <div className="min-h-screen bg-gray-50 py-10 space-y-12">
-//       <PhotoCarousel autoSlide={true} indicatorColor="blue" />
-//       <PhotoCarousel autoSlide={false} indicatorColor="purple" />
-//     </div>
-//   );
-// }
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-export default function PhotoCarousel({ 
-  autoSlide = false, 
-  curveStyle = "up", 
-  indicatorColor = "blue" 
-}) {
+export default function ImageComponent() {
+  const [scrollY, setScrollY] = useState(0);
+  const [topRowScroll, setTopRowScroll] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  
+  const topRowRef = useRef(null);
+  const bottomRowRef = useRef(null);
+  const containerRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  // Sample images - replace with your actual images
   const images = [
+    "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
+    "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
     "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
     "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png"
   ];
 
-  // Auto slide effect (only if autoSlide is true)
+  // Create infinite loop array
+  const infiniteImages = [...images, ...images, ...images];
+
   useEffect(() => {
-    if (!autoSlide) return;
-    
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Auto slide effect
+  useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [images.length, autoSlide]);
+  }, [images.length]);
 
-  // Transform style based on curve type
-  const getTransformStyle = (index) => {
-    const offset = index - activeIndex;
-    if (Math.abs(offset) > 2) {
+  // Auto slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Manual scroll handlers
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.pageX - containerRef.current.offsetLeft;
+    scrollLeft.current = topRowScroll;
+    containerRef.current.style.cursor = 'grabbing';
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2; // Scroll speed multiplier
+    const newScroll = scrollLeft.current - walk;
+    
+    // Keep within bounds and loop
+    const maxScroll = images.length * 280;
+    let boundedScroll = newScroll;
+    if (boundedScroll < 0) boundedScroll = maxScroll + boundedScroll;
+    if (boundedScroll >= maxScroll) boundedScroll = boundedScroll - maxScroll;
+    
+    setTopRowScroll(boundedScroll);
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    containerRef.current.style.cursor = 'grab';
+  };
+
+  const handleMouseLeave = () => {
+    isDragging.current = false;
+    containerRef.current.style.cursor = 'grab';
+  };
+
+  // Touch handlers for mobile
+  const handleTouchStart = (e) => {
+    isDragging.current = true;
+    startX.current = e.touches[0].clientX;
+    scrollLeft.current = topRowScroll;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging.current) return;
+    const x = e.touches[0].clientX;
+    const walk = (x - startX.current) * 2;
+    const newScroll = scrollLeft.current - walk;
+    
+    const maxScroll = images.length * 280;
+    let boundedScroll = newScroll;
+    if (boundedScroll < 0) boundedScroll = maxScroll + boundedScroll;
+    if (boundedScroll >= maxScroll) boundedScroll = boundedScroll - maxScroll;
+    
+    setTopRowScroll(boundedScroll);
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+  };
+
+  // Sync scroll positions
+  useEffect(() => {
+    if (topRowRef.current && bottomRowRef.current) {
+      const maxScroll = images.length * 280;
+      
+      // Top row scrolls normally
+      topRowRef.current.scrollLeft = topRowScroll;
+      
+      // Bottom row scrolls in reverse
+      bottomRowRef.current.scrollLeft = maxScroll - topRowScroll;
+    }
+  }, [topRowScroll, images.length]);
+
+  // Calculate visibility based on scroll position with overlay effect
+  const getVisibility = () => {
+    const scrollThreshold1 = 100; // When both sections become visible
+    const scrollThreshold2 = 300; // When top section starts to hide
+    const scrollThreshold3 = 500; // When only bottom section is visible
+
+    if (scrollY < scrollThreshold1) {
+      // Show only top section
       return {
-        opacity: 0,
-        transform: "translateX(1000px)",
-        transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        topOpacity: 1,
+        bottomOpacity: 0,
+        topTransform: 0,
+        bottomTransform: 100,
+        bottomZIndex: 10
+      };
+    } else if (scrollY < scrollThreshold2) {
+      // Show both sections with overlay effect
+      const progress = (scrollY - scrollThreshold1) / (scrollThreshold2 - scrollThreshold1);
+      return {
+        topOpacity: 1,
+        bottomOpacity: 1,
+        topTransform: 0,
+        bottomTransform: 0,
+        bottomZIndex: 20 + Math.floor(progress * 10) // Bottom curve overlays top curve
+      };
+    } else if (scrollY < scrollThreshold3) {
+      // Transition to bottom only
+      const progress = (scrollY - scrollThreshold2) / (scrollThreshold3 - scrollThreshold2);
+      return {
+        topOpacity: 1 - progress,
+        bottomOpacity: 1,
+        topTransform: -50 * progress,
+        bottomTransform: 0,
+        bottomZIndex: 30
+      };
+    } else {
+      // Show only bottom section
+      return {
+        topOpacity: 0,
+        bottomOpacity: 1,
+        topTransform: -50,
+        bottomTransform: 0,
+        bottomZIndex: 30
       };
     }
-    // Classic coverflow: moderate spacing, strong curve, less Z
-    const spacing = 200;
-    const translateX = offset * spacing;
-    const translateZ = -Math.abs(offset) * 60;
-    const rotateY = offset * -40;
-    let translateY;
-    if (curveStyle === "down") {
-      translateY = -Math.pow(offset, 2) * 10 + 20;
-    } else {
-      translateY = Math.abs(offset) * 10;
-    }
-    return {
-      transform: `
-        translateX(${translateX}px)
-        translateY(${translateY}px)
-        translateZ(${translateZ}px)
-        rotateY(${rotateY}deg)
-      `,
-      opacity: 1,
-      transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-      zIndex: 10 - Math.abs(offset),
-    };
   };
 
-  const goToPrevious = () => {
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const getIndicatorColorClass = () => {
-    switch (indicatorColor) {
-      case "purple":
-        return "bg-purple-600";
-      case "blue":
-      default:
-        return "bg-blue-600";
-    }
-  };
+  const { topOpacity, bottomOpacity, topTransform, bottomTransform, bottomZIndex } = getVisibility();
 
   return (
-    <div className="w-full max-w-full mx-auto p-2">
-      <div className="w-full rounded-lg overflow-hidden">
-        <div
-          className="relative h-[320px] flex items-center justify-center w-full"
-          style={{ transformStyle: "preserve-3d" }}
+    <div className="w-full bg-white">
+      {/* Photos Header */}
+      <div className="w-full bg-[#2C4060] py-4">
+        <h2 className="text-white text-center text-xl font-bold uppercase tracking-wider">
+          Photos
+        </h2>
+      </div>
+
+      {/* Image Gallery Container with Blue Border */}
+      <div className="w-full bg-white py-8">
+        <div 
+          ref={containerRef}
+          className="relative w-full h-[400px] overflow-hidden select-none border-4 border-[#007aff] rounded-lg"
+          style={{ 
+            zIndex: 30,
+            cursor: 'grab',
+            userSelect: 'none'
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          {images.map((src, idx) => (
-            <div
-              key={idx}
-              className="absolute top-1/2 left-1/2 cursor-pointer"
-              style={{
-                width: "320px",
-                height: "200px",
-                marginLeft: "-160px",
-                marginTop: "-100px",
-                ...getTransformStyle(idx),
+          {/* Top Curved Section */}
+          <div 
+            ref={topRowRef}
+            className="absolute top-0 left-0 w-full overflow-x-hidden"
+            style={{
+              height: '200px',
+              borderBottomLeftRadius: '50% 60px',
+              borderBottomRightRadius: '50% 60px',
+              opacity: topOpacity,
+              transform: `translateY(${topTransform}px)`,
+              transition: 'opacity 0.3s ease, transform 0.3s ease',
+              zIndex: 10
+            }}
+          >
+            <div 
+              className="flex items-center h-full gap-6 px-8"
+              style={{ 
+                minWidth: 'max-content',
+                paddingTop: '30px',
+                paddingBottom: '50px',
+                transform: `translateX(-${topRowScroll}px)`,
               }}
-              onClick={() => setActiveIndex(idx)}
             >
-              <img
-                src={src}
-                alt={`Photo ${idx + 1}`}
-                className="w-full h-full object-cover rounded-2xl"
-                style={{
-                  filter: "none",
-                  transition: "filter 0.3s ease",
-                }}
-              />
+              {infiniteImages.map((src, idx) => (
+                <div key={`top-${idx}`} className="flex-shrink-0">
+                  <div 
+                    style={{ 
+                      width: '240px', 
+                      height: '160px'
+                    }}
+                  >
+                    <img 
+                      src={src}
+                      alt={`Photo ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-          {/* Navigation Arrows */}
-          {/* <button
-            onClick={goToPrevious}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-200 z-20"
+          </div>
+
+          {/* Bottom Curved Section with Overlay Effect */}
+          <div 
+            ref={bottomRowRef}
+            className="absolute bottom-0 left-0 w-full overflow-x-hidden"
+            style={{
+              height: '200px',
+              borderTopLeftRadius: '50% 60px',
+              borderTopRightRadius: '50% 60px',
+              opacity: bottomOpacity,
+              transform: `translateY(${bottomTransform}px)`,
+              transition: 'opacity 0.3s ease, transform 0.3s ease',
+              zIndex: bottomZIndex
+            }}
           >
-            <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button> */}
-          {/* <button
-            onClick={goToNext}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-200 z-20"
-          >
-            <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button> */}
+            <div 
+              className="flex items-center h-full gap-6 px-8"
+              style={{ 
+                minWidth: 'max-content',
+                paddingTop: '50px',
+                paddingBottom: '30px',
+                transform: `translateX(-${(images.length * 280) - topRowScroll}px)`,
+              }}
+            >
+              {infiniteImages.map((src, idx) => (
+                <div key={`bottom-${idx}`} className="flex-shrink-0">
+                  <div 
+                    style={{ 
+                      width: '240px', 
+                      height: '160px'
+                    }}
+                  >
+                    <img 
+                      src={src}
+                      alt={`Photo ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Center spacing */}
+          <div 
+            className="absolute left-0 w-full bg-transparent"
+            style={{
+              top: '140px',
+              height: '120px',
+            }}
+          />
         </div>
       </div>
-    </div>
-  );
-}
-
-// Example usage component showing how to use it twice on a page
-export function DualRowPage() {
-  return (
-    <div className="min-h-screen bg-gray-50 py-8 flex flex-row items-start justify-center gap-8">
-      {/* First Carousel - Auto-slide with upward curve */}
-      <PhotoCarousel 
-        autoSlide={true} 
-        curveStyle="up" 
-        indicatorColor="blue" 
-      />
-      {/* Second Carousel - Manual with downward curve */}
-      <PhotoCarousel 
-        autoSlide={false} 
-        curveStyle="down" 
-        indicatorColor="purple" 
-      />
     </div>
   );
 }
