@@ -37,9 +37,9 @@ function useInView(threshold = 0.2) {
 // ...rest of your code above
 
 const schoolCardData = [
-  { title: "VIII - IX - S.S.C", href: "/viiixsscpage" },
-  { title: "ICSE (grade 8,9 & 10th)", href: "/icsepage" },
-  { title: "CBSE (grade 8,9 & 10th)", href: "/cbsepage" },
+  { title: "VIII - IX - S.S.C", href: "/courses/XII-IX-SSC" },
+  { title: "ICSE (grade 8,9 & 10th)", href: "/courses/ICSE" },
+  { title: "CBSE (grade 8,9 & 10th)", href: "/courses/CBSE" },
 ];
 
 const scienceCardData = [
