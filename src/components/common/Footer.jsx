@@ -2,73 +2,76 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FaYoutube, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-y-10">
-        {/* Left: Column 1 & Column 2 grouped with spacing */}
-        <div className="flex flex-col md:flex-row gap-x-16 flex-[2]">
-          {/* Column 1 */}
-          <div className="flex-1 min-w-[250px]">
-            <Image
-              src="/Logo/logo.png"
-              alt="Excellent Classes Logo"
-              width={180}
-              height={60}
-              className="mb-4"
-            />
-            <p className="text-gray-700 text-base leading-relaxed mb-4 max-w-sm">
-              We at Excellent strongly believe that the best faculty creates the
-              best students and that is why we have a faculty who are masters in
-              their subjects.
-            </p>
-            <div className="flex flex-wrap items-center gap-4 mt-3">
-              {[
-                {
-                  href: "https://www.instagram.com/",
-                  src: "/Logo/instagram.png",
-                  alt: "Instagram",
-                },
-                {
-                  href: "https://www.facebook.com/",
-                  src: "/Logo/facebook.png",
-                  alt: "Facebook",
-                },
-                {
-                  href: "https://www.justdial.com/",
-                  src: "/Logo/justdial.png",
-                  alt: "Justdial",
-                },
-                {
-                  href: "https://www.youtube.com/",
-                  src: "/Logo/youtube.png",
-                  alt: "YouTube",
-                },
-              ].map((icon) => (
-                <a
-                  key={icon.alt}
-                  href={icon.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={icon.src}
-                    alt={icon.alt}
-                    width={24}
-                    height={24}
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+    <footer className="bg-white border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-y-12">
+        {/* Left Section: Column 1 */}
+        <div className="flex-1 min-w-[250px]">
+          <Image
+            src="/Logo/logo.png"
+            alt="Excellent Classes Logo"
+            width={180}
+            height={60}
+            className="mb-4"
+          />
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            We at Excellent strongly believe that the best faculty creates the
+            best students and that is why we have a faculty who are masters in
+            their subjects.
+          </p>
 
+          {/* Social Icons */}
+          <div className="flex items-center gap-3 text-xl mt-4">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-600 hover:text-red-700"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-600 hover:text-pink-700"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.justdial.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/Logo/justdial.png"
+                alt="Justdial"
+                width={22}
+                height={22}
+              />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Section: Columns 2 and 3 */}
+        <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-8 gap-y-8">
           {/* Column 2 */}
-          <div className="flex-1 min-w-[200px]">
-            <h4 className="text-black text-base font-semibold uppercase mb-3">
+          <div className="flex-1 min-w-[180px]">
+            <h4 className="text-black text-sm font-semibold uppercase mb-3">
               Main Menu
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm text-[#2f4271]">
               {[
                 { name: "About", path: "/Aboutus" },
                 { name: "Result", path: "/result" },
@@ -77,7 +80,7 @@ export default function Footer() {
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.path}>
-                    <span className="text-[#2f4271] hover:underline hover:text-[#1e2f5d] cursor-pointer text-sm">
+                    <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
                       {item.name}
                     </span>
                   </Link>
@@ -85,31 +88,29 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-        </div>
 
-        {/* Column 3 */}
-        <div className="flex-1 min-w-[200px]">
-          <h4 className="text-black text-base font-semibold uppercase mb-3">
-            Our Courses
-          </h4>
-          <ul className="space-y-2">
-            {[
-              "School Section",
-              "Science Section",
-              "Commerce Stream",
-              "CA Foundation",
-            ].map((course) => (
-              <li key={course}>
-                <Link
-                  href={`/${course.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  <span className="text-[#2f4271] hover:underline hover:text-[#1e2f5d] cursor-pointer text-sm">
-                    {course}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Column 3 */}
+          <div className="flex-1 min-w-[180px]">
+            <h4 className="text-black text-sm font-semibold uppercase mb-3">
+              Our Courses
+            </h4>
+            <ul className="space-y-2 text-sm text-[#2f4271]">
+              {[
+                "School Section",
+                "Science Section",
+                "Commerce Stream",
+                "CA Foundation",
+              ].map((course) => (
+                <li key={course}>
+                  <Link href={`/${course.toLowerCase().replace(/\s+/g, "-")}`}>
+                    <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
+                      {course}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
