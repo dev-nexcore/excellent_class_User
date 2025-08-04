@@ -24,7 +24,11 @@ module.exports = {
         'slide-in-right': 'slide-in-right 0.8s cubic-bezier(0.4, 0, 0.2, 1) both',
         'slide-in-top': 'slide-in-top 0.8s cubic-bezier(0.4, 0, 0.2, 1) both',
       },
+      clipPath: {
+        'left-diagonal': 'polygon(0 0, 80% 0, 20% 100%, 0% 100%)',
+        'right-diagonal': 'polygon(80% 0, 100% 0, 100% 100%, 20% 100%)',
+      }
     },
   },
-  plugins: [],
+  plugins: [ require('tailwind-clip-path')], // install this plugin],
 };

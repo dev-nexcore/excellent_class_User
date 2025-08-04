@@ -1,10 +1,9 @@
-import Result from '@/components/Result/Result'
 import React from 'react'
-
+import CAFoundation from '@/components/Courses/cafoundation'
 function page() {
   return (
     <>
-      <Result/>
+      <CAFoundation/>
     </>
   )
 }

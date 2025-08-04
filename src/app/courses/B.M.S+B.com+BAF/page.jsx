@@ -1,10 +1,10 @@
-import Result from '@/components/Result/Result'
+import CourseDetailsPage from '@/components/Courses/coursedetailspage'
 import React from 'react'
 
 function page() {
   return (
     <>
-      <Result/>
+      <CourseDetailsPage/>
     </>
   )
 }

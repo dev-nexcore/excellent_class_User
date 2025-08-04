@@ -1,38 +1,99 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import bannerImg from "../../../public/img/photo.png";
+import { motion } from "framer-motion";
 
 export default function QualityBanner() {
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] font-[Poppins] overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="w-full h-full flex flex-col md:flex-row">
-          {/* Left Diagonal Blue Section */}
-          <div className="relative w-full md:w-1/2 bg-[#1d366c] text-white clip-left-diagonal z-10 flex items-center justify-center px-6 md:px-10">
-            <div className="max-w-[500px]">
-              <h2 className="text-[28px] sm:text-[36px] md:text-[42px] font-semibold leading-snug animate-slide-in-left">
-                Committed To
-                <br />
-                <span className="text-[#f05a28] font-bold">Quality</span> Education
-              </h2>
-              <button className="mt-6 text-white text-base font-semibold relative px-6 py-2 bg-[#f05a28] animate-slide-in-top before:absolute before:-left-2 before:border-[12px] before:border-r-[#f05a28] before:border-y-transparent before:border-l-transparent before:top-1/2 before:-translate-y-1/2 after:absolute after:-right-2 after:border-[12px] after:border-l-[#f05a28] after:border-y-transparent after:border-r-transparent after:top-1/2 after:-translate-y-1/2">
-                Enroll now
-              </button>
-            </div>
+    <div className="w-screen h-[40vw] bg-white flex items-center justify-center relative overflow-visible">
+      <div className="relative w-full h-full overflow-visible">
+        
+        {/* 🔵 Wrapper div with overflow-hidden to clip the orange circle */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+          {/* 🔵 Left Blue Shape */}
+          <div
+            className="absolute top-0 left-0 w-full h-full bg-blue-900"
+            style={{
+              clipPath: "polygon(0 0, 70% 0, 53% 100%, 0% 100%)",
+            }}
+          >
+            {/* 🚀 Animated Content */}
+            <motion.div 
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute top-[25%] left-[8%] text-white z-10 max-w-[40vw] -mt-[5vw]"
+            >
+              <h1 className="text-[4.5vw] capitalize leading-tight mb-[0.3vw]">
+                Committed to
+              </h1>
+              <span className="text-[#E85222] text-[4.5vw] capitalize">qulaity</span>
+              <p className="text-[4.5vw] mb-[0.4vw] capitalize">education</p>
+
+              {/* 🟧 Enroll Now Image */}
+              <div className="relative w-[20vw] h-[6vw] mt-[1vw]">
+                <Image
+                  src="/img/enroll.png"
+                  alt="Enroll Now"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </motion.div>
           </div>
 
-          {/* Right Section (Image Side) */}
-          <div className="w-full md:w-1/2 relative overflow-hidden">
+          {/* 🟠 Large Orange Circle (EXACTLY as you had it) */}
+          <div 
+            className="absolute bg-[#E85222] rounded-full z-[5]"
+            style={{
+              width: "75vw",
+              height: "75vw",
+              bottom: "-33vw",
+              left: "23%",
+              transform: "translate(-50%, 50%)",
+            }}
+          ></div>
+        </div>
+
+        {/* 🔵 Right Shape with Image (animated from right) */}
+        <motion.div
+          className="absolute top-0 left-0 w-full h-[118%] overflow-visible z-[5]"
+          style={{
+            clipPath: "polygon(70% 0, 100% 0, 100% 150%, 40% 150%)",
+          }}
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <div className="relative w-full h-full flex items-center justify-center">
             <Image
-              src={bannerImg}
-              alt="Banner Right Side"
+              src="/img/photo.png"
+              alt="Song's Joke"
               fill
-              className="object-cover"
-              priority
+              className="h-[32vw] object-contain"
+              style={{
+                position: "absolute",
+                top: "39.3%",
+                left: "75.6%",
+                transform: "translate(-50%, -50%)",
+              }}
             />
           </div>
-        </div>
+        </motion.div>
+
+        {/* 🔴 Static Red Border */}
+        <div
+          className="absolute bg-[#E85222]"
+          style={{
+            width: "4px",
+            height: "112%",
+            top: "-15px",
+            left: "70.20%",
+            transform: "rotate(22.9deg)",
+            transformOrigin: "top",
+            zIndex: 10,
+          }}
+        ></div>
       </div>
     </div>
   );
