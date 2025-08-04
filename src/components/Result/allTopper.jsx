@@ -20,9 +20,11 @@ function useInView(threshold = 0.2) {
 }
 
 // Topper Card Component
-// Topper Card Component
-const TopperCard = ({ name, percentage, achievement, rank, image, animationClass }) => (
-  <div className={`flex flex-col items-center relative ${animationClass}`}>
+const TopperCard = ({ name, percentage, achievement, rank, image, animationClass, scaleValue }) => (
+  <div 
+    className={`flex flex-col items-center relative ${animationClass} transition-all duration-1000 ease-in-out`}
+    style={{ transform: `scale(${scaleValue})` }}
+  >
     {/* Student Image - separate from card, overlaps card */}
     <div className="relative z-30" style={{ height: 140, marginBottom: -80 }}>
       <Image
@@ -37,10 +39,10 @@ const TopperCard = ({ name, percentage, achievement, rank, image, animationClass
 
     {/* Card */}
     <div
-      className={`relative w-[200px] h-[280px] rounded-[16px] shadow-xl overflow-visible bg-[#1E2F65] flex flex-col items-center justify-end transition-transform duration-300`}
+      className={`relative w-[200px] h-[200px] rounded-[16px] shadow-xl overflow-visible bg-[#1E2F65] flex flex-col items-center justify-end transition-transform duration-300`}
     >
       {/* Orange Bottom Background (updated to match Image 1) */}
-      <div className="absolute bottom-0 w-full h-[34%] bg-[#F04F23] rounded-b-[16px] shadow-md z-10"></div>
+      <div className="absolute bottom-5 w-full h-[25px] bg-[#F04F23] rounded-b-[12px] shadow-md z-10"></div>
 
       {/* Yellow Info Box */}
       <div
@@ -62,7 +64,6 @@ const TopperCard = ({ name, percentage, achievement, rank, image, animationClass
   </div>
 );
 
-
 // Section Renderer
 const TopperSection = ({ data, heading, bgColor }) => {
   const animationClasses = [
@@ -70,7 +71,27 @@ const TopperSection = ({ data, heading, bgColor }) => {
     "animate-slide-in-top",
     "animate-slide-in-right"
   ];
+  
+  const scaleValues = [
+    0.85, // Left card - smaller
+    1.15, // Center card - larger
+    0.85  // Right card - smaller
+  ];
+  
   const [ref, inView] = useInView(0.2);
+  const [showScale, setShowScale] = useState(false);
+
+  // Add scale effect after animation delay
+  useEffect(() => {
+    if (inView) {
+      const timer = setTimeout(() => {
+        setShowScale(true);
+      }, 1000); // Increased delay
+      return () => clearTimeout(timer);
+    } else {
+      setShowScale(false);
+    }
+  }, [inView]);
 
   return (
     <div className="mb-10" ref={ref}>
@@ -78,12 +99,13 @@ const TopperSection = ({ data, heading, bgColor }) => {
         <h1 className="text-white text-center text-3xl font-bold">{heading}</h1>
       </div>
       <div className="py-8 bg-[#F5F7FA]">
-        <div className="flex justify-center items-center gap-8 flex-wrap px-4">
+        <div className="flex justify-center items-center gap-2 mx-6 flex-wrap px-4">
           {data.map((topper, index) => (
             <TopperCard
               key={index}
               {...topper}
               animationClass={inView ? animationClasses[index] || '' : ''}
+              scaleValue={showScale ? scaleValues[index] : 1}
             />
           ))}
         </div>
