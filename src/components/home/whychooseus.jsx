@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section className="relative w-full bg-white overflow-hidden mt-[8vw]">
       {/* Heading OUTSIDE SVG */}
       <div className="relative z-20 pt-16 pb-6 text-center px-4">
         <h2 className="text-3xl md:text-5xl font-bold text-[#0f1e49]">

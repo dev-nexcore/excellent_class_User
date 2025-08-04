@@ -30,12 +30,13 @@ export default function About() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
         {/* Hero Section */}
 
 
         {/* Main Content Section */}
-        <div className="py-16 px-4 flex justify-center w-full mb-[6vw] ">
+   {/* Main Content Section - Made Responsive */}
+        <div className="py-8 md:py-16 px-4 flex justify-center w-full mb-4 md:mb-[6vw]">
           <div className="">
             <div className="flex flex-col md:flex-row gap-8 md:gap-4 justify-evenly items-center w-full md:w-[90vw] px-4 md:px-6">
 
@@ -47,30 +48,30 @@ export default function About() {
                 className="relative"
               >
                 <div className="relative rounded-tl-4xl rounded-br-4xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] shadow-lg w-[80vw] md:w-[30vw] h-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] shadow-lg w-[80vw] md:w-[30vw] h-64 md:h-72"></div>
                   <div className="relative rounded-3xl rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] p-2 translate-y-2 translate-x-2">
                     <Image
                       src={AboutSection}
                       alt="Teacher helping student at computer"
-                      className="h-[60vw] md:h-[30vw] w-[80vw] md:w-[30vw] object-cover rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] shadow-lg"
+                      className="h-60 md:h-[25vw] w-[80vw] md:w-[30vw] object-cover rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] shadow-lg"
                     />
                   </div>
                 </div>
               </motion.div>
 
-              {/* Right Content with animation */}
+              {/* Right Content with animation - Made Responsive */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="flex flex-col space-y-6 md:space-y-8 px-2 md:px-8 py-4 md:py-6 w-full sm:w-[90vw] md:w-[50vw] h-auto md:h-[30vw] "
+                className="flex flex-col space-y-4 md:space-y-6 lg:space-y-8 px-4 md:px-8 py-4 md:py-6 w-full sm:w-[90vw] md:w-[50vw] h-auto md:h-[30vw]"
               >
                 {/* Badge - animate from top */}
                 <motion.div
                   initial={{ y: -50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-                  className="flex justify-start "
+                  className="flex justify-start"
                 >
                   <div className="inline-flex items-center px-3 py-2 bg-[#20356B] text-white rounded-full text-xs md:text-sm font-medium mb-2">
                     <span className="w-2 h-2 bg-[#E85222] rounded-full mr-2 md:mr-3"></span>
@@ -79,48 +80,106 @@ export default function About() {
                   </div>
                 </motion.div>
 
-                {/* Text Content - animate from right */}
+                {/* Text Content - animate from right - Made Responsive */}
                 <motion.div
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="space-y-4 sm:space-y-6 md:space-y-8 font-poppins px-2 sm:px-4 md:px-6 sm:py-4 md:py-0 w-full"
+                  className="space-y-3 md:space-y-4 lg:space-y-6 font-poppins w-full"
                 >
-                  <h1 className="text-[5vw] sm:text-[4vw] md:text-[2.5vw] font-bold text-gray-900 leading-tight text-left sm:text-center">
-                    We have the Best Teachers
-                  </h1>
+                  {/* Responsive Headings */}
+                  <div className="text-center md:text-left">
+                    <h1 className="font-semibold text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight">
+                      We have the Best Teachers
+                    </h1>
+                    <h1 className="font-semibold text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight">
+                      available in the City
+                    </h1>
+                  </div>
 
-                  <h1 className="text-[5vw] sm:text-[4vw] md:text-[2.3vw] -mt-2 md:-mt-4 font-bold text-center text-gray-900 leading-tight">
-                    available in the City
-                  </h1>
-
-                  <div className="w-full text-[3.5vw] sm:text-[14px] md:text-[1.3vw] font-radley leading-relaxed text-left sm:text-center">
-                    {/* For small screens: one-line version */}
-                    <p className="block sm:hidden w-auto text-center  ">
+                  {/* Responsive Description */}
+                  <div className="w-full text-sm sm:text-base md:text-lg lg:text-xl font-radley leading-relaxed text-center md:text-left">
+                    <p className="block sm:hidden">
                       Established in 1990. Successfully trained more than 20000 students. Driven by motivated and dedicated team.
                     </p>
 
-                    {/* For sm and above: multiline version */}
-                    <div className="hidden sm:block ">
-                      Established in 1990. Successfully trained more than 20000
-                      <p className="text-center">
-                        students. Driven by motivated and dedicated team.
+                    <div className="hidden sm:block">
+                      <p>
+                        Established in 1990. Successfully trained more than 20000 students. Driven by motivated and dedicated team.
                       </p>
                     </div>
                   </div>
-
                 </motion.div>
               </motion.div>
             </div>
           </div>
         </div>
+        
 
 
       </div>
       {/* second hero section */}
-      <div className='bg-[#E85222] flex justify-center items-center py-[1.4vw] px-12 mb-[4vw]'>
-        <div className='text-3xl capitalize  text-white text-center tracking-wide'> our Story</div>
+      <div className='bg-[#E85222] flex justify-center items-center py-[1.4vw] px-12 -mt-[8vw] mb-[4vw]'>
+        <div className='text-3xl font-semibold capitalize  text-white text-center tracking-wide'> our Story</div>
       </div>
+      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-10 gap-4">
+  {/* Left Content */}  
+  <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="w-full lg:w-[40vw] px-4 md:px-8 lg:px-12 py-6"
+  >
+    <div className="relative"> {/* Added wrapper div */}
+      <span className="block"> {/* Changed to block element */}
+        <span className="text-[5vw] md:text-[4vw] lg:text-[3vw] font-semibold font-radley text-blue-900 -mt-[4vw] md:-mt-[3vw] block"> {/* Responsive text and margin */}
+          Established <span className='text-black font-normal text-[3.5vw] md:text-[2.2vw] lg:text-[1.3vw]'>in 1990.</span>
+        </span>{' '}
+      </span>
+
+      <p className="mt-2 md:mt-0 text-[3.5vw] md:text-[2.2vw] lg:text-[1.3vw] tracking-wide text-black font-radley"> {/* Responsive text size and top margin */}
+        Established in 1990 Successfully trained more than 20000 students. Driven by motivated and dedicated team.
+        We at Excellent strongly believe that the best faculty creates the best students and that is why we have a faculty who are masters in their subjects. We offer our students expertise that they would never experience anywhere else. We invest in training and developing their skills, thus providing our students a complete upgraded education. Qualified and experience faculty accelerate the learning process.
+      </p>
+      <p className="text-[3.5vw] md:text-[2.2vw] lg:text-[1.3vw] tracking-wide text-black font-radey"> {/* Responsive text */}
+        I am glad to share my thoughts about our journey in pursuit of excellence. Our endeavour has been to be the preferred choice for quality education and we keep striving to surpass our benchmarks year after year. We believe in giving the Best. Excellent has been and will continue to serve the students community through innovative coaching programs with a clear accent on quality. We are proud of our legacy. It gives me immense satisfaction to say "We teach Success". We are there to give you a competitive advantage in future with unseen challenges. We will always seek to deliver optimal quality of service to our students, our customer with integrity and unscrupulous honesty as cornerstones of our quality policy. In your happiness, we count our blessings.
+      </p>
+    </div>
+  </motion.div>
+
+  {/* Right Content */}  
+  <motion.div
+    initial={{ opacity: 0, x: 100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="w-full lg:w-[45vw] flex flex-col items-center justify-center py-[6vw]"
+  >
+    <div className="relative w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
+      
+      {/* SVG Behind the Image */}  
+      <img
+        src="/img/squareDesign.svg"
+        alt="SVG Decoration"
+        className="absolute top-[100vw] md:top-[70vw] lg:top-[60vw] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
+
+      />
+      
+      {/* Image on Top */}  
+      <Image
+        src={ExcellentBroucher}
+        alt="Excellent Broucher"
+        className="w-[80vw] md:w-[50vw] lg:w-[36vw] relative z-10"
+      />
+    </div>
+    
+    <p className="text-center text-[5vw] md:text-[3vw] lg:text-2xl font-bold font-poppins uppercase py-6 z-20 mt-8">
+      Excellent Classes Broucher
+    </p>
+  </motion.div>
+</div>
+
       {/* 4 div content */}
       <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[1vw] overflow-visible font-poppins">
         <img
