@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 export default function ImageComponent() {
   const [scrollY, setScrollY] = useState(0);
   const [topRowScroll, setTopRowScroll] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
   const topRowRef = useRef(null);
   const bottomRowRef = useRef(null);
   const containerRef = useRef(null);
@@ -12,45 +11,18 @@ export default function ImageComponent() {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  // Sample images - replace with your actual images
-  const images = [
-    "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
-    "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
-    "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png",
-    "/Rectangle17.png", "/Rectangle17.png", "/Rectangle17.png"
-  ];
-
-  // Create infinite loop array
+  // Sample images
+  const images = Array(12).fill("/Rectangle17.png");
   const infiniteImages = [...images, ...images, ...images];
 
+  // Handle window scroll for overlay effect
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Auto slide effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  // Auto slide effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  // Manual scroll handlers
+  // Manual scroll handlers for desktop
   const handleMouseDown = (e) => {
     isDragging.current = true;
     startX.current = e.pageX - containerRef.current.offsetLeft;
@@ -61,11 +33,12 @@ export default function ImageComponent() {
   const handleMouseMove = (e) => {
     if (!isDragging.current) return;
     e.preventDefault();
+    
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX.current) * 2; // Scroll speed multiplier
+    const walk = (x - startX.current) * 2;
     const newScroll = scrollLeft.current - walk;
     
-    // Keep within bounds and loop
+    // Loop within bounds
     const maxScroll = images.length * 280;
     let boundedScroll = newScroll;
     if (boundedScroll < 0) boundedScroll = maxScroll + boundedScroll;
@@ -109,67 +82,80 @@ export default function ImageComponent() {
     isDragging.current = false;
   };
 
-  // Sync scroll positions
+  // Sync scroll positions between top and bottom rows
   useEffect(() => {
     if (topRowRef.current && bottomRowRef.current) {
       const maxScroll = images.length * 280;
-      
-      // Top row scrolls normally
       topRowRef.current.scrollLeft = topRowScroll;
-      
-      // Bottom row scrolls in reverse
       bottomRowRef.current.scrollLeft = maxScroll - topRowScroll;
     }
   }, [topRowScroll, images.length]);
 
-  // Calculate visibility based on scroll position with overlay effect
+  // Calculate visibility based on scroll position
   const getVisibility = () => {
-    const scrollThreshold1 = 100; // When both sections become visible
-    const scrollThreshold2 = 300; // When top section starts to hide
-    const scrollThreshold3 = 500; // When only bottom section is visible
+    const thresholds = {
+      start: 100,    // When bottom section starts appearing
+      middle: 300,   // When both sections are fully visible at center
+      end: 500       // When top section completely disappears
+    };
 
-    if (scrollY < scrollThreshold1) {
-      // Show only top section
+    if (scrollY < thresholds.start) {
       return {
         topOpacity: 1,
         bottomOpacity: 0,
         topTransform: 0,
         bottomTransform: 100,
-        bottomZIndex: 10
+        bottomZIndex: 10,
+        topCurve: '50% 200px',
+        bottomCurve: '50% 200px'
       };
-    } else if (scrollY < scrollThreshold2) {
-      // Show both sections with overlay effect
-      const progress = (scrollY - scrollThreshold1) / (scrollThreshold2 - scrollThreshold1);
+    } 
+    else if (scrollY < thresholds.middle) {
+      const progress = (scrollY - thresholds.start) / (thresholds.middle - thresholds.start);
       return {
         topOpacity: 1,
-        bottomOpacity: 1,
-        topTransform: 0,
-        bottomTransform: 0,
-        bottomZIndex: 20 + Math.floor(progress * 10) // Bottom curve overlays top curve
+        bottomOpacity: progress,
+        topTransform: -20 * progress, // Reduced movement for better visibility
+        bottomTransform: 80 - (80 * progress), // Reduced movement for better visibility
+        bottomZIndex: 20 + Math.floor(progress * 10),
+        topCurve: `50% ${200 - (30 * progress)}px`, // Gentler curve change
+        bottomCurve: `50% ${200 - (30 * progress)}px` // Gentler curve change
       };
-    } else if (scrollY < scrollThreshold3) {
-      // Transition to bottom only
-      const progress = (scrollY - scrollThreshold2) / (scrollThreshold3 - scrollThreshold2);
+    } 
+    else if (scrollY < thresholds.end) {
+      const progress = (scrollY - thresholds.middle) / (thresholds.end - thresholds.middle);
       return {
         topOpacity: 1 - progress,
         bottomOpacity: 1,
-        topTransform: -50 * progress,
+        topTransform: -20 - (30 * progress), // Reduced movement
         bottomTransform: 0,
-        bottomZIndex: 30
+        bottomZIndex: 30,
+        topCurve: `50% ${170 - (120 * progress)}px`, // Gentler curve change
+        bottomCurve: `50% ${170 - (120 * progress)}px` // Gentler curve change
       };
-    } else {
-      // Show only bottom section
+    } 
+    else {
       return {
         topOpacity: 0,
         bottomOpacity: 1,
         topTransform: -50,
         bottomTransform: 0,
-        bottomZIndex: 30
+        bottomZIndex: 30,
+        topCurve: '50% 50px',
+        bottomCurve: '50% 50px'
       };
     }
   };
 
-  const { topOpacity, bottomOpacity, topTransform, bottomTransform, bottomZIndex } = getVisibility();
+  const { 
+    topOpacity, 
+    bottomOpacity, 
+    topTransform, 
+    bottomTransform, 
+    bottomZIndex,
+    topCurve,
+    bottomCurve
+  } = getVisibility();
 
   return (
     <div className="w-full bg-white">
@@ -180,13 +166,21 @@ export default function ImageComponent() {
         </h2>
       </div>
 
-      {/* Image Gallery Container with Blue Border */}
+      {/* Album List */}
+      <div className="flex flex-wrap justify-center gap-4 py-4 bg-white">
+        {['HOPHEES 2023', 'HOPHEES 2021', 'HOPHEES 2022', 'HOPHEES 2023', 'HOPHEES 2021', 'HOPHEES 2022'].map((album, idx) => (
+          <div key={idx} className="px-4 py-2 bg-gray-200 rounded-md">
+            <span className="font-bold">{album}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Image Gallery Container */}
       <div className="w-full bg-white py-8">
         <div 
           ref={containerRef}
-          className="relative w-full h-[400px] overflow-hidden select-none border-4 border-[#007aff] rounded-lg"
+          className="relative w-full h-[400px] overflow-hidden select-none"
           style={{ 
-            zIndex: 30,
             cursor: 'grab',
             userSelect: 'none'
           }}
@@ -198,17 +192,17 @@ export default function ImageComponent() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Top Curved Section */}
+          {/* Top Curved Section (Convex) */}
           <div 
             ref={topRowRef}
             className="absolute top-0 left-0 w-full overflow-x-hidden"
             style={{
               height: '200px',
-              borderBottomLeftRadius: '50% 60px',
-              borderBottomRightRadius: '50% 60px',
+              borderBottomLeftRadius: topCurve,
+              borderBottomRightRadius: topCurve,
               opacity: topOpacity,
               transform: `translateY(${topTransform}px)`,
-              transition: 'opacity 0.3s ease, transform 0.3s ease',
+              transition: 'all 0.5s ease',
               zIndex: 10
             }}
           >
@@ -224,6 +218,7 @@ export default function ImageComponent() {
               {infiniteImages.map((src, idx) => (
                 <div key={`top-${idx}`} className="flex-shrink-0">
                   <div 
+                    className="rounded-lg overflow-hidden shadow-lg"
                     style={{ 
                       width: '240px', 
                       height: '160px'
@@ -240,17 +235,17 @@ export default function ImageComponent() {
             </div>
           </div>
 
-          {/* Bottom Curved Section with Overlay Effect */}
+          {/* Bottom Curved Section (Concave) */}
           <div 
             ref={bottomRowRef}
             className="absolute bottom-0 left-0 w-full overflow-x-hidden"
             style={{
               height: '200px',
-              borderTopLeftRadius: '50% 60px',
-              borderTopRightRadius: '50% 60px',
+              borderTopLeftRadius: bottomCurve,
+              borderTopRightRadius: bottomCurve,
               opacity: bottomOpacity,
               transform: `translateY(${bottomTransform}px)`,
-              transition: 'opacity 0.3s ease, transform 0.3s ease',
+              transition: 'all 0.5s ease',
               zIndex: bottomZIndex
             }}
           >
@@ -266,6 +261,7 @@ export default function ImageComponent() {
               {infiniteImages.map((src, idx) => (
                 <div key={`bottom-${idx}`} className="flex-shrink-0">
                   <div 
+                    className="rounded-lg overflow-hidden shadow-lg"
                     style={{ 
                       width: '240px', 
                       height: '160px'
@@ -282,7 +278,7 @@ export default function ImageComponent() {
             </div>
           </div>
 
-          {/* Center spacing */}
+          {/* Center spacing for oval effect */}
           <div 
             className="absolute left-0 w-full bg-transparent"
             style={{
