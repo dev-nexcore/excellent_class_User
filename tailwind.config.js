@@ -1,8 +1,10 @@
+  const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     "./src/app/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
+
   theme: {
     extend: {
       keyframes: {
@@ -18,6 +20,10 @@ module.exports = {
           '0%': { transform: 'translateY(-100%)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+      },
+      fontFamily: {
+         poppins: ['var(--font-poppins)', 'sans-serif'],
+        radley: ['var(--font-radley)', 'serif'],
       },
       animation: {
         'slide-in-left': 'slide-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) both',

@@ -62,6 +62,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
+          
 
           {/* Column 2 */}
           <div className="flex-1 min-w-[200px]">
