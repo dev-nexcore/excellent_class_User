@@ -1,21 +1,13 @@
 "use client"
+
 import Image from "next/image"
 
-export default function ImageComponent() {
-  // Define the SVG path for the concave rectangle.
-  // The coordinates are relative to a 950x350 bounding box.
-  // M 0 0: Move to (0, 0) - top-left corner.
-  // Q 475 70 950 0: Quadratic Bezier curve to (950, 0) with control point (475, 70).
-  //                 This pulls the top edge downwards in the middle, creating a deeper concave curve.
-  // L 950 350: Line to (950, 350) - straight line to bottom-right corner.
-  // Q 475 280 0 350: Quadratic Bezier curve to (0, 350) with control point (475, 280).
-  //                 This pulls the bottom edge upwards in the middle, creating a deeper concave curve.
-  // Z: Close the path, drawing a straight line back to the starting point (0, 0).
+export default function CurvedBottomImageComponent() {
+  // Define the SVG path for the concave rectangle with curved top and bottom.
   const svgPath = "M 0 0 Q 475 70 950 0 L 950 350 Q 475 280 0 350 Z"
 
-  // 6 images data (using placeholder images)
   const images = [
-   { id: 1, src: "/Rectangle17.png", alt: "Event Image 1" },
+    { id: 1, src: "/Rectangle17.png", alt: "Event Image 1" },
     { id: 2, src: "/Rectangle17.png", alt: "Event Image 2" },
     { id: 3, src: "/Rectangle17.png", alt: "Event Image 3" },
     { id: 4, src: "/Rectangle17.png", alt: "Event Image 4" },
@@ -24,17 +16,16 @@ export default function ImageComponent() {
   ]
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center p-8">
       <div className="relative w-[950px] h-[350px]">
         {/* Hidden SVG to define the clipPath */}
         <svg width="0" height="0" className="absolute">
           <defs>
-            <clipPath id="concaveClip">
+            <clipPath id="concaveClipCurved">
               <path d={svgPath} />
             </clipPath>
           </defs>
         </svg>
-
         {/* SVG for the visible border of the concave shape */}
         <svg
           width="100%"
@@ -43,16 +34,10 @@ export default function ImageComponent() {
           preserveAspectRatio="none"
           className="absolute inset-0 z-0"
         >
-          <path
-            d={svgPath}
-            fill="none" // No fill for the border SVG
-            stroke="black" // Border color
-            strokeWidth="2" // Border thickness
-          />
+          <path d={svgPath} fill="none" stroke="white" strokeWidth="2" />
         </svg>
-
         {/* Image gallery container, clipped by the SVG path */}
-        <div className="absolute inset-0 z-10 overflow-hidden" style={{ clipPath: "url(#concaveClip)" }}>
+        <div className="absolute inset-0 z-10 overflow-hidden" style={{ clipPath: "url(#concaveClipCurved)" }}>
           <div
             className="flex gap-6 overflow-x-auto scrollbar-hide h-full"
             style={{
@@ -62,10 +47,7 @@ export default function ImageComponent() {
             }}
           >
             {images.map((image) => (
-              <div
-                key={image.id}
-                className="flex-shrink-0 w-[310px] h-full relative" // Adjusted width for ~2.5 images visibility
-              >
+              <div key={image.id} className="flex-shrink-0 w-[310px] h-full relative">
                 <Image
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}

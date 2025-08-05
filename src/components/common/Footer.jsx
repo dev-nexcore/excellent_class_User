@@ -7,7 +7,7 @@ import { FaYoutube, FaFacebookF, FaInstagram } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-y-12">
+      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-y-12 gap-x-36">
         {/* Left Section: Column 1 */}
         <div className="flex-1 min-w-[250px]">
           <Image
@@ -17,14 +17,14 @@ export default function Footer() {
             height={60}
             className="mb-4"
           />
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+          <p className="font-bold text-md leading-relaxed mb-4">
             We at Excellent strongly believe that the best faculty creates the
             best students and that is why we have a faculty who are masters in
             their subjects.
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3 text-xl mt-4">
+          <div className="flex items-center  gap-6 text-4xl mt-4">
             <a
               href="https://www.facebook.com/"
               target="_blank"
@@ -57,21 +57,21 @@ export default function Footer() {
               <Image
                 src="/Logo/justdial.png"
                 alt="Justdial"
-                width={22}
-                height={22}
+                width={56}
+                height={56}
               />
             </a>
           </div>
         </div>
 
         {/* Right Section: Columns 2 and 3 */}
-        <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-8 gap-y-8">
+        <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-8 gap-y-8 ">
           {/* Column 2 */}
           <div className="flex-1 min-w-[180px]">
-            <h4 className="text-black text-sm font-semibold uppercase mb-3">
+            <h4 className="text-black text-md font-semibold uppercase mb-3 ">
               Main Menu
             </h4>
-            <ul className="space-y-2 text-sm text-[#2f4271]">
+            <ul className="space-y-2 text-md text-[#2f4271]">
               {[
                 { name: "About", path: "/Aboutus" },
                 { name: "Result", path: "/result" },
@@ -90,11 +90,11 @@ export default function Footer() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex-1 min-w-[180px]">
-            <h4 className="text-black text-sm font-semibold uppercase mb-3">
+          <div className="flex-1 min-w-[180px] ">
+            <h4 className="text-black text-md font-semibold uppercase mb-3 ">
               Our Courses
             </h4>
-            <ul className="space-y-2 text-sm text-[#2f4271]">
+            <ul className="space-y-2 text-md text-[#2f4271]">
               {[
                 "School Section",
                 "Science Section",

@@ -10,6 +10,12 @@ export default function HeroSection() {
             clipPath: 'polygon(0 0, 53.5% 0, 48.5% 100%, 0 100%)',
           }}
         />
+  {/* { id: 1, src: "/Rectangle17.png", alt: "Event Image 1" },
+    { id: 2, src: "/Rectangle17.png", alt: "Event Image 2" },
+    { id: 3, src: "/Rectangle17.png", alt: "Event Image 3" },
+    { id: 4, src: "/Rectangle17.png", alt: "Event Image 4" },
+    { id: 5, src: "/Rectangle17.png", alt: "Event Image 5" },
+    { id: 6, src: "/Rectangle17.png", alt: "Event Image 6" }, */}
 
         {/* ORANGE DIAGONAL BORDER */}
         <div

@@ -24,11 +24,11 @@ export default function QualityBanner() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="absolute top-[25%] left-[8%] text-white z-10 max-w-[40vw] -mt-[5vw]"
             >
-              <h1 className="text-[4.5vw] capitalize leading-tight mb-[0.3vw]">
+              <h1 className="text-[4.5vw] capitalize leading-tight mb-[0.3vw] font-radley">
                 Committed to
               </h1>
-              <span className="text-[#E85222] text-[4.5vw] capitalize">qulaity</span>
-              <p className="text-[4.5vw] mb-[0.4vw] capitalize">education</p>
+              <span className="text-[#E85222] text-[4.5vw] capitalize font-radley">qulaity</span>
+              <p className="text-[4.5vw] mb-[0.4vw] capitalize font-radley">education</p>
 
               {/* 🟧 Enroll Now Image */}
               <div className="relative w-[20vw] h-[6vw] mt-[1vw]">
@@ -86,7 +86,7 @@ export default function QualityBanner() {
           className="absolute bg-[#E85222]"
           style={{
             width: "4px",
-            height: "112%",
+            height: "111.3%",
             top: "-15px",
             left: "70.20%",
             transform: "rotate(22.9deg)",
