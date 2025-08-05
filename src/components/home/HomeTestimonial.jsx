@@ -1,30 +1,33 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+"use client"
+import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "It was a truly valuable learning experience with the Institute. It has provided me with confidence and self belief. It has driven me to perform to my potential and I owe them to what I am now.",
+    quote:
+      "It was a truly valuable learning experience with the Institute. It has provided me with confidence and self belief. It has driven me to perform to my potential and I owe them to what I am now.",
     name: "Dr. Vikas Gupta",
     title: "M.D ( Paediatrician )",
-    imgSrc: "/profile.jpg",
+    imgSrc: "/placeholder.svg?height=112&width=112",
     alt: "Dr. Vikas Gupta",
   },
   {
-    quote: "The mentors were incredibly supportive and the curriculum was practical. I gained skills that I could apply immediately in real-world scenarios.",
+    quote:
+      "The mentors were incredibly supportive and the curriculum was practical. I gained skills that I could apply immediately in real-world scenarios.",
     name: "Ms. Anjali Sharma",
     title: "Software Engineer",
-    imgSrc: "/profile2.jpg",
+    imgSrc: "/placeholder.svg?height=112&width=112",
     alt: "Anjali Sharma",
   },
   {
-    quote:" From day one, the learning environment pushed me to grow. My confidence skyrocketed and I now feel prepared for industry challenges.",
+    quote:
+      " From day one, the learning environment pushed me to grow. My confidence skyrocketed and I now feel prepared for industry challenges.",
     name: "Mr. Rohit Patel",
     title: "Full Stack Developer",
-    imgSrc: "/profile3.jpg",
+    imgSrc: "/placeholder.svg?height=112&width=112",
     alt: "Rohit Patel",
   },
-];
+]
 
 function CardContent({ testimonial }) {
   return (
@@ -54,7 +57,7 @@ function CardContent({ testimonial }) {
           <div className="rounded-full border-4 border-[#1f2d56] p-1">
             <div className="rounded-full ring-4 ring-[#f26722] overflow-hidden w-38 h-38 bg-white">
               <Image
-                src={testimonial.imgSrc}
+                src={testimonial.imgSrc || "/placeholder.svg"}
                 alt={testimonial.alt}
                 width={112}
                 height={112}
@@ -64,7 +67,6 @@ function CardContent({ testimonial }) {
             </div>
           </div>
         </div>
-
         {/* Stars */}
         <div className="flex justify-center mb-4 mt-2">
           {Array.from({ length: 5 }).map((_, idx) => (
@@ -79,12 +81,8 @@ function CardContent({ testimonial }) {
             </svg>
           ))}
         </div>
-
         {/* Quote */}
-        <p className="text-base sm:text-xl leading-relaxed px-0 sm:px-10 mb-8">
-          {testimonial.quote}
-        </p>
-
+        <p className="text-base sm:text-xl leading-relaxed px-0 sm:px-10 mb-8">{testimonial.quote}</p>
         {/* Name & Title */}
         <div className="absolute bottom-8 right-6 text-right">
           <div className="text-2xl font-semibold">- {testimonial.name}</div>
@@ -92,52 +90,94 @@ function CardContent({ testimonial }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-function HomeTestimonial() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const [prevIdx, setPrevIdx] = useState(null);
-  const [animating, setAnimating] = useState(false);
-  const [direction, setDirection] = useState('right');
+export default function HomeTestimonial() {
+  const [activeIdx, setActiveIdx] = useState(0)
+  const [prevIdx, setPrevIdx] = useState(null)
+  const [animating, setAnimating] = useState(false)
+  const [direction, setDirection] = useState("right")
+  const scrollTimeoutRef = useRef(null) // Ref to manage scroll debounce timeout
 
-  // Add auto sliding every 5 seconds
   useEffect(() => {
-    if (animating) return;
-    const interval = setInterval(() => {
-      setDirection('right');
-      setPrevIdx(activeIdx);
-      setActiveIdx((activeIdx + 1) % testimonials.length);
-      setAnimating(true);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [activeIdx, animating]);
+    const handleScroll = (e) => {
+      // Clear any existing timeout to debounce rapid scroll events
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+
+      // If an animation is already in progress, prevent new transitions
+      if (animating) {
+        return
+      }
+
+      // Set a new timeout to process the scroll event after a short delay
+      scrollTimeoutRef.current = setTimeout(() => {
+        let nextIdx
+        let newDirection
+
+        if (e.deltaY > 0 || e.deltaX > 0) {
+          // Scroll right
+          nextIdx = (activeIdx + 1) % testimonials.length
+          newDirection = "right"
+        } else if (e.deltaY < 0 || e.deltaX < 0) {
+          // Scroll left
+          nextIdx = (activeIdx - 1 + testimonials.length) % testimonials.length
+          newDirection = "left"
+        } else {
+          return // No relevant scroll direction
+        }
+
+        setDirection(newDirection)
+        setPrevIdx(activeIdx)
+        setActiveIdx(nextIdx)
+        setAnimating(true)
+      }, 100) // Debounce time: 100ms
+    }
+
+    const container = document.getElementById("testimonial-scroll-container")
+    if (container) {
+      container.addEventListener("wheel", handleScroll, { passive: true })
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleScroll)
+      }
+      // Clear timeout on component unmount
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+    }
+  }, [activeIdx, animating]) // Dependencies: activeIdx, animating
 
   const handleDot = (idx) => {
-    if (idx === activeIdx || animating) return;
-    setDirection(idx > activeIdx ? 'right' : 'left');
-    setPrevIdx(activeIdx);
-    setActiveIdx(idx);
-    setAnimating(true);
-  };
+    if (idx === activeIdx || animating) return
+    setDirection(idx > activeIdx ? "right" : "left")
+    setPrevIdx(activeIdx)
+    setActiveIdx(idx)
+    setAnimating(true)
+  }
 
   useEffect(() => {
     if (animating) {
       const t = setTimeout(() => {
-        setPrevIdx(null);
-        setAnimating(false);
-      }, 500);
-      return () => clearTimeout(t);
+        setPrevIdx(null)
+        setAnimating(false)
+      }, 500) // This duration matches the CSS transition duration
+      return () => clearTimeout(t)
     }
-  }, [animating]);
+  }, [animating])
 
   return (
     <div className="flex flex-col gap-8 items-center py-10 bg-white">
       {/* Heading */}
       <h2 className="text-3xl sm:text-4xl font-bold mb-6 font-radley">Testimonials</h2>
-
       {/* Card Container with perspective */}
-      <div className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-hidden  overflow-visible">
+      <div
+        id="testimonial-scroll-container"
+        className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-hidden overflow-visible"
+      >
         {/* FIXED: Invisible static copy to preserve original size/height */}
         <div
           aria-hidden="true"
@@ -146,23 +186,21 @@ function HomeTestimonial() {
         >
           <CardContent testimonial={testimonials[activeIdx]} />
         </div>
-
         {/* Animated cards */}
         {testimonials.map((testimonial, idx) => {
-          let transform = 'translateX(100%)';
-          let opacity = 0;
-          let zIndex = 0;
-          
-          if (idx === activeIdx) {
-            transform = 'translateX(0)';
-            opacity = 1;
-            zIndex = 10;
-          } else if (idx === prevIdx) {
-            transform = direction === 'right' ? 'translateX(-100%)' : 'translateX(100%)';
-            opacity = 0;
-            zIndex = 5;
-          }
+          let transform = "translateX(100%)"
+          let opacity = 0
+          let zIndex = 0
 
+          if (idx === activeIdx) {
+            transform = "translateX(0)"
+            opacity = 1
+            zIndex = 10
+          } else if (idx === prevIdx) {
+            transform = direction === "right" ? "translateX(-100%)" : "translateX(100%)"
+            opacity = 0
+            zIndex = 5
+          }
           return (
             <div
               key={idx}
@@ -173,17 +211,13 @@ function HomeTestimonial() {
                 zIndex,
               }}
             >
-              <div 
-                className="relative w-full max-w-3xl mt-12 px-4 sm:px-0 mx-auto"
-                style={{ perspective: "1200px" }}
-              >
+              <div className="relative w-full max-w-3xl mt-12 px-4 sm:px-0 mx-auto" style={{ perspective: "1200px" }}>
                 <CardContent testimonial={testimonial} />
               </div>
             </div>
-          );
+          )
         })}
       </div>
-
       {/* Pagination Dots */}
       <div className="flex items-center gap-2 -mt-6">
         {testimonials.map((_, idx) => (
@@ -191,15 +225,11 @@ function HomeTestimonial() {
             key={idx}
             onClick={() => handleDot(idx)}
             className={`cursor-pointer transition-all duration-300 ${
-              idx === activeIdx
-                ? "w-10 h-2 rounded-full bg-[#f26722]"
-                : "w-3 h-3 rounded-full bg-gray-400"
+              idx === activeIdx ? "w-10 h-2 rounded-full bg-[#f26722]" : "w-3 h-3 rounded-full bg-gray-400"
             }`}
           />
         ))}
       </div>
     </div>
-  );
+  )
 }
-
-export default HomeTestimonial;

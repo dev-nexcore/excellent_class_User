@@ -86,7 +86,7 @@ export default function QualityBanner() {
           className="absolute bg-[#E85222]"
           style={{
             width: "4px",
-            height: "111.3%",
+            height: "111.8%",
             top: "-15px",
             left: "70.20%",
             transform: "rotate(22.9deg)",

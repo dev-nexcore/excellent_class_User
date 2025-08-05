@@ -17,64 +17,55 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Orange Strip Behind SVG */}
-      <div className="absolute top-[180px] left-0 right-0 h-[40px] bg-[#e94f1d] z-0" />
+      <div className="absolute top-[180px] left-0 right-0 h-[90px] sm:h-[120px] md:h-[150px] bg-[#e94f1d] z-0" />
 
       {/* SVG Wave Background */}
-      <div className="absolute top-[120px] left-0 right-0 z-0 ">
+      <div className="absolute top-[120px] left-0 right-0 z-0">
         <Image
           src="/home/Rectangle.svg"
           alt="Wave"
           width={1920}
           height={100}
-          className="w-full h-auto "
+          className="w-full h-auto"
         />
       </div>
 
       {/* Main Content */}
-      <div ref={ref} className="relative z-10 pt-[180px] px-4 md:px-0">
+      <div ref={ref} className="relative z-10 pt-[200px] px-4 md:px-0">
         <div className="px-4 sm:px-6 md:px-20 pb-16">
-         <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-10 -mt-10 sm:-mt-20">
-
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-10 -mt-10 sm:-mt-20">
+            
             {/* Image - Slide from Left */}
-<motion.div
-  initial={{ x: -100, opacity: 0 }}
-  animate={isInView ? { x: 0, opacity: 1 } : {}}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md"
->
-  <div className="border-4 border-white rounded-lg overflow-hidden shadow-lg">
-    <Image
-      src="/Rectangle17.png"
-      alt="Award"
-      width={500}
-      height={350}
-      className="object-cover w-[550px] h-[250px] md:h-[300px]"
-    />
-  </div>
-</motion.div>
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md"
+            >
+              {/* Outer Card with responsive height */}
+              <div className="relative w-full h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[450px] border-4 border-white rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="/Rectangle17.png"
+                  alt="Award"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                />
+              </div>
+            </motion.div>
 
-
-
-            {/* Text - Aligned to image top */}
-  <motion.div
-  initial={{ x: 100, opacity: 0 }}
-  animate={isInView ? { x: 0, opacity: 1 } : {}}
-  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-  className="text-white text-base sm:text-lg leading-8 text-center max-w-[600px] px-4 mr-20 tracking-widest"
->
-  <p>
-    We at Excellent strongly believe that the best<br />
-    faculty creates the best students and that is why<br />
-    we have a faculty who are masters in their<br />
-    subjects. We offer our students expertise that they<br />
-    would never experience anywhere else. We invest in<br />
-    training and developing their skills, thus providing<br />
-    our students a complete upgraded education.<br />
-    Qualified and experience faculty accelerate the<br />
-    learning process.
-  </p>
-</motion.div>
-
+            {/* Text - Slide from Right */}
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="text-white text-base sm:text-lg leading-8 text-center max-w-[600px] px-4 md:mr-20 tracking-widest"
+            >
+              <p>
+                We at Excellent strongly believe that the best faculty creates the best students and that is why we have a faculty who are masters in their subjects. We offer our students expertise that they would never experience anywhere else. We invest in training and developing their skills, thus providing our students a complete upgraded education. Qualified and experienced faculty accelerate the learning process.
+              </p>
+            </motion.div>
 
           </div>
         </div>
