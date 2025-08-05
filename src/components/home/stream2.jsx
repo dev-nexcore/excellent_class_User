@@ -10,14 +10,14 @@ export default function ExamSection() {
       image: "/Home/Rectangle 34.png",
       desc: "NEET, JEE ( M ), MHT-CET",
       direction: "left",
-      link: "/courses",
+      link: "/courses/Entrance-Exam",
     },
     {
       title: "COMPETITIVE EXAMS",
       image: "/Home/Rectangle 35.png",
       desc: "CA Foundation",
       direction: "right",
-      link: "/courses",
+      link: "/courses/C.A-Foundation  ",
     },
   ];
 

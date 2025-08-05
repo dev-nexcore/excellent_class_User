@@ -10,19 +10,19 @@ export default function StreamAndCourses() {
       title: "SCHOOL SECTION",
       image: "/Home/Rectangle 22.png",
       desc: "State Board / ICSE Board / CBSE Board",
-      link: "/school",
+      link: "/courses",
     },
     {
       title: "SCIENCE SECTION",
       image: "/Home/Rectangle 24.png",
       desc: "XI & XII & Entrance",
-      link: "/school",
+      link: "/courses/ICSE",
     },
     {
       title: "COMMERCE SECTION",
       image: "/Home/Rectangle 23.png",
       desc: "XI, XII, F.Y to T.Y.B.Com, BMS, BAF",
-      link: "/school",
+      link: "/courses",
     },
   ];
 
@@ -53,7 +53,7 @@ export default function StreamAndCourses() {
               type: "spring",
               stiffness: 90,
             }}
-            className="rounded-lg overflow-hidden shadow-md bg-white border"
+            className="rounded-lg overflow-hidden shadow-md bg-[#D9D9D9] "
           >
             {/* Title */}
             <div className="bg-[#20356B] text-white text-center py-5 font-bold text-sm tracking-wide">

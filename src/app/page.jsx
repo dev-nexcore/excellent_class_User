@@ -14,9 +14,11 @@ export default function page() {
     <div>
       <QualityBanner/>
       <WhyChooseUs/>
-      <HomeTestimonial/>
+      
       <StreamAndCourses/>
       <ExamSection/>
+      <HomeTestimonial/>
+      
     </div>
   );
 }
