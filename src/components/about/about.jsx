@@ -132,13 +132,13 @@ export default function About() {
     className="w-full lg:w-[40vw] px-4 md:px-8 lg:px-12 py-6"
   >
     <div className="relative"> {/* Added wrapper div */}
-      <span className="block"> {/* Changed to block element */}
-        <span className="text-[5vw] md:text-[4vw] lg:text-[3vw] font-semibold font-radley text-blue-900 -mt-[4vw] md:-mt-[3vw] block"> {/* Responsive text and margin */}
+      <span className="block "> {/* Changed to block element */}
+        <span className="text-[5vw] md:text-[4vw] lg:text-[5vw]   text-blue-900 -mt-[4vw] md:-mt-[3vw] block font-radley"> {/* Responsive text and margin */}
           Established <span className='text-black font-normal text-[3.5vw] md:text-[2.2vw] lg:text-[1.3vw]'>in 1990.</span>
         </span>{' '}
       </span>
 
-      <p className="mt-2 md:mt-0 text-[3.5vw] md:text-[2.2vw] lg:text-[1.3vw] tracking-wide text-black font-radley"> {/* Responsive text size and top margin */}
+      <p className=" md:mt-0 text-[3.5vw] md:text-[2.2vw] lg:text-[1.3vw] tracking-wide text-black "> {/* Responsive text size and top margin */}
         Established in 1990 Successfully trained more than 20000 students. Driven by motivated and dedicated team.
         We at Excellent strongly believe that the best faculty creates the best students and that is why we have a faculty who are masters in their subjects. We offer our students expertise that they would never experience anywhere else. We invest in training and developing their skills, thus providing our students a complete upgraded education. Qualified and experience faculty accelerate the learning process.
       </p>

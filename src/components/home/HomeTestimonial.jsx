@@ -134,7 +134,7 @@ function HomeTestimonial() {
   return (
     <div className="flex flex-col gap-8 items-center py-10 bg-white">
       {/* Heading */}
-      <h2 className="text-3xl sm:text-4xl font-bold mb-6">Testimonials</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6 font-radley">Testimonials</h2>
 
       {/* Card Container with perspective */}
       <div className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-hidden  overflow-visible">
