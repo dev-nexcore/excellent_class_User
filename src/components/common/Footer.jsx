@@ -73,10 +73,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-md text-[#2f4271]">
               {[
-                { name: "About", path: "/Aboutus" },
+                { name: "About", path: "/about" },
                 { name: "Result", path: "/result" },
                 { name: "Gallery", path: "/gallery" },
-                { name: "Contact Us", path: "/Contactuss" },
+                { name: "Contact Us", path: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.path}>
