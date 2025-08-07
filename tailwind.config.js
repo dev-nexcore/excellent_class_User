@@ -27,6 +27,9 @@ module.exports = {
       fontFamily: {
          poppins: ['var(--font-poppins)', 'sans-serif'],
         radley: ['var(--font-radley)', 'serif'],
+          lisu: ['var(--font-lisu-bosa)', 'serif'], // ✅ Use the correct CSS variable
+
+
       },
       animation: {
         'slide-in-left': 'slide-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) both',
@@ -40,5 +43,10 @@ module.exports = {
       }
     },
   },
-  plugins: [ require('tailwind-clip-path')], // install this plugin],
+plugins: [
+  require('tailwind-clip-path'),
+  require('tailwind-scrollbar'),
+],
+
+   // install this plugin],
 };

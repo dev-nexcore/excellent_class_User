@@ -31,7 +31,7 @@ export default function Navbar() {
     <nav
       style={{
         background: "#fff",
-        padding: "12px 20px",
+        padding: "12px 35px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -62,75 +62,82 @@ export default function Navbar() {
         </div>
       ) : (
         // Desktop Navigation Links
-        <div style={{ display: "flex", gap: "32px", flex: 1, justifyContent: "center" }}>
-          {navLinks.map((item) => (
-            <Link key={item.name} href={item.path}>
-              <div style={{ position: "relative", paddingBottom: "4px" }}>
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: pathname === item.path ? "#e65100" : "#000",
-                    cursor: "pointer",
-                    position: "relative",
-                    display: "inline-block",
-                  }}
-                >
-                  {item.name}
-                </span>
-                {/* Animated underline */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    height: "2px",
-                    backgroundColor: "#e65100",
-                  }}
-                />
-                {/* Active state underline */}
-                {pathname === item.path && (
+        <div style={{ display: "flex", gap: "48px", flex: 1, justifyContent: "center" }}>
+          {navLinks.map((item) => {
+            const isActive = pathname === item.path;
+            return (
+              <Link key={item.name} href={item.path}>
+                <div style={{ position: "relative", paddingBottom: "4px" }}>
+                  <span
+                    style={{
+                      fontWeight: 600,
+                      color: "#000", // ✅ Active & Inactive both now black
+                      cursor: "pointer",
+                      position: "relative",
+                      display: "inline-block",
+                    }}
+                  >
+                    {item.name}
+                  </span>
+
+                  {/* Hover underline (orange) */}
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                     style={{
                       position: "absolute",
                       bottom: 0,
                       left: 0,
                       height: "2px",
-                      backgroundColor: "#e65100",
+                      backgroundColor: "#e65100", // Hover underline (orange)
                     }}
                   />
-                )}
-              </div>
-            </Link>
-          ))}
+
+                  {/* Active state underline (blue) */}
+                  {isActive && (
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "80%" }}
+                      transition={{ duration: 0.3 }}
+                      style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        height: "2px",
+                        backgroundColor: "#20356B", // ✅ Blue active underline
+                      }}
+                    />
+                  )}
+                </div>
+              </Link>
+            );
+          })}
         </div>
       )}
 
-      {/* Login Button */}
-      <div style={{ flexShrink: 0 }}>
-        <Link href="/login">
-          <span
-            style={{
-              background: "#e65100",
-              color: "#fff",
-              padding: "8px 20px",
-              borderRadius: "6px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              whiteSpace: "nowrap",
-              display: "inline-block",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-            }}
-          >
-            Login
-          </span>
-        </Link>
-      </div>
+      {/* Login Button - Desktop Only */}
+      {!isMobile && (
+        <div style={{ flexShrink: 0 }}>
+          <Link href="/login">
+            <span
+              style={{
+                background: "#e65100",
+                color: "#fff",
+                padding: "6px 16px",
+                borderRadius: "6px",
+                fontWeight: "600",
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+                display: "inline-block",
+                boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+              }}
+            >
+              Login
+            </span>
+          </Link>
+        </div>
+      )}
 
       {/* Mobile Dropdown Menu */}
       {isMobile && menuOpen && (
@@ -154,9 +161,9 @@ export default function Navbar() {
             <Link key={item.name} href={item.path} onClick={() => setMenuOpen(false)}>
               <span
                 style={{
-                  fontWeight: "bold",
-                  color: pathname === item.path ? "#e65100" : "#000",
-                  borderBottom: pathname === item.path ? "2px solid #e65100" : "none",
+                  fontWeight: 600,
+                  color: "#000",
+                  borderBottom: pathname === item.path ? "2px solid #20356B" : "none",
                   paddingBottom: "4px",
                   cursor: "pointer",
                 }}
@@ -165,6 +172,23 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
+
+          {/* ✅ Login button added inside mobile menu */}
+          <Link href="/login" onClick={() => setMenuOpen(false)}>
+            <span
+              style={{
+                background: "#e65100",
+                color: "#fff",
+                padding: "6px 16px",
+                borderRadius: "6px",
+                fontWeight: "600",
+                cursor: "pointer",
+                boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+              }}
+            >
+              Login
+            </span>
+          </Link>
         </div>
       )}
     </nav>

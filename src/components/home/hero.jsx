@@ -2,14 +2,16 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function QualityBanner() {
   return (
     <div className="w-screen h-[40vw] bg-white flex items-center justify-center relative overflow-visible">
       <div className="relative w-full h-full overflow-visible">
-        
+
         {/* 🔵 Wrapper div with overflow-hidden to clip the orange circle */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+
           {/* 🔵 Left Blue Shape */}
           <div
             className="absolute top-0 left-0 w-full h-full bg-blue-900"
@@ -24,20 +26,26 @@ export default function QualityBanner() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="absolute top-[25%] left-[8%] text-white z-10 max-w-[40vw] -mt-[5vw]"
             >
-              <h1 className="text-[4.5vw] capitalize leading-tight mb-[0.3vw] ">
+              <h1 className="text-[4.5vw] capitalize leading-tight mb-[0.3vw] font-lisu ">
                 Committed to
               </h1>
-              <span className="text-[#E85222] text-[4.5vw] capitalize font-radley">qulaity</span>
-              <p className="text-[4.5vw] mb-[0.4vw] capitalize ">education</p>
+              <span className="text-[#E85222] text-[4.5vw] capitalize font-lisu font-semibold">
+                quality
+              </span>
+              <p className="text-[4.5vw] mb-[0.4vw] capitalize font-lisu-600 ">
+                education
+              </p>
 
               {/* 🟧 Enroll Now Image */}
               <div className="relative w-[20vw] h-[6vw] mt-[1vw]">
-                <Image
-                  src="/img/enroll.png"
-                  alt="Enroll Now"
-                  fill
-                  className="object-contain"
-                />
+                <Link href="/contact">
+                  <Image
+                    src="/img/enroll.png"
+                    alt="Enroll Now"
+                    fill
+                    className="object-contain"
+                  />
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -81,7 +89,7 @@ export default function QualityBanner() {
           </div>
         </motion.div>
 
-        {/* 🔴 Static Red Border */}
+        {/* 🔴 Static Red Border — 🔧 UPDATED HEIGHT */}
         <div
           className="absolute bg-[#E85222]"
           style={{

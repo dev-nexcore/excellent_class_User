@@ -1,0 +1,167 @@
+.contactWrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch; /* Changed to stretch for equal height cards */
+  padding: 40px 20px;
+  background-color: #fff;
+}
+.contactCard {
+  flex: 1 1 300px;
+  padding: 24px;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contactCard:hover {
+  transform: translateY(-5px);
+}
+.contactCard h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 6px;
+  width: 80%; /* or any value like 80%, 100px, etc. */
+}
+
+.contactCard p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.contactInfo {
+  display: flex;
+  align-items: start;       /* ✅ Vertically centers icon and text */
+  gap: 10px;                 /* Space between icon and text */
+  /* background-color: #FF0000; */
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+.contactIcon { /* Reset margin-top as align-items: center handles vertical alignment */
+  color: #fff;
+  position: relative;
+  top: 13px;
+}
+/* Branch and Head Office specific styles */
+.branch {
+  background: linear-gradient(to bottom, #20356B, #20356B);
+}
+.head {
+  background-color:  #E85222;
+}
+/* Social Media Section */
+.socialFollow {
+  text-align: center;
+  padding: 15px 15px;
+  background-color: #E85222;
+  width: 100%;
+}
+.socialFollow h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  /* margin-bottom: 20px; */
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+  /* margin-top: 30px; */
+  padding: 28px;
+  /* background-color:green; */
+}
+.socialIcon {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  font-size: 160px;
+}
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+/* Social media specific colors - use separate classes instead of attribute selectors */
+.facebookIcon {
+  color: #1877F2 !important;
+}
+.youtubeIcon {
+  color: #FF0000 !important;
+}
+.instagramIcon {
+  color: #C13584 !important;
+}
+/* Removed .justdialImage styles as it's now an icon */
+
+/* Reach Us Section */
+.reachUs {
+  text-align: center;
+  padding: 15px 15px;
+  background-color: #20356B;
+  width: 100%;
+}
+.reachUs h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  /* margin-bottom: 20px; */
+  font-family: 'Poppins', sans-serif;
+}
+/* Map Container */
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+.mapContainer iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactWrapper {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+    .contactCard {
+    flex: 1 1 100%;
+  }
+    .socialIcons {
+    gap: 50px;
+  }
+    .socialIcon {
+    font-size: 120px !important;
+  }
+    /* Removed .justdialImage responsive styles */
+    .mapContainer iframe {
+    width: 95% !important;
+  }
+}
+@media (max-width: 480px) {
+  .socialIcons {
+    gap: 30px;
+  }
+    .socialIcon {
+    font-size: 100px !important;
+  }
+    /* Removed .justdialImage responsive styles */
+    .contactCard h3 {
+    font-size: 20px;
+  }
+    .contactCard p {
+    font-size: 14px;
+  }
+}

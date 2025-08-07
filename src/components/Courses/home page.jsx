@@ -20,7 +20,6 @@ function getAnimationClass(idx, total) {
 function useInView(threshold = 0.2) {
   const ref = useRef();
   const [inView, setInView] = useState(false);
-
   useEffect(() => {
     const observer = new window.IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
@@ -29,31 +28,24 @@ function useInView(threshold = 0.2) {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [threshold]);
-
   return [ref, inView];
 }
 
 // Add slug/href for each course (NO SPACES!)
-// ...rest of your code above
-
 const schoolCardData = [
   { title: "VIII - IX - S.S.C", href: "/courses/XII-IX-SSC" },
   { title: "ICSE (grade 8,9 & 10th)", href: "/courses/ICSE" },
   { title: "CBSE (grade 8,9 & 10th)", href: "/courses/CBSE" },
 ];
-
 const scienceCardData = [
   { title: "XI + XII", href: "/courses/XI+XII-Science" },
   { title: "Entrance Exam", href: "/courses/Entrance-Exam" },
 ];
-
 const commerceCardData = [
   { title: "XI + XII", href: "/courses/XI+XII-Commerce" },
   { title: "B.M.S+B.com+BAF", href: "/courses/B.M.S+B.com+BAF" },
   { title: "C.A Foundation", href: "/courses/C.A-Foundation" },
 ];
-
-// ...rest of your code below
 
 const SchoolCard = ({ title, animationClass, href }) => (
   <div className={`w-full max-w-xs bg-white rounded-xl overflow-hidden shadow-lg ${animationClass}`}>
@@ -75,13 +67,7 @@ const SchoolCard = ({ title, animationClass, href }) => (
 );
 
 const CourseSection = ({ title, data, cols = 3, animateOnScroll = false }) => {
-  const animationClasses = [
-    "animate-slide-in-left",
-    "animate-slide-in-top",
-    "animate-slide-in-right"
-  ];
   const [ref, inView] = animateOnScroll ? useInView(0.2) : [null, true];
-
   // For science section, use only 2 columns at all breakpoints
   const gridCols =
     title === "Science Section"
@@ -89,7 +75,6 @@ const CourseSection = ({ title, data, cols = 3, animateOnScroll = false }) => {
       : cols === 2
       ? "sm:grid-cols-2"
       : "sm:grid-cols-2 md:grid-cols-3";
-
   return (
     <div className="bg-gray-100 py-10 sm:py-14 md:py-16" ref={ref}>
       {/* Header */}

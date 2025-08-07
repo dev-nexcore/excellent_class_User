@@ -22,7 +22,7 @@ export default function StreamAndCourses() {
       title: "COMMERCE SECTION",
       image: "/Home/Rectangle 23.png",
       desc: "XI, XII, F.Y to T.Y.B.Com, BMS, BAF",
-      link: "/courses",
+      link: "/courses/B.M.S+B.com+BAF",
     },
   ];
 
@@ -34,7 +34,7 @@ export default function StreamAndCourses() {
   };
 
   return (
-    <section className="bg-white py-6">
+    <section className="bg-white py-2">
       <div className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl font-semibold text-black">
           Stream and Courses

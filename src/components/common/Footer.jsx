@@ -7,7 +7,7 @@ import { FaYoutube, FaFacebookF, FaInstagram } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-y-12 gap-x-36">
+      <div className="max-w-7xl mx-auto px-16 py-12 flex flex-col md:flex-row justify-between gap-y-12 gap-x-36">
         {/* Left Section: Column 1 */}
         <div className="flex-1 min-w-[250px]">
           <Image
@@ -17,7 +17,7 @@ export default function Footer() {
             height={60}
             className="mb-4"
           />
-          <p className="font-bold text-md leading-relaxed mb-4">
+          <p className="font-semibold text-md leading-relaxed mb-4">
             We at Excellent strongly believe that the best faculty creates the
             best students and that is why we have a faculty who are masters in
             their subjects.
@@ -65,10 +65,11 @@ export default function Footer() {
         </div>
 
         {/* Right Section: Columns 2 and 3 */}
-        <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-8 gap-y-8 ">
+        <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-1 gap-y-8 ">
           {/* Column 2 */}
-          <div className="flex-1 min-w-[180px]">
-            <h4 className="text-black text-md font-semibold uppercase mb-3 ">
+          <div className="flex-1 w-[150px] min-w-[120px]">
+
+            <h4 className="text-black text-md font-semibold uppercase mb-3  ">
               Main Menu
             </h4>
             <ul className="space-y-2 text-md text-[#2f4271]">
@@ -90,27 +91,28 @@ export default function Footer() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex-1 min-w-[180px] ">
-            <h4 className="text-black text-md font-semibold uppercase mb-3 ">
-              Our Courses
-            </h4>
-            <ul className="space-y-2 text-md text-[#2f4271]">
-              {[
-                "School Section",
-                "Science Section",
-                "Commerce Stream",
-                "CA Foundation",
-              ].map((course) => (
-                <li key={course}>
-                  <Link href={`/${course.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
-                      {course}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="flex-1 min-w-[180px]">
+  <h4 className="text-black text-md font-semibold uppercase mb-3">
+    Our Courses
+  </h4>
+  <ul className="space-y-2 text-md text-[#2f4271]">
+    {[
+      { name: "School Section", path: "/courses" },
+      { name: "Science Section", path: "/courses" },
+      { name: "Commerce Stream", path: "/courses" },
+      { name: "CA Foundation", path: "/courses/C.A-Foundation" },
+    ].map((course) => (
+      <li key={course.name}>
+        <Link href={course.path}>
+          <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
+            {course.name}
+          </span>
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
         </div>
       </div>
 

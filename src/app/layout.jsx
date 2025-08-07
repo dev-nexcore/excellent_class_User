@@ -6,6 +6,14 @@ import BreadCrumbs from "@/components/breadCrumbs/breadCrumbs";
 // Load fonts using next/font/google
 import { Poppins } from 'next/font/google';
 import { Radley } from 'next/font/google';
+import { Lisu_Bosa } from "next/font/google";
+
+const lisuBosa = Lisu_Bosa({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: '--font-lisu-bosa', // ✅ Needed to use in Tailwind
+});
 
 // Define font imports with variable names
 const poppins = Poppins({
@@ -31,7 +39,7 @@ export const metadata = {
 // Layout structure
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${radley.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${radley.variable} ${lisuBosa.variable} scrollbar-thin scrollbar-thumb-[#f26722] scrollbar-track-blue-900`}>
       <body className=" font- antialiased">
         <Navbar />
         <BreadCrumbs />

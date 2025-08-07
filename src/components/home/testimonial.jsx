@@ -1,115 +1,119 @@
-// "use client";
-
-// import React from "react";
-// import Link from "next/link";
-// import Image from "next/image";
-// // import { motion } from "framer-motion";
-
-// export default function Testimonial() {
-//   const images = Array(10).fill("/img2.png");
-
-//   return (
-//     <>
-//    <div className="w-[400px] h-[200px] bg-blue-600 text-white flex items-center justify-center rounded-md shadow-md">
-//   Blue Rectangle Box
-// </div>
-
-
-//       {/* 🧾 Testimonials Grid */}
-//       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 px-6 max-w-[1100px] mx-auto pb-12">
-//         {images.map((img, index) => (
-//           <motion.div
-//             key={index}
-//             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-//             whileInView={{ opacity: 1, x: 0 }}
-//             transition={{ duration: 0.6, ease: "easeOut" }}
-//             viewport={{ once: true }}
-//             className="overflow-hidden bg-white rounded-xl text-center py-8 mt-96"
-//           >
-//             <Image
-//               src={img}
-//               alt={`Testimonial ${index + 1}`}
-//               width={360}
-//               height={450}
-//               className="mx-auto rounded-md object-cover w-full h-auto"
-//               priority={index === 0}
-//             />
-//           </motion.div>
-//         ))}
-//       </div>
-
-//       {/* 📱 Responsive Styling */}
-//       <style jsx>{`
-//         @media (max-width: 768px) {
-//           .breadcrumb-header {
-//             flex-direction: column;
-//             font-size: 24px;
-//             height: auto;
-//             padding: 20px 10px;
-//             gap: 10px;
-//           }
-//         }
-//       `}</style>
-//     </>
-//   );
-// }
 "use client";
-
 import React from "react";
 import Image from "next/image";
 
 export default function Testimonial() {
-  const images = Array(10).fill("/img2.png");
-
+  const testimonials = [
+    {
+      name: "Ahmed Khan",
+      subtitle: "M.S (Ireland)",
+      quote:
+        "The institute have provided me a perfect launching pad from where I was propelled towards my goal. This institute has boosted my confidence manifold and this is one of the reasons of my achievement. I thank the institute for their all round support.",
+      photo: "/img/testimonialPohto.png",
+      logo: "/img/testimonialLogo.png",
+    },
+    {
+      name: "Nabeel Shaikh",
+      subtitle: "Pursuing MBBS from NASH Hospital",
+      quote:
+        "For any strong pillar the essential factor is its foundation. Excellent classes has been imparting and building the foundation of such great pillars. They have been always there for the supports and guidance whenever asked for. Truly a place where you emerge out to be a winner.",
+      photo: "/img/testimonialPohto.png",
+      logo: "/img/testimonialLogo.png",
+    },
+    {
+      name: "Ahmed Khan",
+      subtitle: "M.S (Ireland)",
+      quote:
+        "The institute have provided me a perfect launching pad from where I was propelled towards my goal. This institute has boosted my confidence manifold and this is one of the reasons of my achievement. I thank the institute for their all round support.",
+      logo: "/img/testimonialLogo.png",
+      photo: "/img/testimonialPohto.png",
+    },
+    {
+      name: "Nabeel Shaikh",
+      subtitle: "Pursuing MBBS from NASH Hospital",
+      quote:
+        "For any strong pillar the essential factor is its foundation. Excellent classes has been imparting and building the foundation of such great pillars. They have been always there for the supports and guidance whenever asked for. Truly a place where you emerge out to be a winner.",
+      logo: "/img/testimonialLogo.png",
+      photo: "/img/testimonialPohto.png",
+    },
+  ];
   return (
     <>
-      <div className="w-[400px] h-[200px] bg-blue-600 text-white flex items-center justify-center rounded-md shadow-md mb-8">
-        Blue Rectangle Box
+      {/* 🔷 Heading Banner */}
+      <div className="relative my-16 flex justify-center font-poppins">
+        <div className="relative w-[70vw] max-w-8xl">
+          <div
+            className="absolute left-1/2 top-0 -translate-x-1/2 z-0 w-[115%] h-full"
+            style={{
+              clipPath:
+                "polygon(0% 0%, 100% 0%, 94% 50%, 100% 100%, 0% 100%, 6% 50%)",
+              backgroundColor: "#ea580c",
+            }}
+          />
+          <div
+            className="relative z-20 text-center p-4 lg:p-10 text-white"
+            style={{
+              clipPath:
+                "polygon(0% 0%, 100% 0%, 94% 50%, 100% 100%, 0% 100%, 6% 50%)",
+              backgroundColor: "#1e3a8a",
+            }}
+          >
+            <h2 className="text-md sm:text-3xl md:text-4xl font-bold mb-3">
+              Our Students want to say something
+            </h2>
+          </div>
+        </div>
       </div>
-
-      {/* Manual Scrollable Image Slider (No Auto or Hover) */}
-      <div className="relative w-full max-w-[1100px] mx-auto h-[500px] bg-gray-100 rounded-xl overflow-hidden">
-        {/* Scrollable container */}
-        <div
-          className="flex h-full overflow-x-auto scrollbar-hide"
-          style={{
-            scrollSnapType: "x mandatory",
-          }}
-        >
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 flex items-center justify-center p-8"
-              style={{ width: "100%", scrollSnapAlign: "start" }}
-            >
-              <div className="bg-white rounded-xl shadow-lg p-6 max-w-md w-full">
-                <Image
-                  src={img}
-                  alt={`Testimonial ${index + 1}`}
-                  width={360}
-                  height={450}
-                  className="mx-auto rounded-md object-cover w-full h-auto"
-                  priority={index === 0}
-                />
-                <div className="mt-4 text-center">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Testimonial {index + 1}
-                  </h3>
-                  <p className="text-gray-600 text-sm mt-2">
-                    Scroll horizontally with your mouse
-                  </p>
-                </div>
+      {/* 🔷 Testimonials */}
+      <div className="flex flex-col gap-10 px-4 sm:px-6 lg:px-20 max-w-7xl mx-auto py-6">
+        {Array.from({ length: Math.ceil(testimonials.length / 2) }).map(
+          (_, rowIndex) => {
+            const pair = testimonials.slice(rowIndex * 2, rowIndex * 2 + 2);
+            return (
+              <div
+                key={rowIndex}
+                className="flex flex-col lg:flex-row gap-10 justify-center items-stretch"
+              >
+                {pair.map((testimonial, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row w-full max-w-[600px] flex-1"
+                  >
+                    {/* 🔹 Text Left */}
+                    <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col items-center justify-center text-center bg-white">
+                      <Image
+                        src={testimonial.logo || "/placeholder.svg"}
+                        alt="Goal Achiever Logo"
+                        width={180}
+                        height={50}
+                        className="mb-3"
+                      />
+                      <div className="bg-[#20356B] text-white text-base px-6 py-2 rounded-md mt-3 mb-5">
+                        {testimonial.name}
+                        <br />
+                        <span className="text-[13px] text-gray-200">
+                          {testimonial.subtitle}
+                        </span>
+                      </div>
+                      <p className="text-[12px] text-gray-700 leading-relaxed px-4">
+                        {testimonial.quote}
+                      </p>
+                    </div>
+                    {/* 🔹 Image Right */}
+                    <div className="w-full md:w-1/2 relative min-h-[250px]">
+                      <Image
+                        src={testimonial.photo || "/placeholder.svg"}
+                        alt={testimonial.name}
+                        fill
+                        className="object-fill rounded-br-2xl md:rounded-bl-2xl md:rounded-br-none"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Instructions */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-10">
-          <p className="text-gray-400 text-lg font-light">
-            Scroll horizontally to explore
-          </p>
-        </div>
+            );
+          }
+        )}
       </div>
     </>
   );

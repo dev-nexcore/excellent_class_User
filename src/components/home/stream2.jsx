@@ -17,7 +17,7 @@ export default function ExamSection() {
       image: "/Home/Rectangle 35.png",
       desc: "CA Foundation",
       direction: "right",
-      link: "/courses/C.A-Foundation  ",
+      link: "/courses/C.A-Foundation",
     },
   ];
 

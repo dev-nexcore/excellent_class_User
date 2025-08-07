@@ -8,7 +8,7 @@ const testimonials = [
       "It was a truly valuable learning experience with the Institute. It has provided me with confidence and self belief. It has driven me to perform to my potential and I owe them to what I am now.",
     name: "Dr. Vikas Gupta",
     title: "M.D ( Paediatrician )",
-    imgSrc: "/placeholder.svg?height=112&width=112",
+    imgSrc: "/img/self.jpg",
     alt: "Dr. Vikas Gupta",
   },
   {
@@ -16,7 +16,8 @@ const testimonials = [
       "The mentors were incredibly supportive and the curriculum was practical. I gained skills that I could apply immediately in real-world scenarios.",
     name: "Ms. Anjali Sharma",
     title: "Software Engineer",
-    imgSrc: "/placeholder.svg?height=112&width=112",
+        imgSrc: "/img/self.jpg",
+
     alt: "Anjali Sharma",
   },
   {
@@ -24,7 +25,8 @@ const testimonials = [
       " From day one, the learning environment pushed me to grow. My confidence skyrocketed and I now feel prepared for industry challenges.",
     name: "Mr. Rohit Patel",
     title: "Full Stack Developer",
-    imgSrc: "/placeholder.svg?height=112&width=112",
+        imgSrc: "/img/self.jpg",
+
     alt: "Rohit Patel",
   },
 ]
@@ -53,20 +55,20 @@ function CardContent({ testimonial }) {
         }}
       >
         {/* Avatar */}
-        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
-          <div className="rounded-full border-4 border-[#1f2d56] p-1">
-            <div className="rounded-full ring-4 ring-[#f26722] overflow-hidden w-38 h-38 bg-white">
-              <Image
-                src={testimonial.imgSrc || "/placeholder.svg"}
-                alt={testimonial.alt}
-                width={112}
-                height={112}
-                className="object-cover rounded-full"
-                priority
-              />
-            </div>
-          </div>
-        </div>
+<div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
+  <div className="rounded-full border-4 border-[#1f2d56] p-1">
+    <div className="rounded-full ring-4 ring-[#f26722] overflow-hidden w-38 h-38 bg-white relative">
+      <Image
+        src={testimonial.imgSrc || "/placeholder.svg"}
+        alt={testimonial.alt}
+        fill
+        className="object-cover rounded-full"
+        priority
+      />
+    </div>
+  </div>
+</div>
+
         {/* Stars */}
         <div className="flex justify-center mb-4 mt-2">
           {Array.from({ length: 5 }).map((_, idx) => (
@@ -176,7 +178,7 @@ export default function HomeTestimonial() {
       {/* Card Container with perspective */}
       <div
         id="testimonial-scroll-container"
-        className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-hidden overflow-visible"
+        className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-visible "
       >
         {/* FIXED: Invisible static copy to preserve original size/height */}
         <div
