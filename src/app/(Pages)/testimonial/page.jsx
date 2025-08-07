@@ -1,5 +1,5 @@
 
-import Testimonial from '@/components/home/testimonial'
+import Testimonial from '@/components/home/Testimonial'
 import React from 'react'
 
 export default function () {

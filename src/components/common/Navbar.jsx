@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -11,7 +11,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => {
+      // More responsive breakpoint handling
+      setIsMobile(window.innerWidth <= 800);
+    };
+    
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -28,164 +32,95 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      style={{
-        background: "#fff",
-        padding: "12px 35px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        boxShadow: "0 1px 6px rgba(0, 0, 0, 0.08)",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-      {/* Logo */}
-      <div>
+    <nav className="sticky top-0 z-[1000] bg-white shadow-md px-[4vw] sm:px-[6vw] py-3 flex items-center justify-between">
+      {/* Logo - Make it smaller on mobile */}
+      <div className="flex-shrink-0">
         <Link href="/">
           <img
             src="/Logo/logo.png"
             alt="Excellent Classes Logo"
-            style={{ height: "40px", width: "auto", cursor: "pointer" }}
+            className="h-8 sm:h-10 w-auto cursor-pointer"
           />
         </Link>
       </div>
 
-      {/* Hamburger Icon on Mobile */}
-      {isMobile ? (
-        <div
+      {/* Hamburger Icon */}
+      {isMobile && (
+        <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ fontSize: "24px", cursor: "pointer", color: "#e65100" }}
+          className="text-orange-700 text-[24px] cursor-pointer focus:outline-none"
+          aria-label="Toggle menu"
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
-      ) : (
-        // Desktop Navigation Links
-        <div style={{ display: "flex", gap: "48px", flex: 1, justifyContent: "center" }}>
-          {navLinks.map((item) => {
-            const isActive = pathname === item.path;
-            return (
-              <Link key={item.name} href={item.path}>
-                <div style={{ position: "relative", paddingBottom: "4px" }}>
-                  <span
-                    style={{
-                      fontWeight: 600,
-                      color: "#000", // ✅ Active & Inactive both now black
-                      cursor: "pointer",
-                      position: "relative",
-                      display: "inline-block",
-                    }}
-                  >
-                    {item.name}
-                  </span>
+        </button>
+      )}
 
-                  {/* Hover underline (orange) */}
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    style={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      height: "2px",
-                      backgroundColor: "#e65100", // Hover underline (orange)
-                    }}
-                  />
-
-                  {/* Active state underline (blue) */}
-                  {isActive && (
+      {/* Desktop Navigation */}
+      {!isMobile && (
+        <>
+          <div className="flex gap-4 sm:gap-[48px] flex-1 justify-center">
+            {navLinks.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <Link key={item.name} href={item.path}>
+                  <div className="relative pb-1">
+                    <span className="font-semibold text-black cursor-pointer inline-block text-sm sm:text-base">
+                      {item.name}
+                    </span>
                     <motion.div
                       initial={{ width: 0 }}
-                      animate={{ width: "80%" }}
-                      transition={{ duration: 0.3 }}
-                      style={{
-                        position: "absolute",
-                        bottom: 0,
-                        left: 0,
-                        height: "2px",
-                        backgroundColor: "#20356B", // ✅ Blue active underline
-                      }}
+                      whileHover={{ width: "100%" }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="absolute bottom-0 left-0 h-[2px] bg-orange-700"
                     />
-                  )}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+                    {isActive && (
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "80%" }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute bottom-0 left-0 h-[2px] bg-[#20356B]"
+                      />
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+          <div className="flex-shrink-0 ml-4">
+            <Link href="/login">
+              <span className="bg-orange-700 text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-md font-semibold cursor-pointer whitespace-nowrap inline-block shadow-md text-sm sm:text-base">
+                Login
+              </span>
+            </Link>
+          </div>
+        </>
       )}
 
-      {/* Login Button - Desktop Only */}
-      {!isMobile && (
-        <div style={{ flexShrink: 0 }}>
-          <Link href="/login">
-            <span
-              style={{
-                background: "#e65100",
-                color: "#fff",
-                padding: "6px 16px",
-                borderRadius: "6px",
-                fontWeight: "600",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                display: "inline-block",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-              }}
-            >
-              Login
-            </span>
-          </Link>
-        </div>
-      )}
-
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Menu */}
       {isMobile && menuOpen && (
-        <div
-          style={{
-            position: "absolute",
-            top: "65px",
-            left: 0,
-            width: "100%",
-            backgroundColor: "#fff",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
-            padding: "20px 0",
-            zIndex: 999,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
+        <div className="fixed top-[65px] left-0 min-w-screen bg-white shadow-lg py-3 z-[999] flex flex-col items-center gap-3 px-4 overflow-y-auto max-h-[calc(100vh-65px)]">
           {navLinks.map((item) => (
-            <Link key={item.name} href={item.path} onClick={() => setMenuOpen(false)}>
+            <Link 
+              key={item.name} 
+              href={item.path} 
+              onClick={() => setMenuOpen(false)}
+              className="w-full text-center py-2 border-b border-gray-100"
+            >
               <span
-                style={{
-                  fontWeight: 600,
-                  color: "#000",
-                  borderBottom: pathname === item.path ? "2px solid #20356B" : "none",
-                  paddingBottom: "4px",
-                  cursor: "pointer",
-                }}
+                className={`font-semibold text-black ${
+                  pathname === item.path ? "text-orange-700" : ""
+                }`}
               >
                 {item.name}
               </span>
             </Link>
           ))}
-
-          {/* ✅ Login button added inside mobile menu */}
-          <Link href="/login" onClick={() => setMenuOpen(false)}>
-            <span
-              style={{
-                background: "#e65100",
-                color: "#fff",
-                padding: "6px 16px",
-                borderRadius: "6px",
-                fontWeight: "600",
-                cursor: "pointer",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-              }}
-            >
+          <Link 
+            href="/login" 
+            onClick={() => setMenuOpen(false)}
+            className="w-full text-center mt-2"
+          >
+            <span className="bg-orange-700 text-white px-4 py-2 rounded-md font-semibold cursor-pointer shadow-md inline-block w-full max-w-[200px]">
               Login
             </span>
           </Link>

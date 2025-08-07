@@ -17,7 +17,7 @@ export default function BreadCrumbs() {
     const segments = path.split("/").filter((seg) => seg !== "");
 
     return (
-        <div className="relative h-40">
+        <div className="relative h-32 md:h-40">  {/* Reduced height on mobile */}
             <Image
                 src={AboutBanner}
                 alt="Office workspace background"
@@ -26,12 +26,12 @@ export default function BreadCrumbs() {
                 priority
             />
             <div className="relative z-10 flex items-center justify-center h-full">
-                <nav className="text-white text-3xl font-bold flex">
+                <nav className="text-white text-lg sm:text-xl md:text-3xl font-bold flex flex-wrap justify-center px-4">  {/* Added responsive text sizes and padding */}
                     {/* Home link */}
                     <Link href="/" className="hover:underline">HOME</Link>
 
                     {/* Separator after HOME */}
-                    {segments.length > 0 && <span className="mx-3">{">>>"}</span>}
+                    {segments.length > 0 && <span className="mx-2 md:mx-3">{">>>"}</span>}  {/* Reduced margin on mobile */}
 
                     {/* Dynamic segments */}
                     {segments.map((segment, index) => {
@@ -47,7 +47,7 @@ export default function BreadCrumbs() {
                                 </Link>
                                 {/* Add >>> separator except for last segment */}
                                 {index < segments.length - 1 && (
-                                    <span className="mx-3">{">>>"}</span>
+                                    <span className="mx-2 md:mx-3">{">>>"}</span>  
                                 )}
                             </span>
                         );

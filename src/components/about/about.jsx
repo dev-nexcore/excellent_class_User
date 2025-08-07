@@ -39,7 +39,7 @@ const rightInView = useInView(rightRef, { once: true });
    {/* Main Content Section - Made Responsive */}
         <div className="py-8 md:py-16 px-4 flex justify-center w-full mb-4 md:mb-[6vw]">
           <div className="">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-4 justify-evenly items-center w-full md:w-[90vw] px-4 md:px-6">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-4 justify-evenly items-center w-full md:w-full max-w-[90vw] px-4 md:px-6">
 
               {/* Left Image with animation */}
               <motion.div
@@ -65,7 +65,7 @@ const rightInView = useInView(rightRef, { once: true });
                 initial={{ opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="flex flex-col space-y-4 md:space-y-6 lg:space-y-8 px-4 md:px-8 py-4 md:py-6 w-full sm:w-[90vw] md:w-[50vw] h-auto md:h-[30vw]"
+                className="flex flex-col space-y-4 md:space-y-6 lg:space-y-8 px-4 md:px-8 py-4 md:py-6 w-full sm:w-full max-w-[90vw] md:w-[50vw] h-auto md:h-[30vw]"
               >
                 {/* Badge - animate from top */}
                 <motion.div
@@ -169,7 +169,7 @@ const rightInView = useInView(rightRef, { once: true });
     viewport={{ once: true, amount: 0.4 }} // 👈 Trigger animation at 20%
     className="w-full lg:w-[45vw] flex flex-col items-center justify-center py-[6vw]"
   >
-    <div className="relative w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
+    <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
       {/* Decorative SVG */}
       <img
         src="/img/squareDesign.svg"
@@ -194,7 +194,7 @@ const rightInView = useInView(rightRef, { once: true });
 
 
       {/* 4 div content */}
-   <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[1vw] overflow-visible font-poppins">
+   <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[9vw] overflow-visible font-poppins">
   <img
     src="/img/squareDesign.svg"
     alt="Left background design"
@@ -322,7 +322,7 @@ const rightInView = useInView(rightRef, { once: true });
             <Image
               src={Principle}
               alt="Principal"
-              className="w-full h-[78vw] md:h-[60vw] lg:h-[60vw] sm:h-[90vw] object-cover rounded-md"
+              className=" h-[78vw] md:h-[60vw] lg:h-[60vw] w-full max-w-[90vw] object-cover rounded-md"
             />
             <img
               src="/img/squareDesign.svg"
