@@ -245,7 +245,7 @@ const rightInView = useInView(rightRef, { once: true });
       animate={inViewLeft2 ? { x: 0, y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.6 }}
       viewport={{ amount: 0.4, once: true }}
-      className="w-full md:w-[45vw] lg:w-[27vw] h-[45vw] md:h-[22vw] lg:h-[17vw] bg-[#F9B233] text-black py-[2vw] md:py-[2vw] lg:py-[1vw] rounded-bl-[60px] md:rounded-bl-[90px] lg:rounded-bl-[120px] shadow-lg ml-auto -mt-[0.3vw] mr-[3vw]"
+      className="w-full md:w-[45vw] lg:w-[28vw] h-[45vw] md:h-[22vw] lg:h-[19vw] bg-[#F9B233] text-black py-[2vw] md:py-[2vw] lg:py-[1vw] rounded-bl-[60px] md:rounded-bl-[90px] lg:rounded-bl-[120px] shadow-lg ml-auto -mt-[0.3vw] mr-[3vw]"
     >
       <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">CORE VALUES</h2>
       <ul className="list-disc list-inside space-y-1 text-xs md:text-sm leading-relaxed px-6 md:px-8 lg:px-12 font-medium">
