@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
 
                 {/* Text Section - Below on Mobile */}
                 <div className="text-white space-y-6 order-2">
-                  <p className="text-base leading-8 lg:leading-8 md:leading-10 sm:leading-8 sm:text-lg lg:text-2xl opacity-90">
+                  <p className="text-base leading-5 lg:leading-8 md:leading-10 sm:leading-8 sm:text-lg lg:text-2xl opacity-90">
                     We at Excellent strongly believe that the best faculty
                     creates the best students and that is why we have a faculty
                     who are masters in their subjects. We offer our students
