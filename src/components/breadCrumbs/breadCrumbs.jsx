@@ -37,7 +37,6 @@ export default function BreadCrumbs() {
                     {segments.map((segment, index) => {
                         const href = "/" + segments.slice(0, index + 1).join("/");
                         const label = decodeURIComponent(segment)
-                            .replace(/-/g, " ")
                             .toUpperCase();
 
                         return (
