@@ -44,7 +44,7 @@ const scienceCardData = [
 ];
 const commerceCardData = [
   { title: "XI + XII", href: "/courses/XI-XII-Commerce" },
-  { title: "B.M.S+B.com+BAF", href: "/courses/B.M.S+B.com+BAF" },
+  { title: "B.M.S+B.com+BAF", href: "/courses/B.M.S-B.com-BAF" },
   { title: "C.A Foundation", href: "/courses/C.A-Foundation" },
 ];
 

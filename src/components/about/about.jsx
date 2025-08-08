@@ -163,33 +163,36 @@ const rightInView = useInView(rightRef, { once: true });
 
   {/* Right Content */}
   <motion.div
-    initial={{ opacity: 0, x: 100 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.4 }}
-    viewport={{ once: true, amount: 0.4 }} // 👈 Trigger animation at 20%
-    className="w-full lg:w-[45vw] flex flex-col items-center justify-center py-[6vw]"
-  >
-    <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
-      {/* Decorative SVG */}
-      <img
-        src="/img/squareDesign.svg"
-        alt="SVG Decoration"
-        className="absolute top-[100vh] md:top-[70vw] lg:top-[60vw] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
-      />
+  initial={{ opacity: 0, x: 100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.4 }}
+  viewport={{ once: true, amount: 0.4 }}
+  className="w-full lg:w-[45vw] flex flex-col items-center justify-center py-[6vw]"
+>
+  <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
+    {/* Decorative SVG */}
+    <img
+      src="/img/squareDesign.svg"
+      alt="SVG Decoration"
+      className="absolute top-[100vh] md:top-[70vw] lg:top-[60vw] right-0 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
+    />
 
-      {/* Image on Top */}
+    {/* Image on Top */}
+    <a href="/img/BrochureExcellentCalsses.pdf" download>
       <Image
         src={ExcellentBroucher}
         alt="Excellent Broucher"
-        className="w-[80vw] md:w-[50vw] lg:w-[36vw] relative z-10"
+        className="w-[80vw] md:w-[50vw] lg:w-[36vw] relative z-10 cursor-pointer"
       />
-    </div>
+    </a>
+  </div>
 
-    {/* Caption Text */}
-    <p className="text-center text-[5vw] md:text-[3vw] lg:text-2xl font-bold font-poppins uppercase py-6 z-20 mt-8">
-      Excellent Classes Broucher
-    </p>
-  </motion.div>
+  {/* Caption Text */}
+  <p className="text-center text-[5vw] md:text-[3vw] lg:text-2xl font-bold font-poppins uppercase py-6 z-20 mt-8">
+    Excellent Classes Broucher
+  </p>
+</motion.div>
+
 </div>
 
 
@@ -198,7 +201,7 @@ const rightInView = useInView(rightRef, { once: true });
   <img
     src="/img/squareDesign.svg"
     alt="Left background design"
-    className="absolute top-[20vw] md:top-[12vw] -left-[10vw] w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
+    className="absolute top-[20vw] md:top-[12vw] -left-[40vw] w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
   />
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
