@@ -37,7 +37,7 @@ const rightInView = useInView(rightRef, { once: true });
 
         {/* Main Content Section */}
    {/* Main Content Section - Made Responsive */}
-        <div className="py-8 md:py-16 px-4 flex justify-center w-full mb-4 md:mb-[6vw]">
+        <div className="py-8 md:py-16 px-4 flex justify-center w-full  md:mb-[6vw]">
           <div className="">
             <div className="flex flex-col md:flex-row gap-8 md:gap-4 justify-evenly items-center w-full md:w-full max-w-[90vw] px-4 md:px-6">
 
@@ -126,7 +126,7 @@ const rightInView = useInView(rightRef, { once: true });
 
       </div>
       {/* second hero section */}
-      <div className='bg-[#E85222] flex justify-center items-center py-[1.7vw] px-12 -mt-[8vw] mb-[4vw]'>
+      <div className='bg-[#E85222] flex justify-center items-center py-[1.7vw] px-12 -mt-[7vw] mb-[1vw]'>
         <div className='text-3xl font-semibold capitalize  text-white text-center tracking-wide'> our Story</div>
       </div>
       <div className="flex flex-col lg:flex-row justify-evenly px-4 py-2 gap-6 -mt-[2vw]">
@@ -163,42 +163,45 @@ const rightInView = useInView(rightRef, { once: true });
 
   {/* Right Content */}
   <motion.div
-    initial={{ opacity: 0, x: 100 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.4 }}
-    viewport={{ once: true, amount: 0.4 }} // 👈 Trigger animation at 20%
-    className="w-full lg:w-[45vw] flex flex-col items-center justify-center py-[6vw]"
-  >
-    <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
-      {/* Decorative SVG */}
-      <img
-        src="/img/squareDesign.svg"
-        alt="SVG Decoration"
-        className="absolute top-[100vw] md:top-[70vw] lg:top-[60vw] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
-      />
+  initial={{ opacity: 0, x: 100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.4 }}
+  viewport={{ once: true, amount: 0.4 }}
+  className="w-full lg:w-[45vw] flex flex-col items-center justify-center py-[6vw]"
+>
+  <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
+    {/* Decorative SVG */}
+    <img
+      src="/img/squareDesign.svg"
+      alt="SVG Decoration"
+      className="absolute top-[100vh] md:top-[70vw] lg:top-[60vw] right-0 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
+    />
 
-      {/* Image on Top */}
+    {/* Image on Top */}
+    <a href="/img/BrochureExcellentCalsses.pdf" download>
       <Image
         src={ExcellentBroucher}
         alt="Excellent Broucher"
-        className="w-[80vw] md:w-[50vw] lg:w-[36vw] relative z-10"
+        className="w-[80vw] md:w-[50vw] lg:w-[36vw] relative z-10 cursor-pointer"
       />
-    </div>
+    </a>
+  </div>
 
-    {/* Caption Text */}
-    <p className="text-center text-[5vw] md:text-[3vw] lg:text-2xl font-bold font-poppins uppercase py-6 z-20 mt-8">
-      Excellent Classes Broucher
-    </p>
-  </motion.div>
+  {/* Caption Text */}
+  <p className="text-center text-[5vw] md:text-[3vw] lg:text-2xl font-bold font-poppins uppercase py-6 z-20 mt-8">
+    Excellent Classes Broucher
+  </p>
+</motion.div>
+
 </div>
 
 
       {/* 4 div content */}
-   <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[9vw] overflow-visible font-poppins">
+   <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[9vw] overflow-visible font-poppins ">
   <img
     src="/img/squareDesign.svg"
     alt="Left background design"
-    className="absolute top-[20vw] md:top-[12vw] -left-[10vw] w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
+    className="absolute top-[20vw] md:top-[12vw] -left-[40vw] w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
   />
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

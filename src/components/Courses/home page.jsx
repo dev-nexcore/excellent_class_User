@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import HomeTestimonial from "../home/HomeTestimonial";
 
 // Animation class assignment helper
 function getAnimationClass(idx, total) {
@@ -43,7 +44,7 @@ const scienceCardData = [
 ];
 const commerceCardData = [
   { title: "XI + XII", href: "/courses/XI-XII-Commerce" },
-  { title: "B.M.S+B.com+BAF", href: "/courses/B.M.S+B.com+BAF" },
+  { title: "B.M.S+B.com+BAF", href: "/courses/B.M.S-B.com-BAF" },
   { title: "C.A Foundation", href: "/courses/C.A-Foundation" },
 ];
 
@@ -76,16 +77,16 @@ const CourseSection = ({ title, data, cols = 3, animateOnScroll = false }) => {
       ? "sm:grid-cols-2"
       : "sm:grid-cols-2 md:grid-cols-3";
   return (
-    <div className="bg-gray-100 py-10 sm:py-14 md:py-16" ref={ref}>
+    <div className="bg-gray-100 pb-9 " ref={ref}>
       {/* Header */}
-      <div className="bg-blue-900 py-6 sm:py-8 mb-8 sm:mb-12 md:mb-16">
+      <div className="bg-blue-900 py-6 sm:py-8  sm:mb-12 md:mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-white text-center">
           {title}
         </h2>
       </div>
       {/* Cards Grid */}
       <div
-        className={`max-w-6xl mx-auto px-2 sm:px-4 grid grid-cols-1 ${gridCols} gap-4 sm:gap-6 md:gap-8 justify-items-center w-full`}
+        className={`max-w-6xl mx-auto px-2  py-4 sm:px-4 grid grid-cols-1 ${gridCols} gap-4 sm:gap-6 md:gap-8 justify-items-center w-full`}
       >
         {data.map((card, idx) => (
           <SchoolCard

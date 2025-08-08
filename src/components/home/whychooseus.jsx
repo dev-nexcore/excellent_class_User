@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
 
       <div className="relative">
         {/* Orange Strip Behind SVG - Mobile Responsive */}
-        <div className="absolute top-[50px] md:top-[70px] left-0 right-0 h-[60px] md:h-[90px] lg:h-[140px] xl:h-[150px] bg-[#e94f1d] z-0" />
+        <div className="absolute top-[50px] md:top-[50px] left-0 right-0 h-[60px] md:h-[90px] lg:h-[140px] xl:h-[150px] bg-[#e94f1d] z-0" />
 
         {/* SVG Wave Background */}
         <div className="min-h-[100vh] relative overflow-hidden">
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 
                 {/* Image Section - Mobile First */}
-                <div className="flex justify-center lg:justify-start order-1 lg:order-none mb-4 md:mb-0">
+                <div className="flex justify-center lg:justify-start order-1 lg:order-none mb-4 md:mb-0 lg:pl-18">
                   <div className="relative w-[160px] sm:w-[200px] md:w-[280px] lg:w-[350px] xl:w-[400px] lg:max-w-lg">
                     <div className="aspect-square relative">
                       <Image
