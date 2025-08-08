@@ -178,7 +178,7 @@ export default function HomeTestimonial() {
       {/* Card Container with perspective */}
       <div
         id="testimonial-scroll-container"
-        className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-visible "
+        className="relative w-full max-w-9xl h-[450px] px-4 sm:px-0 mx-auto overflow-hidden "
       >
         {/* FIXED: Invisible static copy to preserve original size/height */}
         <div

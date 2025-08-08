@@ -22,7 +22,7 @@ export default function ExamSection() {
   ];
 
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-10 overflow-hidden">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
         {exams.map((exam, idx) => (
           <motion.div
