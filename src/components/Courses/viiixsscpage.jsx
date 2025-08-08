@@ -7,7 +7,7 @@ export default function VIIIIXsscpage() {
       
       {/* Unified Background Circle */}
       <div
-  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 
+  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
              w-[85vw] h-[540vw] 
              sm:w-[100vw] sm:h-[200vw] 
              md:w-[80vw] md:h-[180vw] 
