@@ -54,14 +54,14 @@ export default function XIXIIScience() {
               <table className="table-auto w-full text-left rounded-xl overflow-hidden">
                 <thead className="bg-[#eb4b26] text-white text-lg uppercase">
                   <tr>
-                    <th className="px-4 py-3">Date of Commencement</th>
+                    <th className="px-4 py-3 text-center">Date of Commencement</th>
                     <th className="px-4 py-3">Batch</th>
                     <th className="px-4 py-3">Regular Timings</th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#152f63] text-white text-lg">
                   <tr>
-                    <td className="px-4 text-2xl py-3 font-semibold" rowSpan={4}>
+                    <td className="px-4 text-2xl py-3 font-semibold text-center" rowSpan={4}>
                       1st Week of May <br />/ June / July
                     </td>
                     <td className="px-4 py-3">Team F₁</td>
@@ -121,14 +121,14 @@ export default function XIXIIScience() {
               <table className="table-auto w-full text-left rounded-xl overflow-hidden">
                 <thead className="bg-[#eb4b26] text-white text-lg uppercase">
                   <tr>
-                    <th className="px-4 py-3">Date of Commencement</th>
+                    <th className="px-4 py-3 text-center">Date of Commencement</th>
                     <th className="px-4 py-3">Batch</th>
                     <th className="px-4 py-3">Regular Timings</th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#152f63] text-white text-lg">
                   <tr>
-                    <td className="px-4 text-2xl py-3" rowSpan={4}>
+                    <td className="px-4 text-2xl py-3 text-center ml-20" rowSpan={4}>
                       1st Week <br /> of April
                     </td>
                     <td className="px-4 py-3">Team S₁</td>
