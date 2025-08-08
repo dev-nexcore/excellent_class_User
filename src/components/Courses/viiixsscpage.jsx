@@ -7,7 +7,7 @@ export default function VIIIIXsscpage() {
       
       {/* Unified Background Circle */}
       <div
-  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 
              w-[85vw] h-[540vw] 
              sm:w-[100vw] sm:h-[200vw] 
              md:w-[80vw] md:h-[180vw] 
@@ -25,7 +25,7 @@ export default function VIIIIXsscpage() {
           </h2>
 
           <div className="mt-6 px-2 sm:px-4 text-sm sm:text-base md:text-lg  text-black max-w-3xl mx-auto">
-            <p className="mb-3 font-semibold text-[#0b2b6a] text-base sm:text-lg md:text-xl uppercase">
+            <p className="mb-3 font-semibold text-[#0b2b6a] text-base sm:text-lg md:text-xl uppercase m-10">
               Batch Timings – 2:30 – 5:00 pm
             </p>
             <ul className="space-y-2 text-base sm:text-lg md:text-xl pl-5 sm:pl-6">

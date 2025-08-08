@@ -4,17 +4,17 @@ import React from 'react';
 export default function ICSEpage() {
   return (
     <div className="relative w-full mt-[20px] min-h-screen bg-white overflow-hidden">
-      
+
       {/* 🔶 Oval Background Shape */}
-       <div
-  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+      <div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
              w-[83vw] h-[400vw] 
              sm:w-[80vw] sm:h-[190vw] 
              md:w-[80vw] md:h-[180vw] 
              lg:w-[70vw] lg:h-[98vw] 
              rounded-full z-0"
-  style={{ background: '#E85122', opacity: '0.1' }}
-></div>
+        style={{ background: '#E85122', opacity: '0.1' }}
+      ></div>
 
       <div className="relative z-10 max-w-5xl xl:max-w-6xl mx-auto px-3 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 font-[Poppins]">
 
@@ -28,16 +28,16 @@ export default function ICSEpage() {
         {/* Toppers Image */}
         <div className="flex justify-center mb-6 sm:mb-8 md:mb-10">
           <div className="border-4 border-black rounded-lg overflow-hidden shadow-lg w-full max-w-4xl">
-            <img 
-              src="/course image folder/CourseICSE.png" 
-              alt="Grade 10 Toppers 2018-2022" 
+            <img
+              src="/course image folder/CourseICSE.png"
+              alt="Grade 10 Toppers 2018-2022"
               className="w-full h-auto object-cover"
             />
           </div>
         </div>
 
         {/* Batch Details Content */}
-        <div className="mb-8 sm:mb-10 md:mb-12 text-lg sm:text-xl md:text-2xl text-black leading-relaxed space-y-6">
+        <div className="mb-8 sm:mb-10 md:mb-12 text-base sm:text-lg md:text-xl space-y-2 text-black leading-relaxed space-y-4 m-10">
           <p>
             Excellent Classes has been catering to the S.S.C. students from the past 33 years and producing spectacular results. We are also imparting education to post S.S.C. students in XI, XII (Science and Commerce) for undergraduate programs. With changing times and parents opting for ICSE Board for their children, we have ventured into imparting education for ICSE Board from the last 9 years.
           </p>
