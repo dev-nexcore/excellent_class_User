@@ -17,7 +17,7 @@ export default function page() {
       
       <StreamAndCourses/>
       <ExamSection/>
-      <HomeTestimonial/>
+     
       
     </div>
   );
