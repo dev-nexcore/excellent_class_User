@@ -172,7 +172,7 @@ const rightInView = useInView(rightRef, { once: true });
   <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
     {/* Decorative SVG */}
 <img
-  src="/img/squareDesign.svg"
+  src="/img/SquareDesign.svg"
   alt="SVG Decoration"
   className="absolute top-[40vh] md:top-[50vw] lg:top-[30vw] right-[-10vw] md:right-[-6vw] lg:right-[-4vw] w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
 />
@@ -200,7 +200,7 @@ const rightInView = useInView(rightRef, { once: true });
       {/* 4 div content */}
    <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[9vw] overflow-visible font-poppins ">
 <img
-  src="/img/squareDesign.svg"
+  src="/img/SquareDesign.svg"
   alt="Left background design"
   className="absolute 
              top-[175vw] sm:top-[25vw] md:top-[15vw] lg:top-[12vw] 
@@ -335,7 +335,7 @@ const rightInView = useInView(rightRef, { once: true });
               className=" h-[78vw] md:h-[60vw] lg:h-[60vw] w-full max-w-[90vw] object-cover rounded-md"
             />
             <img
-              src="/img/squareDesign.svg"
+              src="/img/SquareDesign.svg"
               alt="Decorative SVG"
               className="w-[20vw] md:w-[12vw] lg:w-[15vw] mt-[-2.5vw] -mb-[1vw] absolute -right-[10vw] md:-right-[6vw] lg:-right-[8vw] z-0"
             />

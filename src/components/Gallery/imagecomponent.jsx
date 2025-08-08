@@ -5,7 +5,7 @@ import FlatBottomImageComponent from './flatBottomImageComponent';
 function ImageComponent() {
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="h-auto bg-white">
 
         {/* Photos Header */}
         <section className="bg-[#20356B] text-white text-center pt-3 pb-1 mb-10">
@@ -13,17 +13,18 @@ function ImageComponent() {
         </section>
 
         {/* Photo Rows */}
-        <div className="flex flex-col items-center  justify-center md:-mt-20 sticky top-0 z-[30] shadow-md px-4 sm:px-0 sm:-mt-300">
+        <div className="flex flex-col items-center  justify-center md:-mt-20 sticky top-0 z-[30] shadow-md px-4 -mt-36 ">
           <CurvedBottomImageComponent />
         </div>
 
-        <div className="flex flex-col items-center justify-center md:-mt-30 sm:-mt-500 bg-white sticky -top-10 z-[30] -py-10 shadow-md px-4  sm:px-0">
-          <FlatBottomImageComponent />
-        </div>
+       <div className="flex flex-col items-center justify-center md:-mt-30 -mt-[18rem] sticky -top-10 z-[30] py-0 shadow-md px-4 sm:px-0 sm:py-0">
+  <FlatBottomImageComponent />
+</div>
+
       </div>
 
       {/* Videos Header */}
-      <section className="bg-[#E85222] text-white mt-0 text-center py-3 mb-10">
+      <section className="bg-[#E85222] text-white text-center py-3 mb-10 -mt-32">
         <h2 className="text-xl sm:text-2xl font-semibold py-3">Videos</h2>
       </section>
 
