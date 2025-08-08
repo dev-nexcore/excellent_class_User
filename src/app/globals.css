@@ -26,6 +26,11 @@ body{
 
 }
 
+*{
+  overflow-x:hidden;
+  scrollbar-width: none;
+}
+
 .footer-list {
   list-style: none;
   padding: 0;
