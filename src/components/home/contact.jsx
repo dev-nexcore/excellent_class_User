@@ -16,10 +16,10 @@ export default function ContactUs() {
   return (
     <div className="min-h-screen bg-white font-poppins">
       {/* Office Boxes Section */}
-      <div className="flex flex-wrap justify-center gap-12 px-5 py-10 md:px-20 md:py-16">
+      <div className="flex flex-col items-center justify-center gap-8 px-5 py-10 md:flex-row md:flex-wrap md:px-20 md:py-16 lg:gap-12">
         {/* First Branch Office */}
         <motion.div
-          className="flex-1 min-w-[340px] max-w-[400px] h-[460px] p-6 rounded-xl bg-[#20356B] text-white shadow-lg flex flex-col items-center text-center hover:-translate-y-[5px] transition-transform duration-300"
+          className="w-full min-w-[300px] max-w-[400px] h-[460px] p-6 rounded-xl bg-[#20356B] text-white shadow-lg flex flex-col items-center text-center hover:-translate-y-[5px] transition-transform duration-300 md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2, ease: "linear" }}
@@ -45,7 +45,7 @@ export default function ContactUs() {
 
         {/* Head Office */}
         <motion.div
-          className="flex-1 min-w-[340px] max-w-[400px] h-[460px] p-6 rounded-xl bg-[#FFA629] text-black shadow-lg flex flex-col items-center text-center hover:-translate-y-[5px] transition-transform duration-300"
+          className="w-full min-w-[300px] max-w-[400px] h-[460px] p-6 rounded-xl bg-[#FFA629] text-black shadow-lg flex flex-col items-center text-center hover:-translate-y-[5px] transition-transform duration-300 md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, ease: "linear" }}
@@ -74,7 +74,7 @@ export default function ContactUs() {
 
         {/* Last Branch Office */}
         <motion.div
-          className="flex-1 min-w-[340px] max-w-[400px] h-[460px] p-6 rounded-xl bg-[#20356B] text-white shadow-lg flex flex-col items-center text-center hover:-translate-y-[5px] transition-transform duration-300"
+          className="w-full min-w-[300px] max-w-[400px] h-[460px] p-6 rounded-xl bg-[#20356B] text-white shadow-lg flex flex-col items-center text-center hover:-translate-y-[5px] transition-transform duration-300 md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2, ease: "linear" }}
@@ -105,7 +105,7 @@ export default function ContactUs() {
       </div>
 
       {/* Social Media Icons */}
-      <div className="flex flex-wrap justify-center items-center gap-16 md:gap-36 py-8 px-4 md:py-12">
+      <div className="flex flex-wrap justify-center items-center gap-8 py-8 px-4 md:gap-16 md:py-12 lg:gap-36">
         <motion.a
           href="https://www.facebook.com/"
           target="_blank"
@@ -115,7 +115,7 @@ export default function ContactUs() {
           transition={{ duration: 0.6 }}
           className="hover:scale-110 transition-transform duration-300"
         >
-          <FaSquareFacebook className="text-[120px] md:text-[160px] text-[#1877F2]" />
+          <FaSquareFacebook className="text-[80px] md:text-[120px] lg:text-[160px] text-[#1877F2]" />
         </motion.a>
         
         <motion.a
@@ -127,7 +127,7 @@ export default function ContactUs() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="hover:scale-110 transition-transform duration-300"
         >
-          <FaYoutube className="text-[120px] md:text-[160px] text-[#FF0000]" />
+          <FaYoutube className="text-[80px] md:text-[120px] lg:text-[160px] text-[#FF0000]" />
         </motion.a>
         
         <motion.a
@@ -142,9 +142,7 @@ export default function ContactUs() {
           <img
             src="/Logo/intagram.svg"
             alt="Instagram"
-            width={120}
-            height={120}
-            className="w-[90px] h-[90px] md:w-[120px] md:h-[120px]"
+            className="w-[70px] h-[70px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px]"
           />
         </motion.a>
         
@@ -160,9 +158,7 @@ export default function ContactUs() {
           <img
             src="/Logo/justdial.svg"
             alt="Justdial"
-            width={2000}
-            height={130}
-            className="w-[140px] md:w-[200px]"
+            className="w-[120px] md:w-[140px] lg:w-[200px]"
           />
         </motion.a>
       </div>
@@ -178,7 +174,7 @@ export default function ContactUs() {
       <div className="flex justify-center p-5 bg-gray-50">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.8650541329965!2d72.88528901490558!3d19.11707385579073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f2d9d7e4df%3A0x3e0cfa04db26a7db!2sExcellent%20Classes!5e0!3m2!1sen!2sin!4v1653489517022!5m2!1sen!2sin"
-          className="w-full md:w-[75%] h-[350px] rounded-xl border-0 shadow-lg"
+          className="w-full md:w-[90%] lg:w-[75%] h-[350px] rounded-xl border-0 shadow-lg"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -189,12 +185,12 @@ export default function ContactUs() {
       <div className="flex justify-center p-5 bg-gray-50">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.8650541329965!2d72.88528901490558!3d19.11707385579073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f2d9d7e4df%3A0x3e0cfa04db26a7db!2sExcellent%20Classes!5e0!3m2!1sen!2sin!4v1653489517022!5m2!1sen!2sin"
-          className="w-full md:w-[75%] h-[350px] rounded-xl border-0 shadow-lg"
+          className="w-full md:w-[90%] lg:w-[75%] h-[350px] rounded-xl border-0 shadow-lg"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </div>
-    );
+  );
 }
