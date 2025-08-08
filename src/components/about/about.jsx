@@ -174,7 +174,7 @@ const rightInView = useInView(rightRef, { once: true });
     <img
       src="/img/squareDesign.svg"
       alt="SVG Decoration"
-      className="absolute top-[100vh] md:top-[70vw] lg:top-[60vw] right-0 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
+      className="absolute top-[100vh] md:top-[50vw] lg:top-[30vw] -right-25 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
     />
 
     {/* Image on Top */}
@@ -201,7 +201,7 @@ const rightInView = useInView(rightRef, { once: true });
   <img
     src="/img/squareDesign.svg"
     alt="Left background design"
-    className="absolute top-[20vw] md:top-[12vw] -left-[40vw] w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
+    className="absolute top-[20vw] md:top-[12vw] -ml-275  w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
   />
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

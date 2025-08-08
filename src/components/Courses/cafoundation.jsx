@@ -26,7 +26,7 @@ export default function CAFoundation() {
 
         {/* Content */}
         <div className="relative z-10">
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl  text-black mb-6 sm:mb-7 md:mb-8 underline text-center sm:text-left sm:ml-[60px] md:ml-[75px]">
+          <h2 className="text-xl sm:text-3xl md:text-2xl lg:text-4xl  text-black mb-6 sm:mb-7 md:mb-8 underline text-center sm:text-left sm:ml-[60px] md:ml-[75px]">
             Join CA Foundation
           </h2>
 
@@ -34,7 +34,7 @@ export default function CAFoundation() {
           <div className="sm:ml-[60px] md:ml-[80px] ml-4 sm:mr-4">
 
             {/* Top Points */}
-            <ul className="text-sm sm:text-lg md:text-xl lg:text-2xl text-black  space-y-3 sm:space-y-4 md:space-y-5">
+            <ul className="text-base sm:text-lg md:text-xl lg:text-2xl text-black  space-y-3 sm:space-y-4 md:space-y-5">
               {[
                 "Limited batch size of 40 students.",
                 "Exposure of CA foundation right from the start.",
@@ -50,10 +50,10 @@ export default function CAFoundation() {
             </ul>
 
             {/* Course Fee */}
-            <div className="mt-4 sm:mt-5 md:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-black ">
+            <div className="mt-4 font-semibold sm:mt-5 md:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-black ">
               <div>Total course fee</div>
             </div>
-            <div className="mt-2 sm:mt-3 md:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black ">
+            <div className="mt-2 sm:mt-3 md:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-3xl text-black ">
               Rs.22000/-
             </div>
 
