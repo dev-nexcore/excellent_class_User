@@ -34,7 +34,7 @@ export default function StreamAndCourses() {
   };
 
   return (
-    <section className="bg-white py-2 overflow-hidden">
+    <section className="-mt-14  py-2 overflow-hidden">
       <div className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl font-semibold text-black">
           Stream and Courses

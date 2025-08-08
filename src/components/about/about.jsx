@@ -171,11 +171,12 @@ const rightInView = useInView(rightRef, { once: true });
 >
   <div className="relative w-full max-w-[90vw] md:w-[60vw] lg:w-[40vw] flex flex-col items-center">
     {/* Decorative SVG */}
-    <img
-      src="/img/squareDesign.svg"
-      alt="SVG Decoration"
-      className="absolute top-[100vh] md:top-[50vw] lg:top-[30vw] -right-25 w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
-    />
+<img
+  src="/img/squareDesign.svg"
+  alt="SVG Decoration"
+  className="absolute top-[40vh] md:top-[50vw] lg:top-[30vw] right-[-10vw] md:right-[-6vw] lg:right-[-4vw] w-[25vw] md:w-[18vw] lg:w-[15vw] max-w-full h-auto z-0"
+/>
+
 
     {/* Image on Top */}
     <a href="/img/BrochureExcellentCalsses.pdf" download>
@@ -198,11 +199,17 @@ const rightInView = useInView(rightRef, { once: true });
 
       {/* 4 div content */}
    <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[9vw] overflow-visible font-poppins ">
-  <img
-    src="/img/squareDesign.svg"
-    alt="Left background design"
-    className="absolute top-[20vw] md:top-[12vw] -ml-275  w-[50vw] md:w-[30vw] lg:w-[25vw] h-[80vw] md:h-[50vw] lg:h-[45vw] -z-10"
-  />
+<img
+  src="/img/squareDesign.svg"
+  alt="Left background design"
+  className="absolute 
+             top-[175vw] sm:top-[25vw] md:top-[15vw] lg:top-[12vw] 
+             left-[-20vw] sm:left-[-15vw] md:left-[-10vw] lg:left-[-8vw]
+             w-[50vw] sm:w-[40vw] md:w-[30vw] lg:w-[25vw] 
+             h-[80vw] sm:h-[60vw] md:h-[50vw] lg:h-[45vw] 
+             -z-10"
+/>
+
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
     {/* 1. OUR VISION */}
@@ -229,7 +236,7 @@ const rightInView = useInView(rightRef, { once: true });
       animate={inViewRight1 ? { x: 0, y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.6, delay: 0.1 }}
       viewport={{ amount: 0.4, once: true }}
-      className="w-full md:w-[45vw] lg:w-[27vw] h-[45vw] md:h-[22vw] lg:h-[17vw] bg-[#F9B233] text-black py-[4vw] md:py-[2vw] lg:py-[1vw] rounded-tr-[60px] md:rounded-tr-[90px] lg:rounded-tr-[120px] shadow-lg ml-auto mr-auto md:ml-[-4vw] lg:ml-[0.5vw] -mt-[6vw] md:-mt-[4vw] lg:-mt-[0.1vw] mb-7"
+      className="w-full md:w-[45vw] lg:w-[27vw] h-[50vw] md:h-[22vw] lg:h-[17vw] bg-[#F9B233] text-black py-[4vw] md:py-[2vw] lg:py-[1vw] rounded-tr-[60px] md:rounded-tr-[90px] lg:rounded-tr-[120px] shadow-lg ml-auto mr-auto md:ml-[-4vw] lg:ml-[0.5vw] -mt-[6vw] md:-mt-[4vw] lg:-mt-[0.1vw] mb-7"
     >
       <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">OUR CULTURE</h2>
       <ul className="list-disc list-inside space-y-1 text-xs md:text-sm leading-relaxed px-6 md:px-8 lg:px-12 font-medium">
@@ -248,7 +255,7 @@ const rightInView = useInView(rightRef, { once: true });
       animate={inViewLeft2 ? { x: 0, y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.6 }}
       viewport={{ amount: 0.4, once: true }}
-      className="w-full md:w-[45vw] lg:w-[28vw] h-[45vw] md:h-[22vw] lg:h-[19vw] bg-[#F9B233] text-black py-[2vw] md:py-[2vw] lg:py-[1vw] rounded-bl-[60px] md:rounded-bl-[90px] lg:rounded-bl-[120px] shadow-lg ml-auto -mt-[0.3vw] mr-[3vw]"
+      className="w-full md:w-[45vw] lg:w-[28vw] h-[50vw] md:h-[22vw] lg:h-[19vw] bg-[#F9B233] text-black py-[2vw] md:py-[2vw] lg:py-[1vw] rounded-bl-[60px] md:rounded-bl-[90px] lg:rounded-bl-[120px] shadow-lg ml-auto -mt-[0.3vw] mr-[3vw]"
     >
       <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">CORE VALUES</h2>
       <ul className="list-disc list-inside space-y-1 text-xs md:text-sm leading-relaxed px-6 md:px-8 lg:px-12 font-medium">

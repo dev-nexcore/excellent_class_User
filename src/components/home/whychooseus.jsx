@@ -8,9 +8,9 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: "100px" });
 
   return (
-    <section className="relative w-full bg-white overflow-hidden mt-[2vw] mb-[20px]">
+    <section className="relative w-full overflow-visible mt-[2vw] ">
       {/* Heading */}
-      <div className="relative z-20 pt-8 md:pt-16 pb-4 md:pb-6 text-center px-4">
+      <div className="relative z-20 pt-8 md:pt-16 pb-2 md:pb-6 text-center px-4">
         <h2 className="text-2xl md:text-5xl font-semibold text-[#0f1e49]">
           Why Choose Us?
         </h2>
