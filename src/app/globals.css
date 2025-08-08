@@ -20,15 +20,18 @@
 }
 body{
   font-family:var(--font-poppins);
-    overflow-x: hidden;
     /* overflow-y: hidden; */
     /* overflow-y: hidden; */
 
 }
 
-*{
-  overflow-x:hidden;
-  scrollbar-width: none;
+html, body {
+  overflow-x: hidden;
+  scrollbar-width: none;           /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;                   /* Chrome, Edge, Safari */
 }
 
 .footer-list {
