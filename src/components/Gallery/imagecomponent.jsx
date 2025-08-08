@@ -13,11 +13,11 @@ function imagecomponent() {
       </section>
 
       {/* Photo Rows */}
-      <div className="flex flex-col items-center -mt-20 justify-center gap-2  sticky top-0 z-[30]  shadow-md">
+      <div className="flex flex-col items-center  -mt-28 lg:-mt-20 md:-mt-15  justify-center gap-2  sticky top-0 z-[30]  shadow-md ">
         <CurvedBottomImageComponent/>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 bg-white sticky top-0 z-[30] py-2 shadow-md">
+      <div className="flex flex-col items-center justify-center  gap-4 sticky top-0 z-[30] py-2 shadow-md">
         <FlatBottomImageComponent/>
       </div>
      </div>

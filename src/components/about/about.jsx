@@ -31,13 +31,13 @@ const rightInView = useInView(rightRef, { once: true });
 
   return (
     <>
-      <div className="min-h-screen overflow-x-hidden">
+      <div className="h-auto overflow-x-hidden">
         {/* Hero Section */}
 
 
         {/* Main Content Section */}
    {/* Main Content Section - Made Responsive */}
-        <div className="py-8 md:py-16 px-4 flex justify-center w-full  md:mb-[6vw]">
+        <div className="py-8 md:py-16 px-4 flex justify-center w-full ">
           <div className="">
             <div className="flex flex-col md:flex-row gap-8 md:gap-4 justify-evenly items-center w-full md:w-full max-w-[90vw] px-4 md:px-6">
 
@@ -48,7 +48,7 @@ const rightInView = useInView(rightRef, { once: true });
                 transition={{ duration: 1 }}
                 className="relative"
               >
-                <div className="relative rounded-tl-4xl rounded-br-4xl">
+                <div className="relative rounded-tl-4xl rounded-br-4xl ">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] shadow-lg w-[80vw] md:w-[30vw] h-64 md:h-72"></div>
                   <div className="relative rounded-3xl rounded-tl-[6vw] md:rounded-tl-[5vw] rounded-br-[6vw] md:rounded-br-[5vw] p-2 translate-y-2 translate-x-2">
                     <Image
@@ -126,7 +126,7 @@ const rightInView = useInView(rightRef, { once: true });
 
       </div>
       {/* second hero section */}
-      <div className='bg-[#E85222] flex justify-center items-center py-[1.7vw] px-12 -mt-[7vw] mb-[1vw]'>
+      <div className='bg-[#E85222] flex justify-center items-center py-[1.7vw] px-12  mb-[1vw] '>
         <div className='text-3xl font-semibold capitalize  text-white text-center tracking-wide'> our Story</div>
       </div>
       <div className="flex flex-col lg:flex-row justify-evenly px-4 py-2 gap-6 -mt-[2vw]">
