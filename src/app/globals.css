@@ -27,11 +27,15 @@ body{
 
 html, body {
   overflow-x: hidden;
-  scrollbar-width: none;           /* Firefox */
+  scrollbar-width: none;        
+}
+
+svg {
+  min-height: 300px;
 }
 
 body::-webkit-scrollbar {
-  display: none;                   /* Chrome, Edge, Safari */
+  display: none;            
 }
 
 .footer-list {

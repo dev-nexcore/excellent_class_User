@@ -25,11 +25,11 @@ export default function WhyChooseUs() {
           {/* SVG Background */}
           <div className="absolute inset-0 w-full h-full">
             <svg
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full"
               viewBox="0 0 1728 848"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
+              preserveAspectRatio="none"
             >
               <path
                 d="M-2.66668 64.4998C211.833 -136.501 1427 213.5 1725.33 55.9999C2023.67 -101.5 1725.33 747.629 1725.33 747.629H-2.66668C-2.66668 747.629 -217.167 265.501 -2.66668 64.4998Z"
