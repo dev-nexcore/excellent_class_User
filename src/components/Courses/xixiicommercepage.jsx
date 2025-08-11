@@ -28,10 +28,14 @@ export default function XIXIICommercepage() {
       
       {/* Background Circle */}
       <div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[1300px] rounded-full z-0"
-        style={{ background: '#E85122', opacity: '0.1' }}
-      ></div>
-
+  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+             w-[85vw] h-[330vw] 
+             sm:w-[100vw] sm:h-[200vw] 
+             md:w-[80vw] md:h-[180vw] 
+             lg:w-[70vw] lg:h-[110vw] 
+             rounded-full z-0"
+  style={{ background: '#E85122', opacity: '0.1' }}
+></div>
       <div className="max-w-5xl mx-auto space-y-16 relative z-10 mt-6 sm:mt-10 font-[Poppins]">
 
         {/* XI Commerce Section */}
@@ -42,34 +46,38 @@ export default function XIXIICommercepage() {
 
           {/* XI Batch Table */}
           <div className="flex justify-center mt-4 sm:mt-6 overflow-x-auto">
-            <div className="overflow-hidden rounded-2xl shadow-lg w-full max-w-4xl min-w-[320px]">
-              <div className="grid grid-cols-4 bg-[#1A3365] text-white text-center text-xs sm:text-sm md:text-base font-semibold">
-                {["Batch", "Date of Commencement", "Timings", "Maths"].map((header, i) => (
-                  <div
-                    key={i}
-                    className={`relative bg-[#E85129] py-2 ${i === 0 ? "rounded-tl-2xl" : ""} ${i === 3 ? "rounded-tr-2xl" : ""}`}
-                  >
-                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-[90%] h-[20px] rounded-full bg-[#E85129]"></div>
-                    {header}
-                  </div>
-                ))}
-              </div>
+  <div className="overflow-hidden rounded-2xl shadow-lg w-full max-w-4xl min-w-[320px]">
+    
+    {/* Header Row */}
+    <div className="grid grid-cols-4 bg-[#1A3365] text-white  text-center text-xs sm:text-sm md:text-base font-semibold">
+      {["Batch", "Date of Commencement", "Timings", "Maths"].map((header, i) => (
+        <div
+          key={i}
+          className={`relative bg-[#E85129] py-2 flex items-center justify-center ${i === 0 ? "rounded-tl-2xl" : ""} ${i === 3 ? "rounded-tr-2xl" : ""}`}
+        >
+          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-[90%] h-[20px] rounded-full bg-[#E85129]"></div>
+          {header}
+        </div>
+      ))}
+    </div>
 
-              <div className="bg-[#1A3365] text-white text-center">
-                {scheduleData.map((row, index) => (
-                  <div
-                    key={index}
-                    className="grid grid-cols-4 text-xs sm:text-sm md:text-base lg:text-xl"
-                  >
-                    <div className="py-3">{row.batch}</div>
-                    <div className="py-3">{row.commencement}</div>
-                    <div className="py-3">{row.timings}</div>
-                    <div className="py-3">{row.maths || "-"}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+    {/* Data Rows */}
+    <div className="bg-[#1A3365] text-white text-center">
+      {scheduleData.map((row, index) => (
+        <div
+          key={index}
+          className="grid grid-cols-4 items-center text-xs sm:text-sm md:text-base lg:text-xl"
+        >
+          <div className="py-3">{row.batch}</div>
+          <div className="py-3">{row.commencement}</div>
+          <div className="py-3">{row.timings}</div>
+          <div className="py-3">{row.maths || "-"}</div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
 
           {/* XI Commerce Bullet Points */}
           <div className="mt-4 px-4 text-xs sm:text-sm md:text-base lg:text-lg lg:ml-[200px]">

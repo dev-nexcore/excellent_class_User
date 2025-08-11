@@ -72,12 +72,12 @@ export default function Testimonial() {
             return (
               <div
                 key={rowIndex}
-                className="flex flex-col lg:flex-row gap-10 justify-center items-stretch"
+                className="flex flex-col lg:flex-row gap-10 justify-center items-stretch "
               >
                 {pair.map((testimonial, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row w-full max-w-[600px] flex-1"
+                    className="bg-white rounded-2xl  overflow-hidden flex flex-col md:flex-row w-full max-w-[600px] flex-1 shadow-xl"
                     >
                     {/* 🔹 Text Left */}
                     <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center text-center bg-white">

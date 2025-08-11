@@ -25,17 +25,17 @@ export default function ContactUs() {
           transition={{ duration: 0.2, ease: "linear" }}
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h3 className="text-3xl md:text-[35px] font-bold mb-4 pb-2 border-b-2 border-current w-[80%]">
+          <h3 className="text-2xl md:text-[30px] font-bold mb-4 pb-2 border-b-2 border-current w-[80%]">
             Branch Office
           </h3>
           <div className="mt-6">
-            <p className="text-lg md:text-[22px] leading-[1.7] font-normal">
+            <p className="text-lg md:text-[20px] leading-[1.7] font-normal">
               Shop No 1, 2 & 8, Swastik Chambers, Below Kurla Nursing Home, Near
               Kurla Station, Kurla (W), Mumbai – 400070.
             </p>
           </div>
           <div className="flex items-center gap-6 mt-8 justify-start w-full">
-            <FaPhoneAlt className="text-2xl" />
+            <FaPhoneAlt className="text-xl" />
             <div className="text-left">
               <p className="text-lg md:text-[23px]">‪‪+91 9967787102‬‬</p>
               <p className="text-lg md:text-[23px]">‪‪+91 9967747102‬‬</p>
@@ -51,25 +51,27 @@ export default function ContactUs() {
           transition={{ duration: 0.2, ease: "linear" }}
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h3 className="text-3xl md:text-[35px] font-bold mb-4 pb-2 border-b-2 border-current w-[80%]">
+          <h3 className="text-3xl md:text-[30px] font-bold mb-4 pb-2 border-b-2 border-current w-[80%]">
             Head Office
           </h3>
-          <p className="text-lg md:text-[22px] leading-[1.7] font-normal">
+          <p className="text-lg md:text-[20px] leading-[1.7] font-normal">
             1, VIP Villa, House No. 16, Next to Michael High School, Kurla (W),
             Mumbai – 400 070.
           </p>
           <div className="flex items-center gap-6 mt-8 justify-start w-full">
-            <FaPhoneAlt className="text-2xl" />
+            <FaPhoneAlt className="text-xl" />
             <div className="text-left">
-              <p className="text-lg md:text-[23px]">022 - 25039452</p>
-              <p className="text-lg md:text-[23px]">9892755100</p>
-              <p className="text-lg md:text-[23px]">9136955101</p>
+              <p className="text-lg md:text-[20px]">022 - 25039452</p>
+              <p className="text-lg md:text-[20px]">9892755100</p>
+              <p className="text-lg md:text-[20px]">9136955101</p>
             </div>
           </div>
-          <div className="flex items-center gap-6 mt-6 justify-start w-full">
-            <FaEnvelope className="text-2xl" />
-            <p className="text-lg md:text-[23px]">info@excellentclasses.in</p>
-          </div>
+          <div className="flex items-center gap-6 mt-2 justify-start w-full">
+            <FaEnvelope className="text-[24px] md:text-[3vw] lg:text-[64px]" />
+
+             <p className="text-sm md:text-[20px]">info@excellentclasses.in</p>
+</div>
+
         </motion.div>
 
         {/* Last Branch Office */}
@@ -80,15 +82,15 @@ export default function ContactUs() {
           transition={{ duration: 0.2, ease: "linear" }}
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h3 className="text-3xl md:text-[35px] font-bold mb-4 pb-2 border-b-2 border-current w-[80%]">
+          <h3 className="text-3xl md:text-[30px] font-bold mb-4 pb-2 border-b-2 border-current w-[80%]">
             Branch Office
           </h3>
-          <p className="text-lg md:text-[21px] leading-[1.7] font-normal">
+          <p className="text-lg md:text-[20px] leading-[1.7] font-normal">
             Gala No.1, First Floor, Behind 2 Star Hotel, Chandu Studio Compound,
             Near Sony Center & Sony Mobile Shop, Kalina (E), Mumbai 400029
           </p>
           <div className="flex items-center gap-6 mt-8 justify-start w-full">
-            <FaPhoneAlt className="text-2xl" />
+            <FaPhoneAlt className="text-xl" />
             <div className="text-left">
               <p className="text-lg md:text-[23px]">‪+91 91369 55101‬</p>
               <p className="text-lg md:text-[23px]">‪+91 7304325859‬</p>
@@ -99,7 +101,7 @@ export default function ContactUs() {
 
       {/* Follow Us On Heading */}
       <div className="w-full bg-[#E85222] py-4">
-        <h2 className="text-3xl md:text-[40px] font-bold text-white text-center font-poppins">
+        <h2 className="text-3xl md:text-[30px] font-bold text-white text-center font-poppins">
           Follow Us On
         </h2>
       </div>
@@ -165,7 +167,7 @@ export default function ContactUs() {
 
       {/* Reach Us Heading */}
       <div className="w-full bg-[#20356B] py-4">
-        <h2 className="text-3xl md:text-[40px] font-bold text-white text-center font-poppins">
+        <h2 className="text-3xl md:text-[30px] font-bold text-white text-center font-poppins">
           How to Reach us
         </h2>
       </div>

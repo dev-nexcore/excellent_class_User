@@ -99,7 +99,7 @@ const rightInView = useInView(rightRef, { once: true });
 </div>
 
                   {/* Responsive Description */}
-                 <div className="w-full text-base sm:text-base md:text-lg lg:text-md font-radley leading-relaxed flex justify-center md:justify-start text-center md:text-left">
+                 <div className="w-full text-base sm:text-base md:text-lg lg:text-[16px]  leading-relaxed flex justify-center md:justify-start text-center md:text-left">
   <div className="inline-block">
     {/* For small screens (mobile) */}
     <div className="block sm:hidden">
@@ -129,7 +129,7 @@ const rightInView = useInView(rightRef, { once: true });
       <div className='bg-[#E85222] flex justify-center items-center py-[1.7vw] px-12  mb-[1vw] '>
         <div className='text-3xl font-semibold capitalize  text-white text-center tracking-wide'> our Story</div>
       </div>
-      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-2 gap-6 -mt-[2vw]">
+      <div className="flex flex-col lg:flex-row justify-evenly px-4 py-2 gap-6 mt-[2vw]">
   {/* Left Content */}
   <motion.div
     initial={{ opacity: 0, x: -100 }}
@@ -198,7 +198,7 @@ const rightInView = useInView(rightRef, { once: true });
 
 
       {/* 4 div content */}
-   <div className="min-h-screen py-10 px-4 flex flex-col items-center font-sans relative mt-[9vw] overflow-visible font-poppins ">
+   <div className="min-h-screen py-10 px-4 flex flex-col items-center justify-center  relative mt-[9vw] overflow-visible font-poppins ">
 <img
   src="/img/SquareDesign.svg"
   alt="Left background design"
@@ -300,9 +300,9 @@ const rightInView = useInView(rightRef, { once: true });
           className="w-full lg:w-[40vw] px-4 md:px-8 lg:px-12 py-6 mt-[8vw]"
         >
           <div className="text-[5vw] md:text-[3vw] lg:text-4xl tracking-wider leading-relaxed text-black font-poppins">
-            <span className="text-[4.5vw] md:text-[2.8vw] lg:text-[2vw] font-semibold text-blue-900">From The</span>
+            <span className="text-[4.5vw] md:text-[2.8vw] lg:text-[2.5vw] font-semibold text-blue-900">From The</span>
             <br />
-            <span className="text-[6vw] md:text-[4vw] lg:text-[2.6vw] text-[#E85222] font-bold uppercase">Principle's desk</span>
+            <span className="text-[6vw] md:text-[4vw] lg:text-[3vw] text-[#E85222] font-bold uppercase">Principle's desk</span>
             <br />
             <span className='text-[4.5vw] md:text-[3vw] lg:text-[2vw] font-semibold italic mb-2 block'>
               "The whole purpose of education is to turn mirrors in to windows."
@@ -342,7 +342,7 @@ const rightInView = useInView(rightRef, { once: true });
 
             {/* Text Overlay */}
             <div className="text-center p-4 mt-2">
-              <p className="font-bold text-[4.5vw] md:text-[3vw] lg:text-[2.5vw]">Dr Jamil khan</p>
+              <p className="font-bold text-[4.5vw] md:text-[3vw] lg:text-[2.5vw]">Dr Jamil Khan</p>
               <p className="text-[#20356B] font-bold text-[2.8vw] md:text-[2vw] lg:text-[1.5vw]">Principal</p>
             </div>
           </div>
@@ -389,7 +389,7 @@ const rightInView = useInView(rightRef, { once: true });
             animate={isInView ? { x: 0, opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.6 }}
             className="flex flex-col items-center 
-                 md:w-[30vw] md:h-[12vw] w-[80vw] h-[35vw] "
+                 md:w-[30vw] md:h-[12vw] w-[80vw] h-[39vw]  "
           >
             <Image src="/img/account_balance.png" alt="Established" width={80} height={80} />
             <h3 className="font-bold mt-2 text-[2vw] md:text-[2vw] text-[6vw]">1990</h3>
