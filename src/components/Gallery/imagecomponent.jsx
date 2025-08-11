@@ -35,23 +35,23 @@ useEffect(()=>{
       <div className="h-auto bg-white">
 
         {/* Photos Header */}
-        <section className="bg-[#20356B] text-white text-center pt-3 pb-1 mb-10">
+        <section className="bg-[#20356B] text-white text-center pt-3 pb-1 mb-2 md:mb-10">
           <h2 className="text-2xl sm:text-3xl font-semibold py-4">Photos</h2>
         </section>
 
         {/* Photo Rows */}
-        <div className="flex flex-col items-center  justify-center  sticky top-0 z-[30]  px-4 ">
+        <div className="flex flex-col items-center  justify-center md:-mt-20 -mt-[5rem] sm:-mt-[6rem]  sticky top-0 z-[30]  px-4 ">
           <CurvedBottomImageComponent />
         </div>
 
-       <div className="flex flex-col items-center justify-center md:-mt-20 -mt-[14rem] sticky top-10 z-[30] py-0 shadow-md px-4 sm:px-0 sm:py-0">
+       <div className="flex flex-col items-center justify-center md:-mt-20 -mt-[22rem] sm:-mt-[23rem] sticky top-10 z-[30] py-0 shadow-md px-4 sm:px-0 sm:py-0">
   <FlatBottomImageComponent />
 </div>
 
       </div>
 
       {/* Videos Header */}
-      <section className="bg-[#E85222] text-white text-center py-3 mb-10">
+      <section className="bg-[#E85222] text-white text-center py-3 mb-10  md:-mt-20 -mt-[9rem] sm:-mt-[10rem]">
         <h2 className="text-xl sm:text-2xl font-semibold py-3">Videos</h2>
       </section>
 
