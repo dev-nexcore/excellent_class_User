@@ -22,7 +22,7 @@ const toppers = [
     rank: '1st',
     image: '/img/girl.png',
     height: 280,
-    imageSize: 200,
+    imageSize: 184,
   },
   {
     name: 'Sana',
@@ -43,7 +43,7 @@ const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }
       style={{ minHeight: `${height}px` }}
     >
       {/* Topper Image */}
-      <div className="absolute -top-24 z-20">
+      <div className="absolute -top-22 z-20">
         <Image
           src={image}
           alt={name}
