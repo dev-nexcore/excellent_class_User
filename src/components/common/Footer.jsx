@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Right Section */}
         <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-20 gap-y-8">
           {/* Column 2 */}
-          <div className="flex-1 w-full sm:w-[150px] min-w-[120px] text-center">
+          <div className="flex-1 w-full sm:w-[150px] min-w-[120px] text-left">
             <h4 className="text-black text-base font-semibold uppercase mb-3">
               Main Menu
             </h4>
@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex-1 min-w-[180px] text-center">
+          <div className="flex-1 min-w-[180px] text-left">
             <h4 className="text-black text-base font-semibold uppercase mb-3">
               Our Courses
             </h4>
