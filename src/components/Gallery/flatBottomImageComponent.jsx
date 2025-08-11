@@ -16,7 +16,7 @@ export default function FlatBottomImageComponent() {
   ]
 
   return (
-    <div className="min-h-screen  flex items-center justify-center p-3 ">
+    <div className="min-h-screen  flex items-center justify-center ">
       <div className="relative w-[950px] h-[350px]">
         {/* Hidden SVG to define the clipPath */}
         <svg width="0" height="0" className="absolute">

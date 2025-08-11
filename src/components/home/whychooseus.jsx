@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, margin: "0px" });
 
   return (
-    <section className="relative w-full bg-white overflow-hidden mt-[2vw] mb-[20px]">
+    <section className="relative w-full overflow-visible mt-[2vw] ">
       {/* Heading */}
       <div className="relative z-20 pt-8 md:pt-16 pb-4 md:pb-6 text-center px-4">
         <h2 className="text-xl md:text-4xl font-semibold text-[#0f1e49]">

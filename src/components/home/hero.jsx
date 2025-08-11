@@ -12,7 +12,7 @@ export default function QualityBanner() {
         {/* 🔵 Wrapper div with overflow-hidden to clip the orange circle */}
        {/* 🔵 Left Blue Shape */}
 <div
-  className="absolute top-0 left-0 w-full h-full bg-blue-900"
+  className="absolute top-0 left-0 w-full h-full bg-blue-900 overflow-visible"
   style={{
     clipPath: "polygon(0 0, 70% 0, 53% 100%, 0% 100%)",
   }}
