@@ -1,22 +1,30 @@
 "use client";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function NoticeRibbon() {
   const [notice, setNotice] = useState("Loading latest notice...");
 
   useEffect(() => {
-    async function fetchNotice() {
-      try {
-        const res = await fetch("/api/notice"); // your backend API endpoint
-        const data = await res.json();
-        setNotice(data.notice || "No new notices at the moment.");
-      } catch (error) {
-        console.error("Error fetching notice:", error);
-        setNotice("Failed to load notice.");
-      }
+  async function fetchNotice() {
+    try {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/notices`); 
+      console.log("notice", res.data);
+
+      // Har object ka description aur date join karke ek string bana rahe hain
+      const noticeText = res.data
+        .map(item => `${item.description} (${item.date})`)
+        .join(" | ");
+
+      setNotice(noticeText || "No new notices at the moment.");
+    } catch (error) {
+      console.error("Error fetching notice:", error);
+      setNotice("Failed to load notice.");
     }
-    fetchNotice();
-  }, []);
+  }
+  fetchNotice();
+}, []);
+
 
   return (
     <div className="w-full bg-red-500  text-white py-2 overflow-hidden relative">
