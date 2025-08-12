@@ -93,8 +93,8 @@ export default function BatchDetails() {
                     key={i}
                     className={`border px-4 py-2 rounded-full ${
                       i === 0
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-gray-100 text-gray-800"
+                        ? "border border-orange-500 text-blue-800"
+                        : "border border-orange-500 text-blue-800 "
                     } text-sm md:text-base font-semibold`}
                   >
                     {btn}

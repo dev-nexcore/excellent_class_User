@@ -1,7 +1,8 @@
 'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 // Topper data with different heights (middle one taller)
 const toppers = [
@@ -11,7 +12,7 @@ const toppers = [
     school: 'Holy Cross',
     rank: '2nd',
     image: '/img/girl.png',
-    height: 240,
+    height: 243,
     imageSize: 160,
   },
   {
@@ -21,7 +22,7 @@ const toppers = [
     rank: '1st',
     image: '/img/girl.png',
     height: 280,
-    imageSize: 200,
+    imageSize: 184,
   },
   {
     name: 'Sana',
@@ -29,7 +30,7 @@ const toppers = [
     school: 'Micheal',
     rank: '3rd',
     image: '/img/girl.png',
-    height: 240,
+    height: 243,
     imageSize: 160,
   },
 ];
@@ -42,7 +43,7 @@ const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }
       style={{ minHeight: `${height}px` }}
     >
       {/* Topper Image */}
-      <div className="absolute -top-24 z-20">
+      <div className="absolute -top-22 z-20">
         <Image
           src={image}
           alt={name}
@@ -71,6 +72,21 @@ const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }
 
 // Final exportable Result section with animations
 export default function Result() {
+  const url = `http://localhost:5001/api/admin/toppers/getTopper`
+const getTopperData =async ()=>{
+  try{
+     const response = await axios.get(url)
+    console.log(response);
+  }catch(error){
+      console.log(error.message)
+  }
+   
+    
+    // console.log(response.data)
+}
+useEffect(()=>{
+     getTopperData()
+},[])
   return (
     <div className="min-h-screen bg-white">
       {/* heading section for x 2025 */}

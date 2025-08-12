@@ -107,21 +107,28 @@ export default function VIIIIXsscpage() {
 
         {/* SSC Section */}
         <div>
-          <h2 className="text-center text-white  text-lg sm:text-2xl md:text-4xl lg:text-5xl bg-[#E85129] px-4 sm:px-6 py-2 sm:py-3 w-fit mx-auto rounded-md shadow-lg">
+          <h2 className="text-center text-white  font-bold text-lg sm:text-2xl md:text-4xl lg:text-5xl bg-[#E85129] px-4 sm:px-6 py-2 sm:py-3 w-fit mx-auto rounded-md shadow-lg">
             SSC
           </h2>
 
           {/* SSC Timings Table */}
           <div className="flex justify-center mt-8 sm:mt-12 px-2 sm:px-4">
             <div className="overflow-x-auto rounded-3xl shadow-lg w-full max-w-5xl bg-[#1A3365] text-white">
-              <div className="grid grid-cols-4 text-center font-semibold text-white text-sm sm:text-lg md:text-xl relative">
-                {["Batches", "Date of Commencement", "Team", "Regular Timings"].map((title, i) => (
-                  <div key={i} className="relative bg-[#E85129] py-3">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-[90%] h-[20px] rounded-full bg-[#E85129]"></div>
-                    {title}
-                  </div>
-                ))}
-              </div>
+           <div className="grid grid-cols-4 text-center font-semibold text-white text-sm sm:text-lg md:text-xl relative">
+  {["Batches", "Date of Commencement", "Team", "Regular Timings"].map((title, i) => (
+    <div
+      key={i}
+      className="relative bg-[#E85129] py-3 flex items-center justify-center"
+    >
+      {/* Top rounded bar */}
+      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-[90%] h-[20px] rounded-full bg-[#E85129]"></div>
+
+      {/* Heading text */}
+      <span>{title}</span>
+    </div>
+  ))}
+</div>
+
               <div className="text-center">
                 {[
                   { batch: "1st Batch", date: "I Week of April", team: "Team A₁", time: "5:15 pm to 7:45 pm" },
@@ -130,7 +137,7 @@ export default function VIIIIXsscpage() {
                   { batch: "4th Batch", date: "III Week of April", team: "Team C₂", time: "5:15 pm to 7:45 pm" },
                   { batch: "Kalina Batch", date: "II Week of April", team: "Team A", time: "2:30 pm to 5:00 pm" },
                 ].map((row, index) => (
-                  <div key={index} className="grid grid-cols-4 text-sm sm:text-lg md:text-xl">
+                  <div key={index} className="grid grid-cols-4 items-center text-center text-sm sm:text-lg md:text-xl">
                     <div className="py-3">{row.batch}</div>
                     <div className="py-3">{row.date}</div>
                     <div className="py-3">{row.team}</div>

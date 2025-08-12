@@ -27,11 +27,12 @@ body{
 
 html, body {
   overflow-x: hidden;
-  scrollbar-width: none;           /* Firefox */
+  scrollbar-width: none;        
 }
 
+
 body::-webkit-scrollbar {
-  display: none;                   /* Chrome, Edge, Safari */
+  display: none;            
 }
 
 .footer-list {
@@ -98,7 +99,5 @@ body::-webkit-scrollbar {
 .animate-fade-in {
   animation: fade-in 0.7s ease-out forwards;
 }
-
-
 
 

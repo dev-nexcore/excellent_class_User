@@ -12,15 +12,27 @@ export default function QualityBanner() {
         {/* 🔵 Wrapper div with overflow-hidden to clip the orange circle */}
        {/* 🔵 Left Blue Shape */}
 <div
-  className="absolute top-0 left-0 w-full h-full bg-blue-900"
+  className="absolute top-0 left-0 w-full h-full bg-blue-900 overflow-visible"
   style={{
     clipPath: "polygon(0 0, 70% 0, 53% 100%, 0% 100%)",
   }}
-
 >
-  {/* ✅ Background image that covers the blue shape */}
+  {/* ✅ Responsive orange circle */}
+<div
+  className="absolute bg-[#E85222] rounded-full z-50
+             w-[50vw] h-[20vw] sm:w-[50vw] sm:h-[14vw] lg:w-[50vw] lg:h-[14vw]"
+  style={{
+    bottom: "0",
+    left: "0",
+    transform: "translate(6%, 85%)",
+  }}
+></div>
+
+
+
+
 {/* Top-left main image */}
-<div className="absolute -top-12 -left-4 w-[20vw] sm:w-[15vw] md:w-[13vw] h-[25vw] sm:h-[20vw] md:h-[17vw]">
+<div className="absolute -top-14 -left-4 w-[15vw] h-[20vw] min-w-[80px] min-h-[100px]">
   <Image
     src="/Ellipse 79.png"
     alt="Top Left Icon"
@@ -29,8 +41,8 @@ export default function QualityBanner() {
   />
 </div>
 
-{/* Small left dot */}
-<div className="absolute top-40 left-20 w-[10vw] sm:w-[8vw] md:w-[6vw] h-[12vw] sm:h-[10vw] md:h-[8vw]">
+{/* Small left dot - made responsive */}
+<div className="absolute top-[25%] left-[15%] w-[6vw] h-[8vw] min-w-[40px] min-h-[50px]">
   <Image
     src="/Ellipse 82.png"
     alt="Top Left Icon"
@@ -39,8 +51,8 @@ export default function QualityBanner() {
   />
 </div>
 
-{/* Bottom left large dot */}
-<div className="absolute top-87 -left-17 w-[20vw] sm:w-[16vw] md:w-[13vw] h-[25vw] sm:h-[20vw] md:h-[17vw]">
+{/* Bottom left large dot - made responsive */}
+<div className="absolute bottom-0 -left-4 w-[13vw] h-[17vw] min-w-[80px] min-h-[100px]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"
@@ -49,8 +61,8 @@ export default function QualityBanner() {
   />
 </div>
 
-{/* Top right dot */}
-<div className="absolute top-30 left-160 w-[14vw] sm:w-[12vw] md:w-[10vw] h-[10vw] sm:h-[8vw] md:h-[6vw]">
+{/* Top right dot - made responsive */}
+<div className="absolute top-[20%] left-[60%] w-[10vw] h-[6vw] min-w-[50px] min-h-[30px] sm:left-[70%]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"
@@ -59,8 +71,8 @@ export default function QualityBanner() {
   />
 </div>
 
-{/* Mid right small dot */}
-<div className="absolute top-70 left-140 w-[8vw] sm:w-[6vw] md:w-[4vw] h-[10vw] sm:h-[8vw] md:h-[6vw]">
+{/* Mid right small dot - made responsive */}
+<div className="absolute top-[45%] left-[55%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px] sm:left-[65%]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"
@@ -69,8 +81,8 @@ export default function QualityBanner() {
   />
 </div>
 
-{/* Bottom mid-right dot */}
-<div className="absolute top-100 left-80 w-[8vw] sm:w-[6vw] md:w-[4vw] h-[10vw] sm:h-[8vw] md:h-[6vw]">
+{/* Bottom mid-right dot - made responsive */}
+<div className="absolute bottom-[20%] left-[40%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"
@@ -79,8 +91,8 @@ export default function QualityBanner() {
   />
 </div>
 
-{/* Top far right dot */}
-<div className="absolute top-10 left-140 w-[8vw] sm:w-[6vw] md:w-[4vw] h-[10vw] sm:h-[8vw] md:h-[6vw]">
+{/* Top far right dot - made responsive */}
+<div className="absolute top-[5%] left-[55%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px] sm:left-[65%]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"
@@ -89,57 +101,44 @@ export default function QualityBanner() {
   />
 </div>
 
-
-  
- 
-  
-    <div className="absolute top-100 left-80 w-[4vw] h-[6vw] ">
-    <Image
-          src="/img/eclipse.png" // replace with your actual image path
-
-      alt="Top Left Icon"
-      fill
-      className="object-contain"
-    />
-  </div>
-    <div className="absolute top-10 left-140 w-[4vw] h-[6vw] ">
-    <Image
-          src="/img/eclipse.png" // replace with your actual image path
-
-      alt="Top Left Icon"
-      fill
-      className="object-contain"
-    />
-  </div>
   {/* 🚀 Animated Content */}
-  <motion.div 
-    initial={{ x: "-100%", opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="absolute top-[25%] left-[8%] text-white z-10 max-w-[40vw] -mt-[5vw]"
+ <motion.div 
+  initial={{ x: "-100%", opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="absolute top-[25%] left-[8%] text-white z-10 max-w-[40vw] -mt-[5vw]"
+>
+  <h1 
+    className="text-[4.5vw] capitalize leading-tight mb-[0.3vw]"
+    style={{ fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, serif" }}
   >
-    <h1 className="text-[4.5vw] capitalize leading-tight mb-[0.3vw] font-lisu ">
-      Committed to
-    </h1>
-    <span className="text-[#E85222] text-[4.5vw] capitalize font-lisu font-semibold">
-      quality
-    </span>
-    <p className="text-[4.5vw] mb-[0.4vw] capitalize font-lisu-600 ">
-      education
-    </p>
+    Committed to
+  </h1>
+  <span 
+    className="text-[#E85222] text-[4.5vw] capitalize font-semibold"
+    style={{ fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, serif" }}
+  >
+    quality
+  </span>
+  <p 
+    className="text-[4.5vw] mb-[0.4vw] capitalize"
+    style={{ fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, serif" }}
+  >
+    education
+  </p>
 
-    {/* 🟧 Enroll Now Image */}
-    <div className="relative w-[20vw] h-[6vw] mt-[1vw]">
-      <Link href="/contact">
-        <Image
-          src="/img/enroll.png"
-          alt="Enroll Now"
-          fill
-          className="object-contain"
-        />
-      </Link>
-    </div>
-  </motion.div>
+  {/* 🟧 Enroll Now Image */}
+  <div className="relative w-[20vw] h-[6vw] mt-[1vw]">
+    <Link href="/contact">
+      <Image
+        src="/img/enroll.png"
+        alt="Enroll Now"
+        fill
+        className="object-contain"
+      />
+    </Link>
+  </div>
+</motion.div>
 </div>
 
         {/* 🔵 Right Shape with Image (animated from right) */}
@@ -169,18 +168,38 @@ export default function QualityBanner() {
         </motion.div>
 
         {/* 🔴 Static Red Border — 🔧 UPDATED HEIGHT */}
-        <div
-          className="absolute bg-[#E85222]"
-          style={{
-            width: "4px",
-            height: "111.8%",
-            top: "-15px",
-            left: "70.20%",
-            transform: "rotate(22.9deg)",
-            transformOrigin: "top",
-            zIndex: 10,
-          }}
-        ></div>
+      <div
+  className="
+    absolute bg-[#E85222]
+    w-[4px]
+
+    /* Height for all breakpoints */
+    h-[115%]        /* default (below sm) */
+    sm:h-[114%]     /* ≥640px */
+    md:h-[112%]    /* ≥768px */
+    lg:h-[112%]    /* ≥1024px */
+
+    /* Top position */
+    top-[-10px]    /* default (below sm) */
+    sm:top-[-12px]
+    md:top-[-14px]
+    lg:top-[-15px]
+
+    /* Left position */
+    left-[70%]     /* default (below sm) */
+    sm:left-[70.1%]
+    md:left-[70.2%]
+    lg:left-[70.2%]
+
+    z-10
+  "
+  style={{
+    transform: "rotate(22.9deg)",
+    transformOrigin: "top",
+  }}
+></div>
+
+
       </div>
     </div>
   );
