@@ -9,10 +9,13 @@ import WhyChooseUs from "@/components/home/whychooseus";
 import Image from "next/image";
 import HeroSection from "@/components/home/HeroSection";
 import HomeTestimonial from "@/components/home/HomeTestimonial";
+import NoticeRibbon from "@/components/home/Notice";
 export default function page() {
   return (
     <div>
+      <NoticeRibbon/>
       <QualityBanner/>
+      
       <WhyChooseUs/>
       
       <StreamAndCourses/>
