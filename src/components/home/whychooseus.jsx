@@ -5,13 +5,13 @@ import { motion, useInView } from "framer-motion";
 
 export default function WhyChooseUs() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px" });
+  const isInView = useInView(ref, { once: true, margin: "100px" });
 
   return (
     <section className="relative w-full overflow-visible mt-[2vw] ">
       {/* Heading */}
-      <div className="relative z-20 pt-8 md:pt-16 pb-4 md:pb-6 text-center px-4">
-        <h2 className="text-xl md:text-4xl font-semibold text-[#0f1e49]">
+      <div className="relative z-20 pt-8 md:pt-16 pb-2 md:pb-6 text-center px-4">
+        <h2 className="text-2xl md:text-5xl font-semibold text-[#0f1e49]">
           Why Choose Us?
         </h2>
       </div>
@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
           {/* SVG Background */}
           <div className="absolute inset-0 w-full h-full">
             <svg
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full object-cover"
               viewBox="0 0 1728 848"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -39,21 +39,12 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Main Content Section - Mobile Optimized */}
-          <div ref={ref} className="relative z-10 min-h-[100vh] flex items-center justify-center py-8 px-4 md:p-4 lg:p-6 xl:p-8">
+          <div className="relative z-10 min-h-[100vh] flex items-center justify-center py-8 px-4 md:p-4 lg:p-6 xl:p-8">
             <div className="max-w-7xl mx-auto w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
                 
-                {/* Image Section - Animate from far left */}
-                <motion.div 
-                  className="flex justify-center lg:justify-start order-1 lg:order-none mb-4 md:mb-0 lg:pl-18"
-                  initial={{ x: "-100%", opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ 
-                    duration: 0.8, 
-                    ease: [0.16, 0.77, 0.47, 0.97],
-                    delay: 0.1
-                  }}
-                >
+                {/* Image Section - Mobile First */}
+                <div className="flex justify-center lg:justify-start order-1 lg:order-none mb-4 md:mb-0 lg:pl-18">
                   <div className="relative w-[160px] sm:w-[200px] md:w-[280px] lg:w-[350px] xl:w-[400px] lg:max-w-lg">
                     <div className="aspect-square relative">
                       <Image
@@ -66,19 +57,10 @@ export default function WhyChooseUs() {
                       />
                     </div>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* Text Section - Animate from far right */}
-                <motion.div 
-                  className="text-white space-y-4 md:space-y-6 order-2 px-2 md:px-0"
-                  initial={{ x: "100%", opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ 
-                    duration: 0.8, 
-                    ease: [0.16, 0.77, 0.47, 0.97],
-                    delay: 0.2
-                  }}
-                >
+                {/* Text Section - Mobile Optimized */}
+                <div className="text-white space-y-4 md:space-y-6 order-2 px-2 md:px-0">
                   <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-6 sm:leading-7 md:leading-8 lg:leading-9 xl:leading-10 opacity-90 text-center lg:text-left">
                     We at Excellent strongly believe that the best faculty
                     creates the best students and that is why we have a faculty
@@ -89,12 +71,25 @@ export default function WhyChooseUs() {
                     Qualified and experienced faculty accelerate the learning
                     process.
                   </p>
-                </motion.div>
+
+                  {/* Call to Action Buttons */}
+                  {/* <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+                    <button className="px-6 py-3 bg-[#e94f1d] text-white rounded-lg font-semibold hover:bg-[#d63f17] transition-colors">
+                      Learn More
+                    </button>
+                    <button className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#20356B] transition-colors">
+                      Contact Us
+                    </button>
+                  </div> */}
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Features Section */}
         </div>
       </div>
+      {/* Main Content */}
     </section>
   );
 }

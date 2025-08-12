@@ -30,9 +30,6 @@ html, body {
   scrollbar-width: none;        
 }
 
-svg {
-  min-height: 300px;
-}
 
 body::-webkit-scrollbar {
   display: none;            
