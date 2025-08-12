@@ -9,8 +9,8 @@ export default function FlatBottomImageComponent() {
   const [currentIndex, setCurrentIndex] = useState(0) // For small screens carousel
   const fallbackImage = "/placeholder.svg" // Fallback image path
   const svgPath = "M 0 0 Q 475 70 950 0 L 950 350 L 0 350 Z"
-  const url = `${process.env.API_BASE_URL}/api/admin/media/images`
-
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/media/images`
+console.log(url)
   const getImageData = async () => {
     try {
       const response = await axios.get(url)
@@ -31,11 +31,11 @@ export default function FlatBottomImageComponent() {
   }, [])
 
   // Use fallback if no images loaded
-  const imagesToDisplay = imageData.length > 0 ? imageData : [
-    { id: 0, imageUrl: fallbackImage, alt: "Fallback Image 1" },
-    { id: 1, imageUrl: fallbackImage, alt: "Fallback Image 2" },
-    { id: 2, imageUrl: fallbackImage, alt: "Fallback Image 3" },
-  ]
+  // const imagesToDisplay = imageData.length > 0 ? imageData : [
+  //   { id: 0, imageUrl: fallbackImage, alt: "Fallback Image 1" },
+  //   { id: 1, imageUrl: fallbackImage, alt: "Fallback Image 2" },
+  //   { id: 2, imageUrl: fallbackImage, alt: "Fallback Image 3" },
+  // ]
 
   return (
     <div className="w-full flex justify-center items-center py-2 m-0 ">
@@ -71,7 +71,7 @@ export default function FlatBottomImageComponent() {
               msOverflowStyle: "none",
             }}
           >
-            {imagesToDisplay.map((image) => (
+            {imageData.map((image) => (
               <div key={image.id} className="flex-shrink-0 w-[310px] h-full relative">
                 <img
                   src={image.imageUrl || fallbackImage}
@@ -90,15 +90,15 @@ export default function FlatBottomImageComponent() {
       {/* Small screens */}
       <div className="md:hidden w-full max-w-md relative flex flex-col items-center">
         <img
-          src={imagesToDisplay[currentIndex]?.imageUrl || fallbackImage}
-          alt={imagesToDisplay[currentIndex]?.alt || `Image ${currentIndex}`}
+          src={imageData[currentIndex]?.imageUrl || fallbackImage}
+          alt={imageData[currentIndex]?.alt || `Image ${currentIndex}`}
           className="w-full h-60 object-cover rounded-lg"
           loading="eager"
           onError={(e) => { e.target.src = fallbackImage }}
         />
         {/* Dot indicators */}
         <div className="flex justify-center gap-3 mt-3">
-          {imagesToDisplay.map((_, idx) => (
+          {imageData.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}

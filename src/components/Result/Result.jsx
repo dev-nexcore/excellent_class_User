@@ -72,7 +72,7 @@ const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }
 
 // Final exportable Result section with animations
 export default function Result() {
-  const url = `http://localhost:5001/api/admin/toppers/getTopper`
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/toppers/getTopper`
 const getTopperData =async ()=>{
   try{
      const response = await axios.get(url)
