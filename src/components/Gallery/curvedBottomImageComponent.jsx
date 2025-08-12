@@ -103,7 +103,7 @@ export default function CurvedBottomImageComponent() {
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                idx === currentIndex ? "bg-white" : "bg-gray-400"
+                idx === currentIndex ? "bg-[#E85222]" : "bg-gray-400"
               }`}
               aria-label={`Go to image ${idx + 1}`}
             />
