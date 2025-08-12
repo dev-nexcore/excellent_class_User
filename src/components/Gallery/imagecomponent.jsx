@@ -9,7 +9,7 @@ function ImageComponent() {
   const [videos, setVideos] = useState([])
   const getVideoData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5001/api/admin/media/videos`)
+      const response = await axios.get(`${process.env.API_BASE_URL}/api/admin/media/videos`)
       // Transform the API response data into the format you need
       const formattedVideoData = response.data.map((obj, index) => ({
         id: index + 1,

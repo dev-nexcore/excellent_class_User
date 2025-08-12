@@ -9,7 +9,7 @@ export default function FlatBottomImageComponent() {
   const [currentIndex, setCurrentIndex] = useState(0) // For small screens carousel
   const fallbackImage = "/placeholder.svg" // Fallback image path
   const svgPath = "M 0 0 Q 475 70 950 0 L 950 350 L 0 350 Z"
-  const url = `http://localhost:5001/api/admin/media/images`
+  const url = `${process.env.API_BASE_URL}/api/admin/media/images`
 
   const getImageData = async () => {
     try {

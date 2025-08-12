@@ -8,7 +8,7 @@ export default function CurvedBottomImageComponent() {
   
   // SVG path for clipping
   const svgPath = "M 0 0 Q 475 70 950 0 L 950 350 Q 475 280 0 350 Z"
-  const url = `http://localhost:5001/api/admin/media/images`
+  const url = `${process.env.API_BASE_URL}/api/admin/media/images`
 
   const getImageData = async () => {
     try {
