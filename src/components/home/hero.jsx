@@ -160,7 +160,7 @@ export default function QualityBanner() {
               style={{
                 position: "absolute",
                 top: "39.3%",
-                left: "75.6%",
+                left: "76.6%",
                 transform: "translate(-50%, -50%)",
               }}
             />
@@ -168,36 +168,21 @@ export default function QualityBanner() {
         </motion.div>
 
         {/* 🔴 Static Red Border — 🔧 UPDATED HEIGHT */}
-      <div
-  className="
-    absolute bg-[#E85222]
-    w-[4px]
-
-    /* Height for all breakpoints */
-    h-[115%]        /* default (below sm) */
-    sm:h-[114%]     /* ≥640px */
-    md:h-[112%]    /* ≥768px */
-    lg:h-[112%]    /* ≥1024px */
-
-    /* Top position */
-    top-[-10px]    /* default (below sm) */
-    sm:top-[-12px]
-    md:top-[-14px]
-    lg:top-[-15px]
-
-    /* Left position */
-    left-[70%]     /* default (below sm) */
-    sm:left-[70.1%]
-    md:left-[70.2%]
-    lg:left-[70.2%]
-
-    z-10
+{/* 🔴 Static Red Border — Fixed Position for All Views */}
+<div
+  className="mt-3
+    absolute bg-[#E85222] z-10
+    w-[0.5vw]      /* thickness scales with screen */
+    h-[110%]       /* enough to cover both views */
+    top-[-16px]
+    left-[70%]   /* same position for all breakpoints */
   "
   style={{
     transform: "rotate(22.9deg)",
     transformOrigin: "top",
   }}
 ></div>
+
 
 
       </div>
