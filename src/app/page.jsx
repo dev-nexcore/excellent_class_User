@@ -1,13 +1,33 @@
 export const metadata = {
-  title: "Best Coaching Classes in Mumbai | Bright Future Classes",
+  title: "Excellent Classee | Best Coaching Classes in Mumbai",
   description:
-    "Bright Future Classes offers the best coaching classes in Mumbai for Maths, Science, and English. Join now for expert faculty, affordable fees, and excellent results.",
+    "Excellent Classee offers the best coaching classes in Mumbai for Maths, Science, and English. Expert faculty, quality notes, regular tests, and 100% result-oriented coaching.",
   keywords: [
+    "Excellent Classee",
     "coaching classes in Mumbai",
-    "maths tuition",
-    "science coaching",
+    "maths tuition Mumbai",
+    "science coaching classes",
     "best classes near me",
+    "SSC coaching Mumbai",
+    "CBSE coaching Mumbai",
   ],
+  openGraph: {
+    title: "Excellent Classee | Best Coaching Classes in Mumbai",
+    description:
+      "Join Excellent Classee – Top coaching classes in Mumbai with expert teachers, modern study material, and a proven track record of success.",
+    url: "https://www.excellent-classes.nexcorealliance.com", // <- yaha apni website ka real domain daalna
+    siteName: "Excellent Classee",
+    images: [
+      {
+        url: "/img/homeBanner.jpg", // hero banner image
+        width: 1200,
+        height: 630,
+        alt: "Excellent Classee Coaching Classes in Mumbai",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 import Footer from "@/components/common/Footer";
