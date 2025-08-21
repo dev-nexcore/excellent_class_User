@@ -103,7 +103,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 */}
-          <div className="flex-1 min-w-[180px] text-left ">
+          <div className="flex-0 min-w-[180px] text-left ">
             <h4 className="text-black text-base font-semibold uppercase mb-3">
               Our Courses
             </h4>

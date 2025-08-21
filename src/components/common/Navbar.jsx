@@ -27,6 +27,7 @@ export default function Navbar() {
     { name: "Courses", path: "/courses" },
     { name: "Result", path: "/result" },
     { name: "Gallery", path: "/gallery" },
+    { name: "Blogs", path: "/blogs" },
     { name: "Testimonial", path: "/testimonial" },
     { name: "Contact us", path: "/contact" },
   ];

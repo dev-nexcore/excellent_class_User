@@ -99,10 +99,10 @@ const rightInView = useInView(rightRef, { once: true });
 </div>
 
                   {/* Responsive Description */}
-                 <div className="w-full text-base sm:text-base md:text-lg lg:text-[16px]  leading-relaxed flex justify-center md:justify-start text-center md:text-left">
-  <div className="inline-block">
+                 <div className="w-full text-base sm:text-base md:text-lg lg:text-[16px]  leading-relaxed flex justify-center md:ml-2 text-center md:text-left">
+  <div className="">
     {/* For small screens (mobile) */}
-    <div className="block sm:hidden">
+    <div className="block sm:hidden ">
       <p>Established in 1990.
       Successfully trained more than 20000 students.</p>
       <p>Driven by motivated and dedicated team.</p>
@@ -238,8 +238,8 @@ const rightInView = useInView(rightRef, { once: true });
       viewport={{ amount: 0.4, once: true }}
       className="w-full md:w-[45vw] lg:w-[27vw] h-[50vw] md:h-[22vw] lg:h-[17vw] bg-[#F9B233] text-black py-[4vw] md:py-[2vw] lg:py-[1vw] rounded-tr-[60px] md:rounded-tr-[90px] lg:rounded-tr-[120px] shadow-lg ml-auto mr-auto md:ml-[-4vw] lg:ml-[0.5vw] -mt-[6vw] md:-mt-[4vw] lg:-mt-[0.1vw] mb-7"
     >
-      <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">OUR CULTURE</h2>
-      <ul className="list-disc list-inside space-y-1 text-xs md:text-sm leading-relaxed px-6 md:px-8 lg:px-12 font-medium">
+      <h2 className="text-xl md:text-3xl font-semibold mb-4 md:mb-6 text-center">OUR CULTURE</h2>
+      <ul className="list-disc list-inside space-y-0 text-xs md:text-base leading-relaxed px-6 md:px-8 lg:px-12 font-medium">
         <li>Commitment</li>
         <li>Enriching Education</li>
         <li>Encouraging Learning</li>
@@ -257,8 +257,8 @@ const rightInView = useInView(rightRef, { once: true });
       viewport={{ amount: 0.4, once: true }}
       className="w-full md:w-[45vw] lg:w-[28vw] h-[50vw] md:h-[22vw] lg:h-[19vw] bg-[#F9B233] text-black py-[2vw] md:py-[2vw] lg:py-[1vw] rounded-bl-[60px] md:rounded-bl-[90px] lg:rounded-bl-[120px] shadow-lg ml-auto -mt-[0.3vw] mr-[3vw]"
     >
-      <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">CORE VALUES</h2>
-      <ul className="list-disc list-inside space-y-1 text-xs md:text-sm leading-relaxed px-6 md:px-8 lg:px-12 font-medium">
+      <h2 className="text-xl md:text-3xl font-semibold mb-4 md:mb-6 text-center">CORE VALUES</h2>
+      <ul className="list-disc list-inside space-y-0 text-xs md:text-base leading-relaxed px-6 md:px-8 lg:px-12 font-medium">
         <li>Commitment</li>
         <li>Enriching Education</li>
         <li>Encouraging Learning</li>
@@ -342,7 +342,7 @@ const rightInView = useInView(rightRef, { once: true });
 
             {/* Text Overlay */}
             <div className="text-center p-4 mt-2">
-              <p className="font-bold text-[4.5vw] md:text-[3vw] lg:text-[2.5vw]">Dr Jamil Khan</p>
+              <p className="font-bold text-[4.5vw] md:text-[3vw] lg:text-[2.5vw]">Dr. Jamil Khan</p>
               <p className="text-[#20356B] font-bold text-[2.8vw] md:text-[2vw] lg:text-[1.5vw]">Principal</p>
             </div>
           </div>
