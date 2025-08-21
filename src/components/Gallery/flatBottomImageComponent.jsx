@@ -58,7 +58,7 @@ console.log(url)
           preserveAspectRatio="none"
           className="absolute inset-0 z-0"
         >
-          <path d={svgPath} fill="none" stroke="white" strokeWidth="2" />
+          <path d={svgPath} fill="none"  strokeWidth="2" />
         </svg>
 
         {/* Scrollable images container */}

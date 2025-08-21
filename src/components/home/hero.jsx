@@ -32,7 +32,8 @@ export default function QualityBanner() {
 
 
 {/* Top-left main image */}
-<div className="absolute -top-14 -left-4 w-[15vw] h-[20vw] min-w-[80px] min-h-[100px]">
+<div className="absolute 
+ md:-top-20 -top-20 -left-4 w-[15vw] h-[20vw] min-w-[80px] min-h-[100px]">
   <Image
     src="/Ellipse 79.png"
     alt="Top Left Icon"
@@ -42,7 +43,7 @@ export default function QualityBanner() {
 </div>
 
 {/* Small left dot - made responsive */}
-<div className="absolute top-[25%] left-[15%] w-[6vw] h-[8vw] min-w-[40px] min-h-[50px]">
+<div className="absolute top-[25%] left-[40%] w-[6vw] h-[8vw] min-w-[40px] min-h-[50px]">
   <Image
     src="/Ellipse 82.png"
     alt="Top Left Icon"
@@ -72,7 +73,7 @@ export default function QualityBanner() {
 </div>
 
 {/* Mid right small dot - made responsive */}
-<div className="absolute top-[45%] left-[55%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px] sm:left-[65%]">
+<div className="absolute top-[30%] left-[65%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px] sm:left-[65%]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"
@@ -92,7 +93,7 @@ export default function QualityBanner() {
 </div>
 
 {/* Top far right dot - made responsive */}
-<div className="absolute top-[5%] left-[55%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px] sm:left-[65%]">
+<div className="absolute top-[10%] right-[25%] w-[4vw] h-[6vw] min-w-[30px] min-h-[40px] sm:left-[65%]">
   <Image
     src="/img/eclipse.png"
     alt="Top Left Icon"

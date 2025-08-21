@@ -1,24 +1,13 @@
 // next-seo.config.js
 export default {
-  title: "Excellent Classes",
+  titleTemplate: "%s | Excellent Classes",
+  defaultTitle: "Excellent Classes",
   description:
-    "Excellent Classes provides quality coaching for students with expert teachers, personalized guidance, and proven results. Join now for academic success!",
+    "Excellent Classes provides expert coaching for IIT-JEE, NEET, SSC, Commerce, BMS, B.Com, BAF, and CA Foundation with personalized guidance and proven results.",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.excellentclasses.nexcorealliance.com/", // <-- replace with your real domain
+    url: "https://www.excellentclasses.nexcorealliance.com/",
     siteName: "Excellent Classes",
-    title: "Excellent Classes",
-    description:
-      "Join Excellent Classes for the best learning experience. Expert faculty, top results, and student success.",
-    images: [
-      {
-        url: "/Logo/logo.png", // Add an image in public folder
-        width: 1200,
-        height: 630,
-        alt: "Excellent Classes Logo",
-      },
-    ],
   },
-
 };

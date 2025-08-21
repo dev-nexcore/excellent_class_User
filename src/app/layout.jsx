@@ -3,7 +3,7 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import BreadCrumbs from "@/components/breadCrumbs/breadCrumbs";
 
-import SeoWrapper from "@/components/SEO/SeoWrapper"; // SEO wrapper component
+
 
 
 // Load fonts using next/font/google
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${radley.variable} ${lisuBosa.variable} scrollbar-thin scrollbar-thumb-[#f26722] scrollbar-track-blue-900`}>
       <body className="antialiased">
-        <SeoWrapper />  {/* ✅ Global SEO */}
+       
 
         <Navbar />
         <BreadCrumbs />

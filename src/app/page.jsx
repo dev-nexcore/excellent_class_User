@@ -30,6 +30,7 @@ export const metadata = {
   },
 };
 
+
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import ContactUs from "@/components/home/contact";
