@@ -3,9 +3,6 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import BreadCrumbs from "@/components/breadCrumbs/breadCrumbs";
 
-
-
-
 // Load fonts using next/font/google
 import { Poppins } from 'next/font/google';
 import { Radley } from 'next/font/google';
@@ -43,7 +40,7 @@ export const metadata = {
     "Best Coaching Classes",
     "Coaching Institute",
     "Tuition for Students",
-    "Top Classes in [Your City]", // yahan apna city name daalo
+    "Top Classes in Mumbai", // yahan apna city name daalo
     "Board Exam Coaching",
     "NEET Coaching",
     "IIT JEE Coaching",
