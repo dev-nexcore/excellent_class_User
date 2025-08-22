@@ -27,7 +27,7 @@ export default function NoticeRibbon() {
 
 
   return (
-    <div className="w-full bg-red-500  text-white py-2 overflow-hidden relative">
+    <div className="w-full bg-[#E85222]  text-white py-2 overflow-hidden relative">
       <div className="whitespace-nowrap animate-marquee">
         {notice}
       </div>
