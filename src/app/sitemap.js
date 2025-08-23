@@ -59,7 +59,11 @@ export default async function sitemap() {
     { slug: "how-to-improve-memory-retention" },
     { slug: "tips-for-writing-effective-essays" },
   ];
-
+  const gallery = [
+    { slug: "annual-function-2025" },
+    { slug: "republic-day-celebration" },
+    { slug: "students-achievements" },
+  ];
   // Return in Next.js App Router sitemap format
   return [
     ...staticPages.map((page) => ({
