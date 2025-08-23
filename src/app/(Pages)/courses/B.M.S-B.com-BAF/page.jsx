@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Join Excellent Classes for expert coaching in BMS, B.Com, and BAF. Learn from experienced faculty, clear concepts, and excel in your academic journey with top results.",
   alternates: {
-    canonical: "https://www.excellent-classes.nexcorealliance.com/courses/cbse",
+    canonical: "https://excellent-classes.nexcorealliance.com/courses/B.M.S-B.com-BAF",
   },
   openGraph: {
     url: "https://www.excellentclasses.nexcorealliance.com/courses/BMS-BCOM_BAF",
