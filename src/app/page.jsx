@@ -1,9 +1,9 @@
 export const metadata = {
-  title: "Excellent Classee | Best Coaching Classes in Mumbai",
+  title: "Excellent Classes",
   description:
-    "Excellent Classee offers the best coaching classes in Mumbai for Maths, Science, and English. Expert faculty, quality notes, regular tests, and 100% result-oriented coaching.",
+    "Excellent Classes offers the best coaching classes in Mumbai for Maths, Science, and English. Expert faculty, quality notes, regular tests, and 100% result-oriented coaching.",
   keywords: [
-    "Excellent Classee",
+    "Excellent Classes",
     "coaching classes in Mumbai",
     "maths tuition Mumbai",
     "science coaching classes",
@@ -12,17 +12,17 @@ export const metadata = {
     "CBSE coaching Mumbai",
   ],
   openGraph: {
-    title: "Excellent Classee | Best Coaching Classes in Mumbai",
+    title: "Excellent Classes | Best Coaching Classes in Mumbai",
     description:
-      "Join Excellent Classee – Top coaching classes in Mumbai with expert teachers, modern study material, and a proven track record of success.",
+      "Join Excellent Classes – Top coaching classes in Mumbai with expert teachers, modern study material, and a proven track record of success.",
     url: "https://www.excellent-classes.nexcorealliance.com", // <- yaha apni website ka real domain daalna
-    siteName: "Excellent Classee",
+    siteName: "Excellent Classes",
     images: [
       {
         url: "/img/homeBanner.jpg", // hero banner image
         width: 1200,
         height: 630,
-        alt: "Excellent Classee Coaching Classes in Mumbai",
+        alt: "Excellent Classes Coaching Classes in Mumbai",
       },
     ],
     locale: "en_IN",

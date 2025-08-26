@@ -1,29 +1,51 @@
+// export const metadata = {
+//   title: "ICSE Coaching Classes in Mumbai | Excellent Classes",
+//   description:
+//     "Join Excellent Classes for the best ICSE coaching in Mumbai. Specialized coaching for 8th, 9th, and 10th ICSE students with expert faculty and top results.",
+//   alternates: {
+//     canonical: "https://www.excellent-classes.nexcorealliance.com/courses/ICSE",
+//   },
+//   openGraph: {
+//     title: "ICSE Coaching Classes in Mumbai | Excellent Classes",
+//     description:
+//       "Top ICSE coaching classes in Mumbai with personalized teaching for 8th, 9th, and 10th students. Trusted by parents and students alike.",
+//     url: "https://www.excellent-classes.nexcorealliance.com/courses/ICSE",
+//     siteName: "Excellent Classes",
+//     images: [
+//       {
+//         url: "/og-image-icse.jpg",
+//         width: 1200,
+//         height: 630,
+//         alt: "ICSE Coaching Classes in Mumbai",
+//       },
+//     ],
+//   },
+// };
+
 export const metadata = {
   title: "ICSE Coaching Classes in Mumbai | Excellent Classes",
   description:
-    "Excellent Classes offers ICSE coaching in Mumbai with expert teachers, personalized study plans, and regular performance tracking.",
+    "Best ICSE coaching in Mumbai with expert faculty, personalized notes, and proven track record of student success at Excellent Classes.",
   alternates: {
-    canonical: "https://www.excellent-classes.nexcorealliance.com/courses/icse",
+    canonical: "https://www.excellent-classes.nexcorealliance.com/icse",
   },
   openGraph: {
-    url: "https://www.excellent-classes.nexcorealliance.com/courses/icse",
-    title: "ICSE Coaching Classes in Mumbai | Excellent Classes",
+    title: "ICSE Coaching in Mumbai | Excellent Classes",
     description:
-      "Excellent Classes provides ICSE coaching with quality notes, expert faculty, and excellent results.",
+      "Enroll in Mumbai’s top ICSE coaching at Excellent Classes. Expert ICSE teachers, result-oriented methods, and student-focused learning.",
+    url: "https://www.excellent-classes.nexcorealliance.com/icse",
+    siteName: "Excellent Classes",
     images: [
       {
-        url: "/img/icseBanner.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ICSE Coaching Excellent Classes",
+        alt: "ICSE Coaching Classes in Mumbai",
       },
     ],
-    siteName: "Excellent Classes",
-  },
-  twitter: {
-    card: "summary_large_image",
   },
 };
+
 
 
 import ICSEpage from "@/components/Courses/icsepage";   
