@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Contact Us | Excellent Classes",
+  title: "Contact Excellent Classes | Coaching in Kurla & Mumbai",
   description:
-    "Get in touch with Excellent Classes for admissions, inquiries, and support. We're here to help you achieve success.",
+    "Get in touch with Excellent Classes - Best coaching classes in Kurla & Mumbai for ICSE, CBSE, SSC, HSC, JEE & NEET. Call us or visit our center today!",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com/contact",
   },
@@ -9,7 +9,7 @@ export const metadata = {
     url: "https://www.excellent-classes.nexcorealliance.com/contact",
     title: "Contact Us | Excellent Classes",
     description:
-      "Get in touch with Excellent Classes for admissions, inquiries, and support. We're here to help you achieve success.",
+    "Get in touch with Excellent Classes - Best coaching classes in Kurla & Mumbai for ICSE, CBSE, SSC, HSC, JEE & NEET. Call us or visit our center today!",
     images: [
       {
         url: "/img/contactBanner.jpg",

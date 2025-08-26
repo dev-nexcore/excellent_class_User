@@ -1,20 +1,26 @@
 export const metadata = {
-  title: "Excellent Classes", 
+  title: "Excellent Classes | Best Coaching in Kurla & Mumbai for 8th–12th, Science & Commerce", 
   description:
-    "Excellent Classes offers the best coaching classes in Mumbai for Maths, Science, and English. Expert faculty, quality notes, regular tests, and 100% result-oriented coaching.",
-  keywords: [
-    "Excellent Classes",
-    "coaching classes in Mumbai",
-    "maths tuition Mumbai",
-    "science coaching classes",
-    "best classes near me",
-    "SSC coaching Mumbai",
-    "CBSE coaching Mumbai",
-  ],
+   "Join Excellent Classes in Kurla, Mumbai – Expert coaching for 8th, 9th, 10th, 11th–12th Science & Commerce. Special focus on NEET, JEE & Board exams with top faculty, quality notes, and proven results."
+,
+keywords: [
+  "Excellent Classes",
+  "coaching classes in Kurla",
+  "best coaching in Kurla West",
+  "class 8 9 10 coaching Kurla",
+  "11 12 science tuition Kurla",
+  "commerce coaching Kurla",
+  "NEET coaching in Kurla",
+  "JEE coaching classes Mumbai",
+  "SSC coaching Kurla Mumbai",
+  "best tuition near me Kurla"
+],
+
   openGraph: {
     title: "Excellent Classes | Best Coaching Classes in Mumbai",
     description:
-      "Join Excellent Classes – Top coaching classes in Mumbai with expert teachers, modern study material, and a proven track record of success.",
+      "Join Excellent Classes – Best coaching classes in Kurla & Mumbai for 8th–12th Science & Commerce, NEET & JEE prep. Trusted by parents, loved by students."
+,
     url: "https://www.excellent-classes.nexcorealliance.com", // <- yaha apni website ka real domain daalna
     siteName: "Excellent Classes",
     images: [

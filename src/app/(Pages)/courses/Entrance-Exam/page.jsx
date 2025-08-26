@@ -18,7 +18,7 @@
 //   },
 // };
 export const metadata = {
-  title: "JEE & NEET Coaching in Mumbai | Excellent Classes",
+  title: "JEE & NEET Coaching in Kurla | Excellent Classes",
   description:
     "Crack JEE & NEET with Excellent Classes in Mumbai. Experienced faculty, focused preparation, and proven success results.",
   alternates: {
@@ -26,8 +26,8 @@ export const metadata = {
   },
   openGraph: {
     title: "JEE/NEET Coaching in Mumbai | Excellent Classes",
-    description:
-      "Enroll in Mumbai’s top JEE & NEET coaching at Excellent Classes. Expert guidance, rigorous practice, and 100% commitment to student success.",
+     description:
+    "Crack JEE & NEET with Excellent Classes in Mumbai. Experienced faculty, focused preparation, and proven success results.",
     url: "https://www.excellent-classes.nexcorealliance.com/jee-neet",
     siteName: "Excellent Classes",
     images: [

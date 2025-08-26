@@ -12,7 +12,7 @@
 // };
 
 export const metadata = {
-  title: "Class 8, 9 & 10 Coaching in Mumbai | Excellent Classes",
+  title: "Class 8, 9 & 10 Coaching in kurla | Excellent Classes",
   description:
     "Excellent Classes offers Class 8, Class 9, and Class 10 coaching in Mumbai. Expert teachers, personalized guidance, and proven success in board exams.",
   alternates: {
@@ -20,8 +20,8 @@ export const metadata = {
   },
   openGraph: {
     title: "Class 8, 9 & 10 Coaching in Mumbai | Excellent Classes",
-    description:
-      "Join Excellent Classes for Class 8, 9, and 10 coaching in Mumbai. Result-driven training, expert faculty, and top performance in board exams.",
+   description:
+    "Excellent Classes offers Class 8, Class 9, and Class 10 coaching in Mumbai. Expert teachers, personalized guidance, and proven success in board exams.",
     url: "https://www.excellent-classes.nexcorealliance.com/class-8-9-10",
     siteName: "Excellent Classes",
     images: [

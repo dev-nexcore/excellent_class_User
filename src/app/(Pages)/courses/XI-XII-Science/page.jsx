@@ -14,16 +14,16 @@
 // };
 
 export const metadata = {
-  title: "Class 11 & 12 Science Coaching in Mumbai | Excellent Classes",
+  title: "Class 11 & 12 Science Coaching in Kurla | Excellent Classes",
   description:
     "Excellent Classes offers Class 11 and 12 Science coaching in Mumbai with expert faculty for Physics, Chemistry, Maths & Biology.",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com/science-11-12",
   },
   openGraph: {
-    title: "Class 11 & 12 Science Coaching in Mumbai | Excellent Classes",
-    description:
-      "Top Class 11 & 12 Science coaching in Mumbai. Join Excellent Classes for Physics, Chemistry, Maths & Biology with proven results.",
+    title: "11th & 12th Science Coaching | Excellent Classes Kurla, Mumbai",
+   description:
+    "Excellent Classes offers Class 11 and 12 Science coaching in Mumbai with expert faculty for Physics, Chemistry, Maths & Biology.",
     url: "https://www.excellent-classes.nexcorealliance.com/science-11-12",
     siteName: "Excellent Classes",
     images: [
