@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Excellent Classes",
+  title: "Excellent Classes", 
   description:
     "Excellent Classes offers the best coaching classes in Mumbai for Maths, Science, and English. Expert faculty, quality notes, regular tests, and 100% result-oriented coaching.",
   keywords: [
