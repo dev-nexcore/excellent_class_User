@@ -153,6 +153,13 @@ export default async function sitemap() {
     { slug: "students-achievements" },
   ];
 
+  const locations = [
+  { slug: "kurla" },
+  { slug: "mumbai" },
+  { slug: "kurla-east" },
+  { slug: "kurla-west" },
+];
+
   // Final Sitemap
   return [
     ...staticPages.map((page) => ({
@@ -171,5 +178,10 @@ export default async function sitemap() {
       url: `${baseUrl}/gallery/${item.slug}`,
       lastModified: new Date(),
     })),
-  ];
+
+    ...locations.map((loc) => ({
+  url: `${baseUrl}/locations/${loc.slug}`,
+  lastModified: new Date(),
+})),
+  ];  
 }
