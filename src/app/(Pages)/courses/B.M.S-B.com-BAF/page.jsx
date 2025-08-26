@@ -37,9 +37,9 @@ export const metadata = {
     canonical: "https://www.excellent-classes.nexcorealliance.com/bms-bcom-baf",
   },
   openGraph: {
-    title: "BMS, BCOM & BAF Coaching in Mumbai | Excellent Classes",
-    description:
-      "Enroll in Excellent Classes for BMS, BCOM & BAF coaching. Personalized learning, expert teachers, and high success rates in Mumbai.",
+    title: "BMS, BCOM & BAF Coaching in kurla | Excellent Classes",
+   description:
+    "Excellent Classes provides specialized BMS, BCOM, and BAF coaching in Mumbai. Expert faculty and focused study material for top results.",
     url: "https://www.excellent-classes.nexcorealliance.com/bms-bcom-baf",
     siteName: "Excellent Classes",
     images: [

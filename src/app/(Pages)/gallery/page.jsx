@@ -1,15 +1,15 @@
 export const metadata = {
-  title: "Gallery | Excellent Classes",
+  title: "Excellent Classes Gallery | Excellent Classes Kurla, Mumbai – Student Life & Coaching Moments",
   description:
-    "Explore the photo gallery of Excellent Classes showcasing events, achievements, and student activities.",
+    "View the gallery of Excellent Classes Kurla, Mumbai – Photos of classrooms, faculty, students, and success celebrations. Experience our coaching environment before you join.",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com/gallery",
   },
   openGraph: {
     url: "https://www.excellent-classes.nexcorealliance.com/gallery",
     title: "Gallery | Excellent Classes",
-    description:
-      "Explore the photo gallery of Excellent Classes showcasing events, achievements, and student activities.",
+   description:
+    "View the gallery of Excellent Classes Kurla, Mumbai – Photos of classrooms, faculty, students, and success celebrations. Experience our coaching environment before you join.",
     images: [
       {
         url: "/img/galleryBanner.jpg",

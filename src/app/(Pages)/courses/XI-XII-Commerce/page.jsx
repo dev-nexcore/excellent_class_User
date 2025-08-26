@@ -14,16 +14,16 @@
 // };
 
 export const metadata = {
-  title: "Class 11 & 12 Commerce Coaching in Mumbai | Excellent Classes",
+  title: "Class 11 & 12 Commerce Coaching in Kurla | Excellent Classes",
   description:
     "Excellent Classes offers Class 11 and 12 Commerce coaching in Mumbai. Expert teachers for Accounts, Economics, Business Studies & more.",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com/commerce-11-12",
   },
   openGraph: {
-    title: "Class 11 & 12 Commerce Coaching in Mumbai | Excellent Classes",
-    description:
-      "Join Excellent Classes for 11th & 12th Commerce coaching in Mumbai. Personalized guidance for Accounts, Economics, Business Studies & more.",
+    title: "11th & 12th Commerce Coaching | Excellent Classes Kurla, Mumbai",
+   description:
+    "Excellent Classes offers Class 11 and 12 Commerce coaching in Mumbai. Expert teachers for Accounts, Economics, Business Studies & more.",
     url: "https://www.excellent-classes.nexcorealliance.com/commerce-11-12",
     siteName: "Excellent Classes",
     images: [

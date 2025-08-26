@@ -1,16 +1,16 @@
 
 export const metadata = {
-  title: "Student Testimonials | Excellent Classes",
+  title: "Testimonials | Excellent Classes Mumbai – Parents & Students Reviews",
   description:
-    "Hear from our students and parents about their experiences with Excellent Classes. Proven results and trusted coaching.",
+    "Read genuine reviews and testimonials from students and parents of Excellent Classes, Mumbai. Trusted coaching with proven success and personal guidance.",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com/testimonials",
   },
   openGraph: {
     url: "https://www.excellent-classes.nexcorealliance.com/testimonials",
-    title: "Student Testimonials | Excellent Classes",
+    title: "Testimonials | Excellent Classes Mumbai – Parents & Students Reviews",
     description:
-      "Hear from our students and parents about their experiences with Excellent Classes. Proven results and trusted coaching.",
+      "Read genuine reviews and testimonials from students and parents of Excellent Classes, Mumbai. Trusted coaching with proven success and personal guidance.",
     images: [
       {
         url: "/img/testimonialsBanner.jpg",

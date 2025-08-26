@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Courses | Excellent Classes",
+  title: "Our Courses | ICSE, CBSE, SSC, HSC, JEE, NEET Coaching in Kurla & Mumbai",
   description:
-    "Explore our wide range of courses at Excellent Classes, including Maths, Science, English, IIT-JEE, and NEET preparation.",
+    "Explore Excellent Classes courses – Coaching for 8th–12th (Science & Commerce) and entrance exams like JEE & NEET. Quality notes, regular tests & personalized mentoring",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com/courses",
   },
@@ -9,8 +9,8 @@ export const metadata = {
     type: "website",
     url: "https://www.excellent-classes.nexcorealliance.com/courses",
     title: "Courses | Excellent Classes",
-    description:
-      "Explore our wide range of courses at Excellent Classes, including Maths, Science, English, IIT-JEE, and NEET preparation.",
+      description:
+    "Explore Excellent Classes courses – Coaching for 8th–12th (Science & Commerce) and entrance exams like JEE & NEET. Quality notes, regular tests & personalized mentoring",
     siteName: "Excellent Classes",
     images: [
       {

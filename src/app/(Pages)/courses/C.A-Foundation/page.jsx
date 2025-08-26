@@ -2,7 +2,7 @@ import React from 'react'
 
 import CAFoundation from '@/components/Courses/cafoundation'
 export const metadata = {
-  title: "C.A. Foundation Coaching in Mumbai | Excellent Classes",
+  title: "C.A. Foundation Coaching in kurla | Excellent Classes",
   description:
     "Prepare for your C.A. Foundation exam with Excellent Classes. Get expert guidance, conceptual clarity, mock tests, and result-oriented coaching in Mumbai.",
   alternates: {
@@ -11,8 +11,8 @@ export const metadata = {
   openGraph: {
     url: "https://www.excellentclasses.nexcorealliance.com/courses/ca-foundation",
     title: "C.A. Foundation Coaching in Mumbai | Excellent Classes",
-    description:
-      "Join Excellent Classes for the best C.A. Foundation coaching in Mumbai. Experienced faculty, structured study plans, and mock test series for exam success.",
+      description:
+    "Prepare for your C.A. Foundation exam with Excellent Classes. Get expert guidance, conceptual clarity, mock tests, and result-oriented coaching in Mumbai.",
     images: [
       {
         url: "/img/caFoundationBanner.jpg", // replace with actual image path
