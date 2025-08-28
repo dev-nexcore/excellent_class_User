@@ -1,39 +1,8 @@
-'use client';
-import Image from 'next/image';
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import axios from 'axios';
-
-// Topper data with different heights (middle one taller)
-const toppers = [
-  {
-    name: 'Sana',
-    percentage: '92.60%',
-    school: 'Holy Cross',
-    rank: '2nd',
-    image: '/img/girl.png',
-    height: 243,
-    imageSize: 160,
-  },
-  {
-    name: 'Sana',
-    percentage: '95.60%',
-    school: 'Karthika',
-    rank: '1st',
-    image: '/img/girl.png',
-    height: 280,
-    imageSize: 184,
-  },
-  {
-    name: 'Sana',
-    percentage: '91.60%',
-    school: 'Micheal',
-    rank: '3rd',
-    image: '/img/girl.png',
-    height: 243,
-    imageSize: 160,
-  },
-];
+"use client";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import axios from "axios";
 
 // Topper card component
 const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }) => {
@@ -59,7 +28,7 @@ const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }
       {/* Yellow name box */}
       <div className="absolute bottom-[32px] z-30 bg-[#FEBB25] px-4 py-2 rounded-lg text-center w-[180px]">
         <p className="text-black font-bold text-[16px] leading-snug">{name}</p>
-        <p className="text-black font-semibold text-[14px]">{percentage}</p>
+        <p className="text-black font-semibold text-[14px]">{percentage}%</p>
       </div>
 
       {/* Rank and School Text */}
@@ -72,21 +41,32 @@ const TopperCard = ({ name, percentage, school, rank, image, height, imageSize }
 
 // Final exportable Result section with animations
 export default function Result() {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/toppers/getTopper`
-const getTopperData =async ()=>{
-  try{
-     const response = await axios.get(url)
-    console.log(response);
-  }catch(error){
-      console.log(error.message)
-  }
-   
-    
-    // console.log(response.data)
-}
-useEffect(()=>{
-     getTopperData()
-},[])
+  const [toppers, setToppers] = useState([]);
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/admin/toppers/getTopper`;
+
+  const getTopperData = async () => {
+    try {
+      const response = await axios.get(url);
+      // ✅ Map backend data into frontend card format
+      const mapped = response.data.map((item, index) => ({
+        name: item.studentName,
+        percentage: item.percentage,
+        school: item.trade, // using trade as school/section
+        rank: `${index + 1}st`, // temporary rank based on sort
+        image: "/img/girl.png", // fallback static image
+        height: index === 1 ? 280 : 243, // middle one taller
+        imageSize: index === 1 ? 184 : 160,
+      }));
+      setToppers(mapped);
+    } catch (error) {
+      console.log("Error fetching toppers:", error.message);
+    }
+  };
+
+  useEffect(() => {
+    getTopperData();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* heading section for x 2025 */}
@@ -96,7 +76,6 @@ useEffect(()=>{
 
       {/* Cards Container for x 2025 */}
       <div className="flex justify-center md:justify-evenly items-end flex-wrap gap-x-6 gap-y-15 md:gap-4 py-20 px-4 bg-[#F5F7FA]">
-
         {toppers.map((topper, index) => {
           let initial = {};
           if (index === 0) initial = { x: -200, opacity: 0 };
@@ -123,8 +102,7 @@ useEffect(()=>{
       </div>
 
       {/* Cards Container for hsc science 2025 */}
-       <div className="flex justify-center md:justify-evenly items-end flex-wrap gap-x-6 gap-y-15 md:gap-4 py-20 px-4 bg-[#F5F7FA]">
-
+      <div className="flex justify-center md:justify-evenly items-end flex-wrap gap-x-6 gap-y-15 md:gap-4 py-20 px-4 bg-[#F5F7FA]">
         {toppers.map((topper, index) => {
           let initial = {};
           if (index === 0) initial = { x: -200, opacity: 0 };
@@ -133,7 +111,7 @@ useEffect(()=>{
 
           return (
             <motion.div
-              key={index}
+              key={`science-${index}`}
               initial={initial}
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: index * 0.2 }}
@@ -151,8 +129,7 @@ useEffect(()=>{
       </div>
 
       {/* Cards Container for hsc commerce 2025 */}
-       <div className="flex justify-center md:justify-evenly items-end flex-wrap gap-x-6 gap-y-15 md:gap-4 py-20 px-4 bg-[#F5F7FA]">
-
+      <div className="flex justify-center md:justify-evenly items-end flex-wrap gap-x-6 gap-y-15 md:gap-4 py-20 px-4 bg-[#F5F7FA]">
         {toppers.map((topper, index) => {
           let initial = {};
           if (index === 0) initial = { x: -200, opacity: 0 };
@@ -161,7 +138,7 @@ useEffect(()=>{
 
           return (
             <motion.div
-              key={index}
+              key={`commerce-${index}`}
               initial={initial}
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: index * 0.2 }}
