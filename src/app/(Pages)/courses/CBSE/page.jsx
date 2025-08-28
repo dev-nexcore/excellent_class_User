@@ -39,9 +39,9 @@ export const metadata = {
     canonical: "https://www.excellent-classes.nexcorealliance.com/cbse",
   },
   openGraph: {
-    title: "CBSE Coaching in kurla | Excellent Classes",
-     description:
-    "Excellent Classes offers the best CBSE coaching in Mumbai with experienced teachers, comprehensive study material, and excellent results.",
+    title: "CBSE Coaching in Mumbai | Excellent Classes",
+    description:
+      "Join CBSE coaching at Excellent Classes, Mumbai. Expert guidance, personalized support, and guaranteed academic success.",
     url: "https://www.excellent-classes.nexcorealliance.com/cbse",
     siteName: "Excellent Classes",
     images: [

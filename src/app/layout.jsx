@@ -86,26 +86,16 @@ const radley = Radley({
 // };
 
 export const metadata = {
-  title: "Excellent Classes | Best Coaching in Kurla & Mumbai for ICSE, CBSE, SSC & HSC",
+  title: "Excellent Classes | Coaching Classes in Mumbai",
   description:
-    "Excellent Classes in Kurla, Mumbai offers coaching for 8th–12th (ICSE, CBSE, SSC & HSC), along with JEE & NEET preparation. Experienced faculty, personalized guidance, and proven results.",
+    "Excellent Classes provides expert coaching for school & college students in Mumbai. Trusted teachers, proven results, and personalized guidance.",
   alternates: {
     canonical: "https://www.excellent-classes.nexcorealliance.com",
   },
-  keywords: [
-  "Excellent Classes",
-  "coaching classes in Kurla",
-  "best coaching in Mumbai",
-  "SSC coaching Kurla",
-  "ICSE CBSE tuition Kurla",
-  "11 12 Science Commerce coaching",
-  "NEET JEE preparation Mumbai"
-],
-
   openGraph: {
     title: "Excellent Classes | Coaching in Mumbai",
     description:
-      "Join Excellent Classes in Kurla & Mumbai – Coaching for ICSE, CBSE, SSC, HSC, JEE & NEET. Expert teachers, quality notes & 100% result-driven training.",
+      "Join Excellent Classes for ICSE, CBSE, SSC, HSC, JEE, NEET & more. Result-oriented training with experienced faculty in Mumbai.",
     url: "https://www.excellent-classes.nexcorealliance.com",
     siteName: "Excellent Classes",
     images: [
@@ -116,7 +106,6 @@ export const metadata = {
         alt: "Excellent Classes Coaching in Mumbai",
       },
     ],
-    
   },
 };
 

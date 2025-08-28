@@ -1,12 +1,12 @@
 export const metadata = {
-  title: "Learning Resources & Study Tips | Excellent Classes Mumbai",
+  title: "Blog | Excellent Classes",
   description:
-    "Read study tips, exam preparation guides & success stories from Excellent Classes, Kurla – Coaching for ICSE, CBSE, SSC, HSC, JEE & NEET in Mumbai.",
+    "Read the latest blogs, articles, and insights from Excellent Classes. Stay updated with exam tips, study strategies, and success stories.",
   openGraph: {
     url: "https://www.excellentclasses.nexcorealliance.com/blog",
     title: "Blog | Excellent Classes",
-   description:
-    "Read study tips, exam preparation guides & success stories from Excellent Classes, Kurla – Coaching for ICSE, CBSE, SSC, HSC, JEE & NEET in Mumbai.",
+    description:
+      "Explore blogs and articles by Excellent Classes – exam tips, preparation strategies, and inspirational student success stories.",
     siteName: "Excellent Classes",
   },
 };

@@ -23,7 +23,7 @@
 // };
 
 export const metadata = {
-  title: "ICSE Coaching Classes in kurla | Excellent Classes",
+  title: "ICSE Coaching Classes in Mumbai | Excellent Classes",
   description:
     "Best ICSE coaching in Mumbai with expert faculty, personalized notes, and proven track record of student success at Excellent Classes.",
   alternates: {
@@ -31,8 +31,8 @@ export const metadata = {
   },
   openGraph: {
     title: "ICSE Coaching in Mumbai | Excellent Classes",
-   description:
-    "Best ICSE coaching in Mumbai with expert faculty, personalized notes, and proven track record of student success at Excellent Classes.",
+    description:
+      "Enroll in Mumbai’s top ICSE coaching at Excellent Classes. Expert ICSE teachers, result-oriented methods, and student-focused learning.",
     url: "https://www.excellent-classes.nexcorealliance.com/icse",
     siteName: "Excellent Classes",
     images: [
