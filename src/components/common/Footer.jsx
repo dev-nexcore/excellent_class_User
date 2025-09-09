@@ -108,7 +108,7 @@ export default function Footer() {
     </h4>
   <ul className="space-y-2 text-base text-[#2f4271] text-center">
   {[
-    { name: "School Section", path: "/courses#school" },
+    { name: "School Sections", path: "/courses#school" },
     { name: "Science Section", path: "/courses#science" },
     { name: "Commerce Stream", path: "/courses#commerce" },
     { name: "CA Foundation", path: "/courses#commerce" }, // part of commerce section
