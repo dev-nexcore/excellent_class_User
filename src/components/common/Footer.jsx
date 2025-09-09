@@ -111,7 +111,7 @@ export default function Footer() {
     { name: "School Sections", path: "/courses#school" },
     { name: "Science Section", path: "/courses#science" },
     { name: "Commerce Stream", path: "/courses#commerce" },
-    { name: "CA Foundation", path: "/courses#commerce" }, // part of commerce section
+    { name: "CA Foundation", path: "/courses/C.A-Foundation" }, // part of commerce section
   ].map((course) => (
     <li key={course.name}>
       <Link href={course.path}>
