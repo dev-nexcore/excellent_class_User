@@ -77,54 +77,56 @@ export default function Footer() {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-20 gap-y-8 -mr-4 ">
-          {/* Column 2 */}
-          <div className="flex-1 w-full sm:w-[150px] min-w-[120px] flex flex-col items-center">
-            <h4 className="text-black text-base font-semibold uppercase mb-3">
-              Main Menu
-            </h4>
-<ul className="space-y-2 text-base text-[#2f4271] ">
+     <div className="flex flex-col sm:flex-row flex-[1.5] gap-x-20 gap-y-8 -mr-4">
+  {/* Column 2 - Main Menu */}
+  <div className="flex-1 min-w-[150px] flex flex-col items-center">
+    <h4 className="text-black text-base font-semibold uppercase mb-3 text-center">
+      Main Menu
+    </h4>
+    <ul className="space-y-2 text-base text-[#2f4271] text-center">
+      {[
+        { name: "About", path: "/about" },
+        { name: "Result", path: "/result" },
+        { name: "Gallery", path: "/gallery" },
+        { name: "Contact Us", path: "/contact" },
+      ].map((item) => (
+        <li key={item.name}>
+          <Link href={item.path}>
+            <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
+              {item.name}
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Column 3 - Our Courses */}
+  <div className="flex-1 min-w-[180px] flex flex-col items-center">
+    <h4 className="text-black text-base font-semibold uppercase mb-3 text-center">
+      Our Courses
+    </h4>
+  <ul className="space-y-2 text-base text-[#2f4271] text-center">
   {[
-    { name: "About", path: "/about" },
-    { name: "Result", path: "/result" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Contact Us", path: "/contact" },
-  ].map((item) => (
-    <li key={item.name}>
-      <Link href={item.path}>
+    { name: "School Section", path: "/courses#school" },
+    { name: "Science Section", path: "/courses#science" },
+    { name: "Commerce Stream", path: "/courses#commerce" },
+    { name: "CA Foundation", path: "/courses#commerce" }, // part of commerce section
+  ].map((course) => (
+    <li key={course.name}>
+      <Link href={course.path}>
         <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
-          {item.name}
+          {course.name}
         </span>
       </Link>
     </li>
   ))}
 </ul>
 
-          </div>
+  </div>
+</div>
 
-          {/* Column 3 */}
-          <div className="flex-0 min-w-[180px] text-left ">
-            <h4 className="text-black text-base font-semibold uppercase mb-3">
-              Our Courses
-            </h4>
-            <ul className="space-y-2 text-base text-[#2f4271]">
-              {[
-                { name: "School Section", path: "/courses" },
-                { name: "Science Section", path: "/courses" },
-                { name: "Commerce Stream", path: "/courses" },
-                { name: "CA Foundation", path: "/courses/C.A-Foundation" },
-              ].map((course) => (
-                <li key={course.name}>
-                  <Link href={course.path}>
-                    <span className="hover:underline hover:text-[#1e2f5d] cursor-pointer">
-                      {course.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+
       </div>
 
       {/* Footer Bottom */}

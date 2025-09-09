@@ -174,7 +174,7 @@ export default function QualityBanner() {
   className="mt-3
     absolute bg-[#E85222] z-10
     w-[0.5vw]      /* thickness scales with screen */
-    h-[110%]       /* enough to cover both views */
+    h-[109%]       /* enough to cover both views */
     top-[-16px]
     left-[70%]   /* same position for all breakpoints */
   "

@@ -67,7 +67,7 @@ const SchoolCard = ({ title, animationClass, href }) => (
   </div>
 );
 
-const CourseSection = ({ title, data, cols = 3, animateOnScroll = false }) => {
+const CourseSection = ({ id,title, data, cols = 3, animateOnScroll = false }) => {
   const [ref, inView] = animateOnScroll ? useInView(0.2) : [null, true];
   // For science section, use only 2 columns at all breakpoints
   const gridCols =
@@ -77,7 +77,7 @@ const CourseSection = ({ title, data, cols = 3, animateOnScroll = false }) => {
       ? "sm:grid-cols-2"
       : "sm:grid-cols-2 md:grid-cols-3";
   return (
-    <div className="bg-gray-100 pb-9 " ref={ref}>
+    <div id={id} className="bg-gray-100 pb-9 " ref={ref}>
       {/* Header */}
       <div className="bg-blue-900 py-6 sm:py-8  sm:mb-12 md:mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-white text-center">
@@ -102,14 +102,34 @@ const CourseSection = ({ title, data, cols = 3, animateOnScroll = false }) => {
 };
 
 export default function CourcesHomePage () {
-  return (
+ return (
     <div className="min-h-screen bg-white">
-      {/* School Section with on-scroll animation */}
-      <CourseSection title="School Section" data={schoolCardData} cols={3} animateOnScroll={true} />
-      {/* Science Section with on-scroll animation */}
-      <CourseSection title="Science Section" data={scienceCardData} cols={2} animateOnScroll={true} />
-      {/* Commerce Section with on-scroll animation */}
-      <CourseSection title="Commerce Section" data={commerceCardData} cols={3} animateOnScroll={true} />
+      {/* School Section */}
+      <CourseSection
+        id="school"
+        title="School Section"
+        data={schoolCardData}
+        cols={3}
+        animateOnScroll={true}
+      />
+
+      {/* Science Section */}
+      <CourseSection
+        id="science"
+        title="Science Section"
+        data={scienceCardData}
+        cols={2}
+        animateOnScroll={true}
+      />
+
+      {/* Commerce Section */}
+      <CourseSection
+        id="commerce"
+        title="Commerce Section"
+        data={commerceCardData}
+        cols={3}
+        animateOnScroll={true}
+      />
     </div>
   );
 }
